@@ -9,3 +9,4 @@ reaper.SetEditCurPos2(0, outpoint, true, false) -- move edit cursor to out-point
 if inpoint == 0 then
 	reaper.Main_OnCommand(40625, 0) -- set in-point = out-point
 end
+reaper.UpdateArrange()
