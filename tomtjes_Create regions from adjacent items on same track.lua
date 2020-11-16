@@ -23,11 +23,13 @@
  * Changelog:
  * v1.0 (2020-09-11)
 	+ Initial Release
+ * v1.01 (2020-11-16)
+  ~ fix for short items that are covered by longer items
 --]]
 
 --======= CONFIG =================================--
 gap = 1 -- minimum distance (seconds) between items for a new region to be created
-render = "track" -- options: "master", "tracks", "both"
+render = "tracks" -- options: "master", "tracks", "both"
 --======= END OF CONFIG ==========================--
 
 --======= FUNCTIONS ==============================--
@@ -50,6 +52,7 @@ function main()
     -- get first item on track
     next_item = reaper.GetTrackMediaItem( track, 0 )
     next_item_start, _, next_item_end = StartLengthEnd(next_item)
+    item_end = next_item_end
 
     -- start first region
     region_start = next_item_start
@@ -58,7 +61,10 @@ function main()
     for j=1, number_of_items do
 
       -- shift next item to item
-      item, item_start, item_end = next_item, next_item_start, next_item_end
+      item, item_start = next_item, next_item_start
+      if next_item_end > item_end then
+        item_end = next_item_end
+      end
 
       -- get next item on track
       next_item = reaper.GetTrackMediaItem( track, j )
