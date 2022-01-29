@@ -15,11 +15,13 @@
  * Extensions: 2.8.3
  * Version: 1.6.1
  * Original Name: Add envelope points at time selection edges from X to Y preserving edges on choosen envelopes
- *** This version is modified by tomtjes - MOD VERSION 1.0 ***
+ *** This version is modified by tomtjes - MOD VERSION 1.0.1 ***
 --]]
  
 --[[
  * Changelog:
+ * tomtjes mod 1.0.1 (2022-01-29)
+   # fix undefined variables
  * tomtjes mod 1.0 (2017-03-11)
    + support for shape of envelope points
    # offset replaced by length of fade
@@ -208,7 +210,7 @@ function UnselectAllEnvelopePoints(envelope, env_points_count)
   -- UNSELECT POINTS
   if env_points_count > 0 then
     for k = 0, env_points_count+1 do 
-      reaper.SetEnvelopePoint(envelope, k, timeInOptional, valueInOptional, shapeInOptional, tensionInOptional, false, true)
+      reaper.SetEnvelopePoint(envelope, k, nil, nil, nil, nil, false, true)
     end
   end
 
