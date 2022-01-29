@@ -21,10 +21,13 @@
 
 --[[
  * Changelog:
+ * v1.0.2 (2022-01-28)
+  ~ fix region numbering (start with 1 instead of 0)
+  - remove requirement to select tracks, apply script to all tracks if none selected
+ * v1.0.1 (2020-11-16)
+  ~ fix for short items that are covered by longer items
  * v1.0 (2020-09-11)
 	+ Initial Release
- * v1.01 (2020-11-16)
-  ~ fix for short items that are covered by longer items
 --]]
 
 --======= CONFIG =================================--
@@ -35,49 +38,54 @@ render = "tracks" -- options: "master", "tracks", "both"
 --======= FUNCTIONS ==============================--
 
 function main()
+  local region, region_start, region_end, region_name, region_color, number_of_items, item, item_start, item_end
   -- get master track
   local master = reaper.GetMasterTrack( 0 )
 
+  -- check # of tracks selected
+  local tracks = {}
+  local number_of_tracks = reaper.CountSelectedTracks(0)
+  if number_of_tracks == 0 then
+    number_of_tracks = reaper.CountTracks(0)
+    for i=1, number_of_tracks do
+      tracks[i] = reaper.GetTrack(0, i-1)
+    end
+  else
+    for i=1, number_of_tracks do
+      tracks[i] = reaper.GetSelectedTrack( 0, i-1 )
+    end
+  end
+
   -- iterate over tracks
   for _,track in ipairs(tracks) do
-    local region, region_start, region_name, region_color, number_of_items, item, item_start, item_end, next_item, next_item_start, next_item_end
-
-    reaper.SetOnlyTrackSelected( track )
-
+  
     region_color = reaper.GetTrackColor( track )
     _, region_name = reaper.GetTrackName( track )
 
     number_of_items = reaper.CountTrackMediaItems( track )
 
     -- get first item on track
-    next_item = reaper.GetTrackMediaItem( track, 0 )
-    next_item_start, _, next_item_end = StartLengthEnd(next_item)
-    item_end = next_item_end
+    item = reaper.GetTrackMediaItem( track, 0 )
+    item_start, _, item_end = StartLengthEnd(item)
 
     -- start first region
-    region_start = next_item_start
+    region_start = item_start
+    region_end = item_end
 
     -- iterate over items on track
     for j=1, number_of_items do
 
-      -- shift next item to item
-      item, item_start = next_item, next_item_start
-      if next_item_end > item_end then
-        item_end = next_item_end
-      end
-
       -- get next item on track
-      next_item = reaper.GetTrackMediaItem( track, j )
-      if next_item ~= nil then
-        next_item_start, _, next_item_end = StartLengthEnd(next_item)
+      item = reaper.GetTrackMediaItem( track, j )
+      if item ~= nil then
+        item_start, _, item_end = StartLengthEnd(item)
       else -- reached end of track
-        next_item_start = item_end + gap + 1 -- always create region for last item
+        item_start = region_end + gap + 1 -- always create region for last item
       end
 
       -- create region now?
-      if next_item_start - item_end >= gap then -- if gap to next item big enough
-        region = reaper.AddProjectMarker2( 0, true, region_start, item_end, region_name, 0, region_color ) -- add region and save id
-        reaper.SetRegionRenderMatrix( 0, region, track, 1 )
+      if item_start - region_end >= gap then -- if gap to next item big enough
+        region = reaper.AddProjectMarker2( 0, true, region_start, region_end, region_name, 1, region_color ) -- add region and save id
 
         -- adjust render matrix
         if render == "master" or render == "both" then
@@ -88,7 +96,12 @@ function main()
         end
 
         -- start next region
-        region_start = next_item_start
+        region_start = item_start
+      end
+
+      -- extend region?
+      if item_end > region_end then
+        region_end = item_end
       end
     end
   end
@@ -103,27 +116,9 @@ end
 
 --======= END OF FUNCTIONS =======================--
 
--- check # of tracks selected
-local number_of_tracks_selected = reaper.CountSelectedTracks( 0 )
-if number_of_tracks_selected == 0 then
-  reaper.ShowMessageBox("No Tracks Selected.", "Error", 0)
-  return
-end
-
 reaper.Undo_BeginBlock()
 
--- save selected tracks
-tracks = {}
-for i=1, number_of_tracks_selected do
-  tracks[i] = reaper.GetSelectedTrack( 0, i-1 )
-end
-
 main()
-
--- restore track selection
-for _,track in ipairs(tracks) do
-  reaper.SetTrackSelected( track, true )
-end
 
 reaper.UpdateArrange()
 reaper.Undo_EndBlock("Create regions from adjacent items on same track", -1)

@@ -21,127 +21,145 @@
 
 --[[
  * Changelog:
+ * v1.1 (2022-01-28)
+    ~ fix for first item at position 0 (using code from https://github.com/nofishonfriday/ReaScripts/blob/master/editing/nofish_Select%20next%20item%20(in%20time)%20across%20tracks.lua)
+    ~ fix for multiple items with same position but different length
+    ~ fix region numbering (start with 1 instead of 0)
+    ~ define region color by first track
+    ~ set default to render tracks
+    ~ reduce number of calls to reaper
+    - remove requirement to select tracks, apply script to all tracks if none selected
  * v1.0 (2020-09-11)
 	+ Initial Release
 --]]
 
 --======= CONFIG =================================--
 gap = 1 -- minimum distance (seconds) between items for a new region to be created
-render = "master" -- options: "master", "tracks", "both"
+render = "tracks" -- options: "master", "tracks", "both"
 --======= END OF CONFIG ==========================--
 
 --======= FUNCTIONS ==============================--
 
 function main()
-  local master, region, item, item_start, item_end
-  local tracks = {}
+    local region, item
+    local tracks = {}
+    local items = {}
 
-  -- get master track
-  master = reaper.GetMasterTrack( 0 )
+    -- get master track
+    local master = reaper.GetMasterTrack( 0 )
 
-  -- go to beginning of project
-  reaper.SetEditCurPos2( 0, 0, false, false )
+	local items_total = 0
 
-  -- get first item in project
-  next_item = GetNextItem()
-  next_item_start, _, next_item_end, track = StartLengthEndTrack(next_item)
-  InitializeRegion()
+    local track_count = reaper.CountTracks(0)
+    local track_count_sel = reaper.CountSelectedTracks(0)
 
-  -- iterate over items until end of project
-  while next_item ~= item do
+	-- LOOP THROUGH TRACKS
+	for i = 0, track_count - 1 do
 
-    -- shift next item to item
-    item, item_start, item_end = next_item, next_item_start, next_item_end
+		track = reaper.GetTrack(0, i)
 
-    -- if current item longer than region, extend region
-    if region_end < item_end then
-      region_end = item_end
-    end
+        if (track_count_sel > 0 and reaper.IsTrackSelected(track) == true) or track_count_sel == 0 then
 
-    if render == "tracks" or render == "both" then
-    -- save track for render matrix
-    tracks[track] = true
-    end
+            -- create tracks array in project order (for later use)
+            tracks[track] = {}
+            tracks[track].set = false
+            _, tracks[track].name = reaper.GetTrackName(track)
+            tracks[track].color = reaper.GetTrackColor(track)
 
-    -- get next item
-    next_item = GetNextItem()
-    next_item_start, _, next_item_end, track = StartLengthEndTrack(next_item)
+            count_items_tracks = reaper.GetTrackNumMediaItems(track)
 
-    -- reached end of project?
-    if next_item == item then
-      next_item_start = region_end + gap -- always create region for last item
-    end
+            for j = 0, count_items_tracks - 1 do
 
-    -- create region now?
-    if next_item_start - region_end >= gap then -- if gap to next item big enough
-      region = reaper.AddProjectMarker2( 0, true, region_start, region_end, region_name, 0, region_color ) -- add region and save id
+                item = reaper.GetTrackMediaItem(track, j)
 
-      -- adjust render matrix
-      if render == "master" or render == "both" then
-        reaper.SetRegionRenderMatrix( 0, region, master, 1 )
-      end
-      if render == "tracks" or render == "both" then
-        for track, set in pairs(tracks) do
-          if set == true then
-            reaper.SetRegionRenderMatrix( 0, region, track, 1 )
-            tracks[track]=false
-          end
+                items_total = items_total + 1
+
+                items[items_total] = {}
+
+                items[items_total].item = item
+                items[items_total].pos = reaper.GetMediaItemInfo_Value(item, "D_POSITION")
+                items[items_total].endpos = items[items_total].pos + reaper.GetMediaItemInfo_Value(item, "D_LENGTH")
+                items[items_total].track = track
+            end
         end
-      end
+		
+	end
 
-      -- start next region
-      InitializeRegion()
-    end
-  end
+	table.sort(items, function( a,b )
+		if (a.pos < b.pos) then
+				-- primary sort on position -> a before b
+			return true
+			elseif (a.pos > b.pos) then
+				-- primary sort on position -> b before a
+			return false
+		else
+			-- primary sort tied, resolve w secondary sort on rank
+			return a.pos < b.pos
+		end
+	end)
+
+    -- add virtual last item to make sure the last region gets created
+    items[items_total+1] = {}
+    items[items_total+1].pos = items[items_total].endpos + gap + 1
+
+    -- start first region
+    InitializeRegion(items[1].pos)
+
+	-- loop through items
+	for i = 1, items_total do
+
+        -- if current item longer than region, extend region
+        if region_end < items[i].endpos then
+            region_end = items[i].endpos
+        end
+
+        -- save track for render matrix and region naming
+        tracks[items[i].track].set = true
+
+        -- create region now?
+        if items[i+1].pos - region_end >= gap then -- if gap to next item big enough
+        
+            -- region name and color defined by tracks in project order
+            for _, trk in pairs(tracks) do
+                if trk.set == true then
+                    region_name = region_name .. trk.name    
+                    if region_color == "" then
+                        region_color = trk.color
+                    end
+                end
+            end
+
+            region = reaper.AddProjectMarker2( 0, true, region_start, region_end, region_name, 1, region_color ) -- add region and save id
+  
+            -- adjust render matrix
+            if render == "master" or render == "both" then
+                reaper.SetRegionRenderMatrix( 0, region, master, 1 )
+            end
+
+            for id, trk in pairs(tracks) do
+                if trk.set == true and (render == "tracks" or render == "both") then
+                    reaper.SetRegionRenderMatrix( 0, region, id, 1 )
+                end
+                tracks[id].set=false
+            end
+
+            -- start next region
+            InitializeRegion(items[i+1].pos)
+        end
+
+	end -- ENDLOOP through items
 end
 
-function StartLengthEndTrack(item)
-  local item_start = reaper.GetMediaItemInfo_Value( item, "D_POSITION" )
-  local item_length = reaper.GetMediaItemInfo_Value( item, "D_LENGTH" )
-  local item_end = item_start + item_length
-  local item_track = reaper.GetMediaItem_Track( item )
-  return item_start, item_length, item_end, item_track
-end
-
-function InitializeRegion()
-  region_start = next_item_start
-  region_end = region_start
-  _, region_name = reaper.GetTrackName( track )
-  region_color = reaper.GetTrackColor( track )
-end
-
-function GetNextItem()
-  reaper.Main_OnCommand(40417, 0) -- select next item
-  local item = reaper.GetSelectedMediaItem( 0, 0 )
-  return item
+function InitializeRegion(start)
+  region_start = start
+  region_end = 0
+  region_name = ""
+  region_color = ""
 end
 
 --======= END OF FUNCTIONS =======================--
 
 reaper.Undo_BeginBlock()
-
--- check # of tracks selected
-local number_of_tracks_selected = reaper.CountSelectedTracks( 0 )
-if number_of_tracks_selected == 0 then
-  reaper.ShowMessageBox("No Tracks Selected.", "Error", 0)
-  return
-end
-
--- preserve edit cursor and selected items
-local cursor = reaper.GetCursorPositionEx( 0 )
-local selected_items = {}
-local selected_items_count = reaper.CountSelectedMediaItems( 0 )
-for i=1, selected_items_count do
-  selected_items[i] = reaper.GetSelectedMediaItem( 0, i-1 )
-end
-
 main()
-
--- restore state
-reaper.SetEditCurPos2(0, cursor, true, false)
-for _,item in ipairs(selected_items) do
-  reaper.SetMediaItemSelected( item, true )
-end
-
 reaper.UpdateArrange()
 reaper.Undo_EndBlock("Create regions from adjacent items across tracks", -1)
