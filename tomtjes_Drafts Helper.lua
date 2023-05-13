@@ -1,3 +1,6 @@
+-- Helper functions for Drafts action group
+-- https://directory.getdrafts.com/g/2Jy
+
 local function create_marker()
 
     local function rgbsplit (inputstr, sep)
