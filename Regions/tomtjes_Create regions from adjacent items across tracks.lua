@@ -1,21 +1,21 @@
 --[[
-@name
+Name:
     Create regions from adjacent items across tracks
-@screenshot
-    https://raw.githubusercontent.com/tomtjes/ReaScripts/c65335dcfe5f6b5eef1c7ff218efc7a8da79cd90/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20across%20tracks.gif
-@author
+Screenshot:
+    https://raw.githubusercontent.com/tomtjes/Radio-Toolkit/c65335dcfe5f6b5eef1c7ff218efc7a8da79cd90/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20across%20tracks.gif
+Author:
     tomtjes
-@donation
+Donation:
     https://ko-fi.com/tomtjes
-@links
-    Github https://github.com/tomtjes/ReaScripts
-@provides
+Links:
+    Github https://github.com/tomtjes/Radio-Toolkit
+Provides:
     [data] toolbar_icons/tomtjes_toolbar_region_adjacent_items_across_tracks.png > toolbar_icons/tomtjes_toolbar_region_adjacent_items_across_tracks.png
-@license
+License:
     GPL v3
-@version
+Version:
     1.1 2022-01-28
-@changelog
+Changelog:
     ~ fix for first item at position 0 (using code from https://github.com/nofishonfriday/ReaScripts/blob/master/editing/nofish_Select%20next%20item%20(in%20time)%20across%20tracks.lua)
     ~ fix for multiple items with same position but different length
     ~ fix region numbering (start with 1 instead of 0)
@@ -24,7 +24,7 @@
     ~ reduce number of calls to reaper
     - remove requirement to select tracks, apply script to all tracks if none selected
     (Initial relase was 2020-09-11)
-@about
+About:
     # Create regions from adjacent items across tracks
 
     Creates regions that comprise all items that are less than a

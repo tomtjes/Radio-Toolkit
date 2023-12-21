@@ -1,9 +1,9 @@
 --[[
   Name: Create regions from adjacent items on same track
-  Screenshot: https://github.com/tomtjes/ReaScripts/Regions/tomtjes_Create regions from adjacent items on same track.gif
+  Screenshot: https://github.com/tomtjes/Radio-Toolkit/blob/master/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20on%20same%20track.gif
   Author: tomtjes
   Donation: https://ko-fi.com/tomtjes
-  Links: Github https://github.com/tomtjes/ReaScripts
+  Links: Github https://github.com/tomtjes/Radio-Toolkit
   Provides:
     [data] toolbar_icons/tomtjes_toolbar_region_adjacent_items_same_track.png > toolbar_icons/tomtjes_toolbar_region_adjacent_items_same_track.png
   License: GPL v3

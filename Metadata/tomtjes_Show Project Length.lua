@@ -1,17 +1,17 @@
 --[[
- * Name: Show project length
- * Author: tomtjes
- * Donation: https://ko-fi.com/tomtjes
- * Links: Github https://github.com/tomtjes/ReaScripts
- * License: GPL v3
- * Version: 1.0 2023-12-20
- * Changelog: Initial Release
-@about
-  # Show project length 
+  Name: Show project length
+  Author: tomtjes
+  Donation: https://ko-fi.com/tomtjes
+  Links: Github https://github.com/tomtjes/Radio-Toolkit
+  License: GPL v3
+  Version: 1.0 2023-12-20
+  Changelog: + initial release
+  About:
+    # Show project length 
 
-  Displays the current project length in a Docker tab with docking capability
+    Displays the current project length in a docker tab
 
-  > If this script frequently saves you time and money, please consider to [support my work with coffee](https://ko-fi.com/tomtjes). 
+    > If this script frequently saves you time and money, please consider to [support my work with coffee](https://ko-fi.com/tomtjes). 
 --]]
 
 local script_title = "tomtjes_Show Project Length"

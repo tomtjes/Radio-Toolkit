@@ -1,24 +1,24 @@
 --[[
- * Name: Calculate total length of items on selected tracks
- * Screenshot: https://github.com/tomtjes/ReaScripts/Metadata/tomtjes_Calculate total length of items on selected tracks.png
- * Author: tomtjes
- * Donation: https://ko-fi.com/tomtjes
- * Links: Github https://github.com/tomtjes/ReaScripts
- * License: GPL v3
- * Version: 1.0 2023-12-19
- * Changelog: Initial Release
-@about 
-    # Calculate total length of items on selected tracks
+    Name: Calculate total length of items on selected tracks
+    Screenshot: https://github.com/tomtjes/Radio-Toolkit/blob/master/Metadata/tomtjes_Calculate%20total%20length%20of%20items%20on%20selected%20tracks.png
+    Author: tomtjes
+    Donation: https://ko-fi.com/tomtjes
+    Links: Github https://github.com/tomtjes/Radio-Toolkit
+    License: GPL v3
+    Version: 1.0 2023-12-19
+    Changelog: + initial release
+    About:
+        # Calculate total length of items on selected tracks
 
-    Sums up the lengths of all items and breaks the result down by track and media source file.
-    If you use markers named `=START` and/or `=END`, anything outside that range is disregarded.
+        Sums up the lengths of all items and breaks the result down by track and media source file.
+        If you use markers named `=START` and/or `=END`, anything outside that range is disregarded.
 
-    ## Instructions
+        ## Instructions
 
-    - select one or more tracks
-    - run the script
+        - select one or more tracks
+        - run the script
 
-    > If this script frequently saves you time and money, please consider to [support my work with coffee](https://ko-fi.com/tomtjes). 
+        > If this script frequently saves you time and money, please consider to [support my work with coffee](https://ko-fi.com/tomtjes). 
 --]]
 
 

@@ -1,25 +1,25 @@
 --[[
-Name: Drafts Helper
-Author: tomtjes
-Donation: https://ko-fi.com/tomtjes
-Links:
-  Github https://github.com/tomtjes/ReaScripts
-  Drafts App https://getdrafts.com
-  Reaper Action Group https://actions.getdrafts.com/g/2Jy
-License: GPL v3
-Version: 1.0 2023-12-20
-Changelog:
-  + initial release
-About:
-  # Drafts Helper
+  Name: Drafts Helper
+  Author: tomtjes
+  Donation: https://ko-fi.com/tomtjes
+  Links:
+    Github https://github.com/tomtjes/Radio-Toolkit
+    Drafts App https://getdrafts.com
+    Reaper Action Group https://actions.getdrafts.com/g/2Jy
+  License: GPL v3
+  Version: 1.0 2023-12-20
+  Changelog:
+    + initial release
+  About:
+    # Drafts Helper
 
-  Allows to control Reaper from the Drafts note taking app and pull data from Reaper into Drafts, e.g. timestamps.
+    Allows to control Reaper from the Drafts note taking app and pull data from Reaper into Drafts, e.g. timestamps.
 
-  ## Instructions
+    ## Instructions
 
-  *see instructions in Action Group in Drafts Directory*
+    *see instructions in Action Group in Drafts Directory*
 
-  > If this script frequently saves you time and money, please consider to [support my work with coffee](https://ko-fi.com/tomtjes). 
+    > If this script frequently saves you time and money, please consider to [support my work with coffee](https://ko-fi.com/tomtjes). 
 --]]
 
 local function create_marker()
