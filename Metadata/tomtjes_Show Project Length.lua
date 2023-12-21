@@ -7,11 +7,11 @@
  * Version: 1.0 2023-12-20
  * Changelog: Initial Release
 @about
-# Show project length
+  # Show project length
 
-Displays the current project length in a Docker tab with docking capability
+  Displays the current project length in a Docker tab with docking capability
 
-> If this script frequently saves you time and money, please consider to [support my work with coffee](https://ko-fi.com/tomtjes). 
+  > If this script frequently saves you time and money, please consider to [support my work with coffee](https://ko-fi.com/tomtjes). 
 --]]
 
 local script_title = "tomtjes_Show Project Length"
