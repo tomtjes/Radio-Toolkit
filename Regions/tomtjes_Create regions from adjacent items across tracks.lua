@@ -14,7 +14,7 @@
 @version
     1.1 2022-01-28
 @changelog
-fix for first item at position 0 (using code from https://github.com/nofishonfriday/ReaScripts/blob/master/editing/nofish_Select%20next%20item%20(in%20time)%20across%20tracks.lua)
+    fix for first item at position 0 (using code from https://github.com/nofishonfriday/ReaScripts/blob/master/editing/nofish_Select%20next%20item%20(in%20time)%20across%20tracks.lua)
 ~ fix for multiple items with same position but different length
 ~ fix region numbering (start with 1 instead of 0)
 ~ define region color by first track
