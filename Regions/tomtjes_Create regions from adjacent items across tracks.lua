@@ -13,7 +13,7 @@
     GPL v3
 @version
     1.1 2022-01-28
-@changelog
+@changelog 
     ~ fix for first item at position 0 (using code from https://github.com/nofishonfriday/ReaScripts/blob/master/editing/nofish_Select%20next%20item%20(in%20time)%20across%20tracks.lua)
     ~ fix for multiple items with same position but different length
     ~ fix region numbering (start with 1 instead of 0)
@@ -28,8 +28,8 @@
     Creates regions that comprise all items that are less than a
     given number of seconds (default: 1) apart. The region render
     matrix gets adjusted to render the respective tracks for the created
-    regions and/or the master track (configurable). Regions are named and colored after track of first item
-    in region.
+    regions and/or the master track (configurable). Regions are named and 
+    colored after track of first item in region.
 
     Evaluates items on selected tracks or all items if no tracks are selected.
 
