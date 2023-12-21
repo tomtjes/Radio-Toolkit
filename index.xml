@@ -25,7 +25,7 @@ support my work with coffee
       </metadata>
       <version name="1.0 2020-09-11" author="tomtjes" time="2023-12-21T03:43:17Z">
         <changelog><![CDATA[Initial Release]]></changelog>
-        <source main="main">https://github.com/tomtjes/ReaScripts/raw/eb55b7c1b96eb50903f1b4a99085a3f004ab2295/Items/tomtjes_Glue%20adjacent%20items%20on%20track.lua</source>
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/eb55b7c1b96eb50903f1b4a99085a3f004ab2295/Items/tomtjes_Glue%20adjacent%20items%20on%20track.lua</source>
       </version>
     </reapack>
   </category>
@@ -53,7 +53,7 @@ support my work with coffee
       </metadata>
       <version name="1.0 2023-12-19" author="tomtjes" time="2023-12-21T03:43:17Z">
         <changelog><![CDATA[Initial Release]]></changelog>
-        <source main="main">https://github.com/tomtjes/ReaScripts/raw/eb55b7c1b96eb50903f1b4a99085a3f004ab2295/Metadata/tomtjes_Calculate%20total%20length%20of%20items%20on%20selected%20tracks.lua</source>
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/eb55b7c1b96eb50903f1b4a99085a3f004ab2295/Metadata/tomtjes_Calculate%20total%20length%20of%20items%20on%20selected%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="tomtjes_Show Project Length.lua" type="script" desc="Show project length">
@@ -75,7 +75,7 @@ support my work with coffee
       </metadata>
       <version name="1.0 2023-12-20" author="tomtjes" time="2023-12-21T03:43:17Z">
         <changelog><![CDATA[Initial Release]]></changelog>
-        <source main="main">https://github.com/tomtjes/ReaScripts/raw/eb55b7c1b96eb50903f1b4a99085a3f004ab2295/Metadata/tomtjes_Show%20Project%20Length.lua</source>
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/eb55b7c1b96eb50903f1b4a99085a3f004ab2295/Metadata/tomtjes_Show%20Project%20Length.lua</source>
       </version>
     </reapack>
   </category>
@@ -106,7 +106,7 @@ support my work with coffee
         <link rel="donation">https://ko-fi.com/tomtjes</link>
       </metadata>
       <version name="1.1 2022-01-28" author="tomtjes" time="2023-12-21T03:43:17Z">
-        <source main="main">https://github.com/tomtjes/ReaScripts/raw/eb55b7c1b96eb50903f1b4a99085a3f004ab2295/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20across%20tracks.lua</source>
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/eb55b7c1b96eb50903f1b4a99085a3f004ab2295/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20across%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="tomtjes_Create regions from adjacent items on same track.lua" type="script" desc="Create regions from adjacent items on same track">
@@ -135,7 +135,7 @@ support my work with coffee
         <link rel="donation">https://ko-fi.com/tomtjes</link>
       </metadata>
       <version name="1.0.2 2022-01-28" author="tomtjes" time="2023-12-21T03:43:17Z">
-        <source main="main">https://github.com/tomtjes/ReaScripts/raw/eb55b7c1b96eb50903f1b4a99085a3f004ab2295/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20on%20same%20track.lua</source>
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/eb55b7c1b96eb50903f1b4a99085a3f004ab2295/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20on%20same%20track.lua</source>
       </version>
     </reapack>
   </category>
@@ -162,7 +162,7 @@ support my work with coffee
         <link rel="donation">https://ko-fi.com/tomtjes</link>
       </metadata>
       <version name="1.0 2023-12-20" author="tomtjes" time="2023-12-21T03:43:17Z">
-        <source main="main">https://github.com/tomtjes/ReaScripts/raw/eb55b7c1b96eb50903f1b4a99085a3f004ab2295/Third%20Party/tomtjes_Drafts%20Helper.lua</source>
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/eb55b7c1b96eb50903f1b4a99085a3f004ab2295/Third%20Party/tomtjes_Drafts%20Helper.lua</source>
       </version>
     </reapack>
   </category>
