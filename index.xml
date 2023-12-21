@@ -1,2 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="tomtjes"/>
+<index version="1" name="tomtjes" commit="62402a65d9b1ea4c8217aabbe08e62674e7347f1">
+  <category name="Items">
+    <reapack name="tomtjes_Glue adjacent items on track.lua" type="script" desc="Glue adjacent items on track">
+      <metadata>
+        <link rel="website" href="https://github.com/tomtjes/ReaScripts">Repository</link>
+        <link rel="screenshot">https://github.com/tomtjes/ReaScripts/Items/tomtjes_Glue adjacent items on track.gif</link>
+        <link rel="donation">https://ko-fi.com/tomtjes</link>
+      </metadata>
+      <version name="1.0 2020-09-11" author="tomtjes" time="2023-12-21T03:43:17Z">
+        <changelog><![CDATA[Initial Release]]></changelog>
+        <source main="main">https://github.com/tomtjes/ReaScripts/raw/eb55b7c1b96eb50903f1b4a99085a3f004ab2295/Items/tomtjes_Glue%20adjacent%20items%20on%20track.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Metadata">
+    <reapack name="tomtjes_Calculate total length of items on selected tracks.lua" type="script" desc="Calculate total length of items on selected tracks">
+      <metadata>
+        <link rel="website" href="https://github.com/tomtjes/ReaScripts">Repository</link>
+        <link rel="screenshot">https://github.com/tomtjes/ReaScripts/Metadata/tomtjes_Calculate total length of items on selected tracks.png</link>
+        <link rel="donation">https://ko-fi.com/tomtjes</link>
+      </metadata>
+      <version name="1.0 2023-12-19" author="tomtjes" time="2023-12-21T03:43:17Z">
+        <changelog><![CDATA[Initial Release]]></changelog>
+        <source main="main">https://github.com/tomtjes/ReaScripts/raw/eb55b7c1b96eb50903f1b4a99085a3f004ab2295/Metadata/tomtjes_Calculate%20total%20length%20of%20items%20on%20selected%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="tomtjes_Show Project Length.lua" type="script" desc="Show project length">
+      <metadata>
+        <link rel="website" href="https://github.com/tomtjes/ReaScripts">Repository</link>
+        <link rel="donation">https://ko-fi.com/tomtjes</link>
+      </metadata>
+      <version name="1.0 2023-12-20" author="tomtjes" time="2023-12-21T03:43:17Z">
+        <changelog><![CDATA[Initial Release]]></changelog>
+        <source main="main">https://github.com/tomtjes/ReaScripts/raw/eb55b7c1b96eb50903f1b4a99085a3f004ab2295/Metadata/tomtjes_Show%20Project%20Length.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Regions">
+    <reapack name="tomtjes_Create regions from adjacent items across tracks.lua" type="script" desc="Create regions from adjacent items across tracks">
+      <metadata>
+        <link rel="website" href="https://github.com/tomtjes/ReaScripts">Repository</link>
+        <link rel="screenshot">https://github.com/tomtjes/ReaScripts/Regions/tomtjes_Create regions from adjacent items across tracks.gif</link>
+        <link rel="donation">https://ko-fi.com/tomtjes</link>
+      </metadata>
+      <version name="1.1 2022-01-28" author="tomtjes" time="2023-12-21T03:43:17Z">
+        <source main="main">https://github.com/tomtjes/ReaScripts/raw/eb55b7c1b96eb50903f1b4a99085a3f004ab2295/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20across%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="tomtjes_Create regions from adjacent items on same track.lua" type="script" desc="Create regions from adjacent items on same track">
+      <metadata>
+        <link rel="website" href="https://github.com/tomtjes/ReaScripts">Repository</link>
+        <link rel="screenshot">https://github.com/tomtjes/ReaScripts/Regions/tomtjes_Create regions from adjacent items on same track.gif</link>
+        <link rel="donation">https://ko-fi.com/tomtjes</link>
+      </metadata>
+      <version name="1.0.2 2022-01-28" author="tomtjes" time="2023-12-21T03:43:17Z">
+        <source main="main">https://github.com/tomtjes/ReaScripts/raw/eb55b7c1b96eb50903f1b4a99085a3f004ab2295/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20on%20same%20track.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Third Party">
+    <reapack name="tomtjes_Drafts Helper.lua" type="script" desc="Drafts Helper">
+      <metadata>
+        <link rel="donation">https://ko-fi.com/tomtjes</link>
+      </metadata>
+      <version name="1.0 2023-12-20" author="tomtjes" time="2023-12-21T03:43:17Z">
+        <source main="main">https://github.com/tomtjes/ReaScripts/raw/eb55b7c1b96eb50903f1b4a99085a3f004ab2295/Third%20Party/tomtjes_Drafts%20Helper.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <metadata>
+    <link rel="donation">https://ko-fi.com/tomtjes</link>
+  </metadata>
+</index>
