@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="tomtjes" commit="95fa52b577281acb9345abc5931720d39e68ecec">
+<index version="1" name="tomtjes" commit="98ee703d2f3870b693801e17b1292651270213a9">
   <category name="Items">
     <reapack name="tomtjes_Glue adjacent items on track.lua" type="script" desc="Glue adjacent items on track">
       <metadata>
@@ -27,6 +27,18 @@
     </reapack>
     <reapack name="tomtjes_Show Project Length.lua" type="script" desc="Show project length">
       <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Show project length\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Displays the current project length in a Docker tab with docking capability\par}
+{\pard \ql \f0 \sa180 \li720 \fi0 If this script frequently saves you time and money, please consider to {\field{\*\fldinst{HYPERLINK "https://ko-fi.com/tomtjes"}}{\fldrslt{\ul
+support my work with coffee
+}}}
+.\par}
+}
+]]></description>
         <link rel="website" href="https://github.com/tomtjes/ReaScripts">Repository</link>
         <link rel="donation">https://ko-fi.com/tomtjes</link>
       </metadata>
