@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Radio Toolkit" commit="099a0f1dedd6acc4f9899c3d0f36999090ba7430">
+<index version="1" name="Radio Toolkit" commit="0da2a859cb4b087a03c0ae07f9e3c2e664975a87">
   <category name="Items">
     <reapack name="tomtjes_Glue adjacent items on track.lua" type="script" desc="Glue adjacent items on track">
       <metadata>
@@ -19,8 +19,8 @@ support my work with coffee
 .\par}
 }
 ]]></description>
-        <link rel="website" href="https://github.com/tomtjes/ReaScripts">Github</link>
-        <link rel="screenshot">https://github.com/tomtjes/ReaScripts/Items/tomtjes_Glue adjacent items on track.gif</link>
+        <link rel="website" href="https://github.com/tomtjes/Radio-Toolkit">Github</link>
+        <link rel="screenshot">https://github.com/tomtjes/Radio-Toolkit/blob/master/Items/tomtjes_Glue%20adjacent%20items%20on%20track.gif</link>
         <link rel="donation">https://ko-fi.com/tomtjes</link>
       </metadata>
       <version name="1.0 2020-09-11" author="tomtjes" time="2023-12-21T03:43:17Z">
@@ -47,8 +47,8 @@ support my work with coffee
 .\par}
 }
 ]]></description>
-        <link rel="website" href="https://github.com/tomtjes/ReaScripts">Github</link>
-        <link rel="screenshot">https://github.com/tomtjes/ReaScripts/Metadata/tomtjes_Calculate total length of items on selected tracks.png</link>
+        <link rel="website" href="https://github.com/tomtjes/Radio-Toolkit">Github</link>
+        <link rel="screenshot">https://github.com/tomtjes/Radio-Toolkit/blob/master/Metadata/tomtjes_Calculate%20total%20length%20of%20items%20on%20selected%20tracks.png</link>
         <link rel="donation">https://ko-fi.com/tomtjes</link>
       </metadata>
       <version name="1.0 2023-12-19" author="tomtjes" time="2023-12-21T03:43:17Z">
@@ -63,14 +63,14 @@ support my work with coffee
 \widowctrl\hyphauto
 
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Show project length\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Displays the current project length in a Docker tab with docking capability\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Displays the current project length in a docker tab\par}
 {\pard \ql \f0 \sa180 \li720 \fi0 If this script frequently saves you time and money, please consider to {\field{\*\fldinst{HYPERLINK "https://ko-fi.com/tomtjes"}}{\fldrslt{\ul
 support my work with coffee
 }}}
 .\par}
 }
 ]]></description>
-        <link rel="website" href="https://github.com/tomtjes/ReaScripts">Github</link>
+        <link rel="website" href="https://github.com/tomtjes/Radio-Toolkit">Github</link>
         <link rel="donation">https://ko-fi.com/tomtjes</link>
       </metadata>
       <version name="1.0 2023-12-20" author="tomtjes" time="2023-12-21T03:43:17Z">
@@ -101,8 +101,8 @@ support my work with coffee
 .\par}
 }
 ]]></description>
-        <link rel="website" href="https://github.com/tomtjes/ReaScripts">Github</link>
-        <link rel="screenshot">https://raw.githubusercontent.com/tomtjes/ReaScripts/c65335dcfe5f6b5eef1c7ff218efc7a8da79cd90/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20across%20tracks.gif</link>
+        <link rel="website" href="https://github.com/tomtjes/Radio-Toolkit">Github</link>
+        <link rel="screenshot">https://raw.githubusercontent.com/tomtjes/Radio-Toolkit/c65335dcfe5f6b5eef1c7ff218efc7a8da79cd90/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20across%20tracks.gif</link>
         <link rel="donation">https://ko-fi.com/tomtjes</link>
       </metadata>
       <version name="1.1 2022-01-28" author="tomtjes" time="2023-12-21T03:43:17Z">
@@ -130,8 +130,8 @@ support my work with coffee
 .\par}
 }
 ]]></description>
-        <link rel="website" href="https://github.com/tomtjes/ReaScripts">Github</link>
-        <link rel="screenshot">https://github.com/tomtjes/ReaScripts/Regions/tomtjes_Create regions from adjacent items on same track.gif</link>
+        <link rel="website" href="https://github.com/tomtjes/Radio-Toolkit">Github</link>
+        <link rel="screenshot">https://github.com/tomtjes/Radio-Toolkit/blob/master/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20on%20same%20track.gif</link>
         <link rel="donation">https://ko-fi.com/tomtjes</link>
       </metadata>
       <version name="1.0.2 2022-01-28" author="tomtjes" time="2023-12-21T03:43:17Z">
@@ -156,7 +156,7 @@ support my work with coffee
 .\par}
 }
 ]]></description>
-        <link rel="website" href="https://github.com/tomtjes/ReaScripts">Github</link>
+        <link rel="website" href="https://github.com/tomtjes/Radio-Toolkit">Github</link>
         <link rel="website" href="https://getdrafts.com">Drafts App</link>
         <link rel="website" href="https://actions.getdrafts.com/g/2Jy">Reaper Action Group</link>
         <link rel="donation">https://ko-fi.com/tomtjes</link>
