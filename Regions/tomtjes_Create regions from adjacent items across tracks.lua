@@ -2,7 +2,7 @@
 @name
     Create regions from adjacent items across tracks
 @screenshot
-    https://github.com/tomtjes/ReaScripts/Regions/tomtjes_Create regions from adjacent items across tracks.gif
+    https://github.com/tomtjes/ReaScripts/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20across%20tracks.gif
 @author
     tomtjes
 @donation
