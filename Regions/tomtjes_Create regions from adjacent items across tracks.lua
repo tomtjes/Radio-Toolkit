@@ -1,27 +1,12 @@
 --[[
- * ReaScript Name: Create regions from adjacent items across tracks
- * Description: Creates regions that comprise all items that are less than a
-                given number of seconds (default: 1) apart. The region render
-                matrix gets adjusted to render the master track for the created
-                regions. Regions are named and colored after track of first item
-                in region.
- * Instructions: select track(s), run (modify gap value in first line if desired)
- * Screenshot URI:
- * Author: Thomas Reintjes
- * Author URI: https://reidio.io
- * Repository:
- * Repository URI: https://github.com/tomtjes/ReaScripts
- * File URI:
- * Licence: GPL v3
- * Forum Thread:
- * Forum Thread URl:
- * REAPER: 5.0
- * Extensions:
---]]
-
---[[
+ * Name: Create regions from adjacent items across tracks
+ * Screenshot: https://github.com/tomtjes/ReaScripts/Regions/tomtjes_Create regions from adjacent items across tracks.gif
+ * Author: tomtjes
+ * Donation: https://ko-fi.com/tomtjes
+ * Links: Repository https://github.com/tomtjes/ReaScripts
+ * License: GPL v3
+ * Version: 1.1 2022-01-28
  * Changelog:
- * v1.1 (2022-01-28)
     ~ fix for first item at position 0 (using code from https://github.com/nofishonfriday/ReaScripts/blob/master/editing/nofish_Select%20next%20item%20(in%20time)%20across%20tracks.lua)
     ~ fix for multiple items with same position but different length
     ~ fix region numbering (start with 1 instead of 0)
@@ -29,8 +14,25 @@
     ~ set default to render tracks
     ~ reduce number of calls to reaper
     - remove requirement to select tracks, apply script to all tracks if none selected
- * v1.0 (2020-09-11)
-	+ Initial Release
+    (Initial relase was 2020-09-11)
+ * About:
+     # Create regions from adjacent items across tracks
+     
+     Creates regions that comprise all items that are less than a
+     given number of seconds (default: 1) apart. The region render
+     matrix gets adjusted to render the respective tracks for the created
+     regions and/or the master track (configurable). Regions are named and colored after track of first item
+     in region.
+
+     Evaluates items on selected tracks or all items if no tracks are selected.
+
+     ## Instructions
+
+     - modify gap value and render setting in first lines of code (optional)
+     - select track(s) (optional)
+     - run script
+
+     > If this script frequently saves you time and money, please consider to [support my work with coffee](https://ko-fi.com/tomtjes). 
 --]]
 
 --======= CONFIG =================================--
