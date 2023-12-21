@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="tomtjes" commit="32bcb7245f921272fc888dd0cad1e4e27e8a768c">
+<index version="1" name="tomtjes" commit="1a5124880bea2b3b816455a9e2787e6949ff07e6">
   <category name="Items">
     <reapack name="tomtjes_Glue adjacent items on track.lua" type="script" desc="Glue adjacent items on track">
       <metadata>
@@ -73,20 +73,6 @@ support my work with coffee
   <category name="Third Party">
     <reapack name="tomtjes_Drafts Helper.lua" type="script" desc="Drafts Helper">
       <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
-{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
-\widowctrl\hyphauto
-
-{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Drafts Helper\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Allows to control Reaper from the Drafts note taking app and pull data from Reaper into Drafts, e.g. timestamps.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Instructions\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 {\i see instructions in Drafts Directory (follow link to Reaper Action Group below)}\par}
-{\pard \ql \f0 \sa180 \li720 \fi0 If this script frequently saves you time and money, please consider to {\field{\*\fldinst{HYPERLINK "https://ko-fi.com/tomtjes"}}{\fldrslt{\ul
-support my work with coffee
-}}}
-.\par}
-}
-]]></description>
         <link rel="website" href="https://github.com/tomtjes/ReaScripts">Repository</link>
         <link rel="website" href="https://getdrafts.com">Drafts App</link>
         <link rel="website" href="https://actions.getdrafts.com/g/2Jy">Reaper Action Group</link>
