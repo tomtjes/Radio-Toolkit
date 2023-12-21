@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="tomtjes" commit="3258247d99f61717bd20db6eb80d96993b354c80">
+<index version="1" name="tomtjes" commit="45876f0c140a7c8bcddc02edbf0261027c507e4a">
   <category name="Items">
     <reapack name="tomtjes_Glue adjacent items on track.lua" type="script" desc="Glue adjacent items on track">
       <metadata>
-        <link rel="website" href="https://github.com/tomtjes/ReaScripts">Repository</link>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Glue adjacent items on track\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Glues all items on the same track that are less than a given number of seconds (default: 1) apart.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Instructions\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab modify gap value in first line of code if desired\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab select track(s)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab run script\sa180\par}
+{\pard \ql \f0 \sa180 \li720 \fi0 If this script frequently saves you time and money, please consider to {\field{\*\fldinst{HYPERLINK "https://ko-fi.com/tomtjes"}}{\fldrslt{\ul
+support my work with coffee
+}}}
+.\par}
+}
+]]></description>
+        <link rel="website" href="https://github.com/tomtjes/ReaScripts">Github</link>
         <link rel="screenshot">https://github.com/tomtjes/ReaScripts/Items/tomtjes_Glue adjacent items on track.gif</link>
         <link rel="donation">https://ko-fi.com/tomtjes</link>
       </metadata>
@@ -16,7 +32,22 @@
   <category name="Metadata">
     <reapack name="tomtjes_Calculate total length of items on selected tracks.lua" type="script" desc="Calculate total length of items on selected tracks">
       <metadata>
-        <link rel="website" href="https://github.com/tomtjes/ReaScripts">Repository</link>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Calculate total length of items on selected tracks\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Sums up the lengths of all items and breaks the result down by track and media source file. If you use markers named {\f1 =START} and/or {\f1 =END}, anything outside that range is disregarded.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Instructions\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab select one or more tracks\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab run the script\sa180\par}
+{\pard \ql \f0 \sa180 \li720 \fi0 If this script frequently saves you time and money, please consider to {\field{\*\fldinst{HYPERLINK "https://ko-fi.com/tomtjes"}}{\fldrslt{\ul
+support my work with coffee
+}}}
+.\par}
+}
+]]></description>
+        <link rel="website" href="https://github.com/tomtjes/ReaScripts">Github</link>
         <link rel="screenshot">https://github.com/tomtjes/ReaScripts/Metadata/tomtjes_Calculate total length of items on selected tracks.png</link>
         <link rel="donation">https://ko-fi.com/tomtjes</link>
       </metadata>
@@ -39,7 +70,7 @@ support my work with coffee
 .\par}
 }
 ]]></description>
-        <link rel="website" href="https://github.com/tomtjes/ReaScripts">Repository</link>
+        <link rel="website" href="https://github.com/tomtjes/ReaScripts">Github</link>
         <link rel="donation">https://ko-fi.com/tomtjes</link>
       </metadata>
       <version name="1.0 2023-12-20" author="tomtjes" time="2023-12-21T03:43:17Z">
@@ -51,7 +82,24 @@ support my work with coffee
   <category name="Regions">
     <reapack name="tomtjes_Create regions from adjacent items across tracks.lua" type="script" desc="Create regions from adjacent items across tracks">
       <metadata>
-        <link rel="website" href="https://github.com/tomtjes/ReaScripts">Repository</link>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Create regions from adjacent items across tracks\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Creates regions that comprise all items that are less than a given number of seconds (default: 1) apart. The region render matrix gets adjusted to render the respective tracks for the created regions and/or the master track (configurable). Regions are named and colored after track of first item in region.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Evaluates items on selected tracks or all items if no tracks are selected.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Instructions\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab modify gap value and render setting in first lines of code (optional)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab select track(s) (optional)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab run script\sa180\par}
+{\pard \ql \f0 \sa180 \li720 \fi0 If this script frequently saves you time and money, please consider to {\field{\*\fldinst{HYPERLINK "https://ko-fi.com/tomtjes"}}{\fldrslt{\ul
+support my work with coffee
+}}}
+.\par}
+}
+]]></description>
+        <link rel="website" href="https://github.com/tomtjes/ReaScripts">Github</link>
         <link rel="screenshot">https://github.com/tomtjes/ReaScripts/Regions/tomtjes_Create regions from adjacent items across tracks.gif</link>
         <link rel="donation">https://ko-fi.com/tomtjes</link>
       </metadata>
@@ -61,7 +109,24 @@ support my work with coffee
     </reapack>
     <reapack name="tomtjes_Create regions from adjacent items on same track.lua" type="script" desc="Create regions from adjacent items on same track">
       <metadata>
-        <link rel="website" href="https://github.com/tomtjes/ReaScripts">Repository</link>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Create regions from adjacent items on same track\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Creates regions that comprise all items on the same track that are less than a given number of seconds (default: 1) apart. The region render matrix gets adjusted to render the respective tracks for the created regions and/or the master track (configurable). Regions are named and colored after track of first item in region.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Evaluates items on selected tracks or all items if no tracks are selected.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Instructions\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab modify gap value and render setting in first lines of code (optional)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab select track(s) (optional)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab run script\sa180\par}
+{\pard \ql \f0 \sa180 \li720 \fi0 If this script frequently saves you time and money, please consider to {\field{\*\fldinst{HYPERLINK "https://ko-fi.com/tomtjes"}}{\fldrslt{\ul
+support my work with coffee
+}}}
+.\par}
+}
+]]></description>
+        <link rel="website" href="https://github.com/tomtjes/ReaScripts">Github</link>
         <link rel="screenshot">https://github.com/tomtjes/ReaScripts/Regions/tomtjes_Create regions from adjacent items on same track.gif</link>
         <link rel="donation">https://ko-fi.com/tomtjes</link>
       </metadata>
@@ -80,16 +145,13 @@ support my work with coffee
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Drafts Helper\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Allows to control Reaper from the Drafts note taking app and pull data from Reaper into Drafts, e.g. timestamps.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Instructions\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 {\i see instructions in Drafts Directory (follow link to Reaper Action Group below)}\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\i see instructions in Action Group in Drafts Directory}\par}
 {\pard \ql \f0 \sa180 \li720 \fi0 If this script frequently saves you time and money, please consider to {\field{\*\fldinst{HYPERLINK "https://ko-fi.com/tomtjes"}}{\fldrslt{\ul
 support my work with coffee
 }}}
 .\par}
 }
 ]]></description>
-        <link rel="website" href="https://github.com/tomtjes/ReaScripts">Repository</link>
-        <link rel="website" href="https://getdrafts.com">Drafts App</link>
-        <link rel="website" href="https://actions.getdrafts.com/g/2Jy">Reaper Action Group</link>
         <link rel="donation">https://ko-fi.com/tomtjes</link>
       </metadata>
       <version name="1.0 2023-12-20" author="tomtjes" time="2023-12-21T03:43:17Z">
