@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="tomtjes" commit="b6e41f429c6b4fd0db92a1e8ba10997564a10ee4">
+<index version="1" name="tomtjes" commit="ba1aaffc13053f5d7caa9c76575404998e8d1b47">
   <category name="Items">
     <reapack name="tomtjes_Glue adjacent items on track.lua" type="script" desc="Glue adjacent items on track">
       <metadata>
@@ -89,8 +89,10 @@ support my work with coffee
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Create regions from adjacent items across tracks\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Creates regions that comprise all items that are less than a given number of seconds (default: 1) apart. The region render matrix gets adjusted to render the respective tracks for the created regions and/or the master track (configurable). Regions are named and colored after track of first item in region.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Evaluates items on selected tracks or all items if no tracks are selected.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Instructions\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab modify gap value and render setting in first lines of code (optional)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Installation\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab optional: modify gap value and render setting in first lines of code\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab optional: add included icon to toolbar: {\f1 tomtjes_toolbar_region_adjacent_items_across_tracks.png}\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Usage\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab select track or tracks (optional)\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab run script\sa180\par}
 {\pard \ql \f0 \sa180 \li720 \fi0 If this script frequently saves you time and money, please consider to {\field{\*\fldinst{HYPERLINK "https://ko-fi.com/tomtjes"}}{\fldrslt{\ul
@@ -112,8 +114,8 @@ support my work with coffee
 ~ reduce number of calls to reaper
 - remove requirement to select tracks, apply script to all tracks if none selected
 (Initial relase was 2020-09-11)]]></changelog>
-        <source main="main">https://github.com/tomtjes/ReaScripts/raw/b6e41f429c6b4fd0db92a1e8ba10997564a10ee4/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20across%20tracks.lua</source>
-        <source type="data" file="toolbar_icons/tomtjes_toolbar_region_adjacent_items_across_tracks.png">https://github.com/tomtjes/ReaScripts/raw/b6e41f429c6b4fd0db92a1e8ba10997564a10ee4/Regions/toolbar_icons/tomtjes_toolbar_region_adjacent_items_across_tracks.png</source>
+        <source main="main">https://github.com/tomtjes/ReaScripts/raw/ba1aaffc13053f5d7caa9c76575404998e8d1b47/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20across%20tracks.lua</source>
+        <source type="data" file="toolbar_icons/tomtjes_toolbar_region_adjacent_items_across_tracks.png">https://github.com/tomtjes/ReaScripts/raw/ba1aaffc13053f5d7caa9c76575404998e8d1b47/Regions/toolbar_icons/tomtjes_toolbar_region_adjacent_items_across_tracks.png</source>
       </version>
     </reapack>
     <reapack name="tomtjes_Create regions from adjacent items on same track.lua" type="script" desc="Create regions from adjacent items on same track">
