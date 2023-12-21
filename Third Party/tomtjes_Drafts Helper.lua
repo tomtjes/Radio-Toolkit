@@ -11,11 +11,11 @@ Version: 1.0 2023-12-20
 Changelog:
   + initial release
 About:
-  ## Drafts Helper
+  # Drafts Helper
 
   Allows to control Reaper from the Drafts note taking app and pull data from Reaper into Drafts, e.g. timestamps.
 
-  ### Instructions
+  ## Instructions
 
   *see instructions in Action Group in Drafts Directory*
 

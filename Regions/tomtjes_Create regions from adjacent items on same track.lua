@@ -1,32 +1,38 @@
 --[[
- * Name: Create regions from adjacent items on same track
- * Screenshot: https://github.com/tomtjes/ReaScripts/Regions/tomtjes_Create regions from adjacent items on same track.gif
- * Author: tomtjes
- * Donation: https://ko-fi.com/tomtjes
- * Links: Github https://github.com/tomtjes/ReaScripts
- * License: GPL v3
- * Version: 1.0.2 2022-01-28
- * Changelog:
-   ~ fix region numbering (start with 1 instead of 0)
-   - remove requirement to select tracks, apply script to all tracks if none selected
-@about
-  # Create regions from adjacent items on same track
+  Name: Create regions from adjacent items on same track
+  Screenshot: https://github.com/tomtjes/ReaScripts/Regions/tomtjes_Create regions from adjacent items on same track.gif
+  Author: tomtjes
+  Donation: https://ko-fi.com/tomtjes
+  Links: Github https://github.com/tomtjes/ReaScripts
+  Provides:
+    [data] toolbar_icons/tomtjes_toolbar_region_adjacent_items_same_track.png > toolbar_icons/tomtjes_toolbar_region_adjacent_items_same_track.png
+  License: GPL v3
+  Version: 1.0.2 2022-01-28
+  Changelog:
+    ~ fix region numbering (start with 1 instead of 0)
+    - remove requirement to select tracks, apply script to all tracks if none selected
+  About:
+    # Create regions from adjacent items on same track
 
-  Creates regions that comprise all items on the same track that are 
-  less than a given number of seconds (default: 1) apart. The region render
-  matrix gets adjusted to render the respective tracks for the created
-  regions and/or the master track (configurable). Regions are named and 
-  colored after track of first item in region.
+    Creates regions that comprise all items on the same track that are 
+    less than a given number of seconds (default: 1) apart. The region render
+    matrix gets adjusted to render the respective tracks for the created
+    regions and/or the master track (configurable). Regions are named and 
+    colored after track of first item in region.
 
-  Evaluates items on selected tracks or all items if no tracks are selected.
+    Evaluates items on selected tracks or all items if no tracks are selected.
 
-  ## Instructions
+    ## Installation
 
-  - modify gap value and render setting in first lines of code (optional)
-  - select track(s) (optional)
-  - run script
+    - optional: modify gap value and render setting in first lines of code
+    - optional: add included icon to toolbar: `tomtjes_toolbar_region_adjacent_items_same_track.png`
 
-  > If this script frequently saves you time and money, please consider to [support my work with coffee](https://ko-fi.com/tomtjes). 
+    ## Usage
+
+    - select track or tracks (optional)
+    - run script
+
+    > If this script frequently saves you time and money, please consider to [support my work with coffee](https://ko-fi.com/tomtjes). 
 --]]
 
 --======= CONFIG =================================--
