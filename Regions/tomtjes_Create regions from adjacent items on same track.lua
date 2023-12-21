@@ -1,33 +1,32 @@
 --[[
- * ReaScript Name: Create regions from adjacent items on same track
- * Description: Creates regions that comprise all items on the same track that
-                are less than a given number of seconds (default: 1) apart. The
-                region render matrix gets adjusted to only render the respective
-                tracks for the created regions. Regions are named and colored
-                after their track.
- * Instructions: select track(s), run (modify gap value in first line if desired)
- * Screenshot URI:
- * Author: Thomas Reintjes
- * Author URI: https://reidio.io
- * Repository:
- * Repository URI: https://github.com/tomtjes/ReaScripts
- * File URI:
- * Licence: GPL v3
- * Forum Thread:
- * Forum Thread URl:
- * REAPER: 5.0
- * Extensions:
---]]
-
---[[
+ * Name: Create regions from adjacent items on same track
+ * Screenshot: https://github.com/tomtjes/ReaScripts/Regions/tomtjes_Create regions from adjacent items on same track.gif
+ * Author: tomtjes
+ * Donation: https://ko-fi.com/tomtjes
+ * Links: Repository https://github.com/tomtjes/ReaScripts
+ * License: GPL v3
+ * Version: 1.0.2 2022-01-28
  * Changelog:
- * v1.0.2 (2022-01-28)
-  ~ fix region numbering (start with 1 instead of 0)
-  - remove requirement to select tracks, apply script to all tracks if none selected
- * v1.0.1 (2020-11-16)
-  ~ fix for short items that are covered by longer items
- * v1.0 (2020-09-11)
-	+ Initial Release
+   ~ fix region numbering (start with 1 instead of 0)
+   - remove requirement to select tracks, apply script to all tracks if none selected
+ * About:
+    # Create regions from adjacent items on same track
+
+    Creates regions that comprise all items on the same track that are 
+    less than a given number of seconds (default: 1) apart. The region render
+    matrix gets adjusted to render the respective tracks for the created
+    regions and/or the master track (configurable). Regions are named and 
+    colored after track of first item in region.
+
+    Evaluates items on selected tracks or all items if no tracks are selected.
+
+    ## Instructions
+
+    - modify gap value and render setting in first lines of code (optional)
+    - select track(s) (optional)
+    - run script
+
+    > If this script frequently saves you time and money, please consider to [support my work with coffee](https://ko-fi.com/tomtjes). 
 --]]
 
 --======= CONFIG =================================--
