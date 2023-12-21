@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="tomtjes" commit="ba1aaffc13053f5d7caa9c76575404998e8d1b47">
+<index version="1" name="tomtjes" commit="099a0f1dedd6acc4f9899c3d0f36999090ba7430">
   <category name="Items">
     <reapack name="tomtjes_Glue adjacent items on track.lua" type="script" desc="Glue adjacent items on track">
       <metadata>
@@ -127,9 +127,11 @@ support my work with coffee
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Create regions from adjacent items on same track\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Creates regions that comprise all items on the same track that are less than a given number of seconds (default: 1) apart. The region render matrix gets adjusted to render the respective tracks for the created regions and/or the master track (configurable). Regions are named and colored after track of first item in region.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Evaluates items on selected tracks or all items if no tracks are selected.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Instructions\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab modify gap value and render setting in first lines of code (optional)\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab select track(s) (optional)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Installation\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab optional: modify gap value and render setting in first lines of code\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab optional: add included icon to toolbar: {\f1 tomtjes_toolbar_region_adjacent_items_same_track.png}\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Usage\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab select track or tracks (optional)\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab run script\sa180\par}
 {\pard \ql \f0 \sa180 \li720 \fi0 If this script frequently saves you time and money, please consider to {\field{\*\fldinst{HYPERLINK "https://ko-fi.com/tomtjes"}}{\fldrslt{\ul
 support my work with coffee
@@ -142,7 +144,10 @@ support my work with coffee
         <link rel="donation">https://ko-fi.com/tomtjes</link>
       </metadata>
       <version name="1.0.2 2022-01-28" author="tomtjes" time="2023-12-21T03:43:17Z">
-        <source main="main">https://github.com/tomtjes/ReaScripts/raw/eb55b7c1b96eb50903f1b4a99085a3f004ab2295/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20on%20same%20track.lua</source>
+        <changelog><![CDATA[~ fix region numbering (start with 1 instead of 0)
+- remove requirement to select tracks, apply script to all tracks if none selected]]></changelog>
+        <source main="main">https://github.com/tomtjes/ReaScripts/raw/099a0f1dedd6acc4f9899c3d0f36999090ba7430/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20on%20same%20track.lua</source>
+        <source type="data" file="toolbar_icons/tomtjes_toolbar_region_adjacent_items_same_track.png">https://github.com/tomtjes/ReaScripts/raw/099a0f1dedd6acc4f9899c3d0f36999090ba7430/Regions/toolbar_icons/tomtjes_toolbar_region_adjacent_items_same_track.png</source>
       </version>
     </reapack>
   </category>
@@ -153,9 +158,9 @@ support my work with coffee
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Drafts Helper\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Drafts Helper\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Allows to control Reaper from the Drafts note taking app and pull data from Reaper into Drafts, e.g. timestamps.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Instructions\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Instructions\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 {\i see instructions in Action Group in Drafts Directory}\par}
 {\pard \ql \f0 \sa180 \li720 \fi0 If this script frequently saves you time and money, please consider to {\field{\*\fldinst{HYPERLINK "https://ko-fi.com/tomtjes"}}{\fldrslt{\ul
 support my work with coffee
@@ -170,7 +175,7 @@ support my work with coffee
       </metadata>
       <version name="1.0 2023-12-20" author="tomtjes" time="2023-12-21T03:43:17Z">
         <changelog><![CDATA[+ initial release]]></changelog>
-        <source main="main">https://github.com/tomtjes/ReaScripts/raw/b6e41f429c6b4fd0db92a1e8ba10997564a10ee4/Third%20Party/tomtjes_Drafts%20Helper.lua</source>
+        <source main="main">https://github.com/tomtjes/ReaScripts/raw/099a0f1dedd6acc4f9899c3d0f36999090ba7430/Third%20Party/tomtjes_Drafts%20Helper.lua</source>
       </version>
     </reapack>
   </category>
