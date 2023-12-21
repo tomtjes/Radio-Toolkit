@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="tomtjes" commit="65635a0596c4e6859981dd2a334ce45f51f3d48d">
+<index version="1" name="tomtjes" commit="8f627affed9683af37ab0ff392d5639c83df1966">
   <category name="Items">
     <reapack name="tomtjes_Glue adjacent items on track.lua" type="script" desc="Glue adjacent items on track">
       <metadata>
