@@ -9,6 +9,8 @@
     https://ko-fi.com/tomtjes
 @links
     Github https://github.com/tomtjes/ReaScripts
+@provides
+    [data] toolbar_icons/tomtjes_toolbar_region_adjacent_items_across_tracks.png > toolbar_icons/tomtjes_toolbar_region_adjacent_items_across_tracks.png
 @license
     GPL v3
 @version
