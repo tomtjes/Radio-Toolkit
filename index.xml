@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="tomtjes" commit="29b8a8aac6074c62ff4227424ae94b41ad8491c8">
+<index version="1" name="tomtjes" commit="b6e41f429c6b4fd0db92a1e8ba10997564a10ee4">
   <category name="Items">
     <reapack name="tomtjes_Glue adjacent items on track.lua" type="script" desc="Glue adjacent items on track">
       <metadata>
@@ -112,7 +112,8 @@ support my work with coffee
 ~ reduce number of calls to reaper
 - remove requirement to select tracks, apply script to all tracks if none selected
 (Initial relase was 2020-09-11)]]></changelog>
-        <source main="main">https://github.com/tomtjes/ReaScripts/raw/29b8a8aac6074c62ff4227424ae94b41ad8491c8/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20across%20tracks.lua</source>
+        <source main="main">https://github.com/tomtjes/ReaScripts/raw/b6e41f429c6b4fd0db92a1e8ba10997564a10ee4/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20across%20tracks.lua</source>
+        <source type="data" file="toolbar_icons/tomtjes_toolbar_region_adjacent_items_across_tracks.png">https://github.com/tomtjes/ReaScripts/raw/b6e41f429c6b4fd0db92a1e8ba10997564a10ee4/Regions/toolbar_icons/tomtjes_toolbar_region_adjacent_items_across_tracks.png</source>
       </version>
     </reapack>
     <reapack name="tomtjes_Create regions from adjacent items on same track.lua" type="script" desc="Create regions from adjacent items on same track">
@@ -150,9 +151,9 @@ support my work with coffee
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Drafts Helper\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Drafts Helper\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Allows to control Reaper from the Drafts note taking app and pull data from Reaper into Drafts, e.g. timestamps.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Instructions\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Instructions\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 {\i see instructions in Action Group in Drafts Directory}\par}
 {\pard \ql \f0 \sa180 \li720 \fi0 If this script frequently saves you time and money, please consider to {\field{\*\fldinst{HYPERLINK "https://ko-fi.com/tomtjes"}}{\fldrslt{\ul
 support my work with coffee
@@ -160,10 +161,14 @@ support my work with coffee
 .\par}
 }
 ]]></description>
+        <link rel="website" href="https://github.com/tomtjes/ReaScripts">Github</link>
+        <link rel="website" href="https://getdrafts.com">Drafts App</link>
+        <link rel="website" href="https://actions.getdrafts.com/g/2Jy">Reaper Action Group</link>
         <link rel="donation">https://ko-fi.com/tomtjes</link>
       </metadata>
       <version name="1.0 2023-12-20" author="tomtjes" time="2023-12-21T03:43:17Z">
-        <source main="main">https://github.com/tomtjes/ReaScripts/raw/eb55b7c1b96eb50903f1b4a99085a3f004ab2295/Third%20Party/tomtjes_Drafts%20Helper.lua</source>
+        <changelog><![CDATA[+ initial release]]></changelog>
+        <source main="main">https://github.com/tomtjes/ReaScripts/raw/b6e41f429c6b4fd0db92a1e8ba10997564a10ee4/Third%20Party/tomtjes_Drafts%20Helper.lua</source>
       </version>
     </reapack>
   </category>
