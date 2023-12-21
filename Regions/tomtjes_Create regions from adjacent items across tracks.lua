@@ -3,7 +3,7 @@
  * Screenshot: https://github.com/tomtjes/ReaScripts/Regions/tomtjes_Create regions from adjacent items across tracks.gif
  * Author: tomtjes
  * Donation: https://ko-fi.com/tomtjes
- * Links: Repository https://github.com/tomtjes/ReaScripts
+ * Links: Github https://github.com/tomtjes/ReaScripts
  * License: GPL v3
  * Version: 1.1 2022-01-28
  * Changelog:
@@ -15,24 +15,24 @@
     ~ reduce number of calls to reaper
     - remove requirement to select tracks, apply script to all tracks if none selected
     (Initial relase was 2020-09-11)
- * About:
-     # Create regions from adjacent items across tracks
-     
-     Creates regions that comprise all items that are less than a
-     given number of seconds (default: 1) apart. The region render
-     matrix gets adjusted to render the respective tracks for the created
-     regions and/or the master track (configurable). Regions are named and colored after track of first item
-     in region.
+@about
+    # Create regions from adjacent items across tracks
 
-     Evaluates items on selected tracks or all items if no tracks are selected.
+    Creates regions that comprise all items that are less than a
+    given number of seconds (default: 1) apart. The region render
+    matrix gets adjusted to render the respective tracks for the created
+    regions and/or the master track (configurable). Regions are named and colored after track of first item
+    in region.
 
-     ## Instructions
+    Evaluates items on selected tracks or all items if no tracks are selected.
 
-     - modify gap value and render setting in first lines of code (optional)
-     - select track(s) (optional)
-     - run script
+    ## Instructions
 
-     > If this script frequently saves you time and money, please consider to [support my work with coffee](https://ko-fi.com/tomtjes). 
+    - modify gap value and render setting in first lines of code (optional)
+    - select track(s) (optional)
+    - run script
+
+    > If this script frequently saves you time and money, please consider to [support my work with coffee](https://ko-fi.com/tomtjes). 
 --]]
 
 --======= CONFIG =================================--

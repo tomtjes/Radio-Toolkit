@@ -3,22 +3,22 @@
  * Screenshot: https://github.com/tomtjes/ReaScripts/Items/tomtjes_Glue adjacent items on track.gif
  * Author: tomtjes
  * Donation: https://ko-fi.com/tomtjes
- * Links: Repository https://github.com/tomtjes/ReaScripts
+ * Links: Github https://github.com/tomtjes/ReaScripts
  * License: GPL v3
  * Version: 1.0 2020-09-11
  * Changelog: Initial Release 
- * About:
-    # Glue adjacent items on track
+@about
+  # Glue adjacent items on track
 
-    Glues all items on the same track that are less than a given number of seconds (default: 1) apart.
-    
-    ## Instructions
-    
-    - modify gap value in first line of code if desired
-    - select track(s)
-    - run script
+  Glues all items on the same track that are less than a given number of seconds (default: 1) apart.
 
-    > If this script frequently saves you time and money, please consider to [support my work with coffee](https://ko-fi.com/tomtjes). 
+  ## Instructions
+
+  - modify gap value in first line of code if desired
+  - select track(s)
+  - run script
+
+  > If this script frequently saves you time and money, please consider to [support my work with coffee](https://ko-fi.com/tomtjes). 
 --]]
 
 --======= CONFIG =================================--

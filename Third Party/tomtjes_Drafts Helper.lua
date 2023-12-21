@@ -2,8 +2,8 @@
  * Name: Drafts Helper
  * Author: tomtjes
  * Donation: https://ko-fi.com/tomtjes
- @links
-    Repository https://github.com/tomtjes/ReaScripts
+ * Links:
+    Github https://github.com/tomtjes/ReaScripts
     Drafts App https://getdrafts.com
     Reaper Action Group https://actions.getdrafts.com/g/2Jy
  * License: GPL v3
@@ -17,7 +17,7 @@
 
     ## Instructions
 
-    *see instructions in Drafts Directory (follow link to Reaper Action Group below)*
+    *see instructions in Action Group in Drafts Directory*
 
     > If this script frequently saves you time and money, please consider to [support my work with coffee](https://ko-fi.com/tomtjes). 
 --]]

@@ -2,7 +2,7 @@
  * Name: Show project length
  * Author: tomtjes
  * Donation: https://ko-fi.com/tomtjes
- * Links: Repository https://github.com/tomtjes/ReaScripts
+ * Links: Github https://github.com/tomtjes/ReaScripts
  * License: GPL v3
  * Version: 1.0 2023-12-20
  * Changelog: Initial Release
