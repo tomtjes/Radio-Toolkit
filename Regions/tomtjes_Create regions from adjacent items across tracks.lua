@@ -36,7 +36,7 @@
     ## Instructions
 
     - modify gap value and render setting in first lines of code (optional)
-    - select track(s) (optional)
+    - select track or tracks (optional)
     - run script
 
     > If this script frequently saves you time and money, please consider to [support my work with coffee](https://ko-fi.com/tomtjes). 
