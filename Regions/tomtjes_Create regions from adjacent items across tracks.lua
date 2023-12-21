@@ -23,7 +23,6 @@ Changelog:
     ~ set default to render tracks
     ~ reduce number of calls to reaper
     - remove requirement to select tracks, apply script to all tracks if none selected
-    (Initial relase was 2020-09-11)
 About:
     # Create regions from adjacent items across tracks
 
