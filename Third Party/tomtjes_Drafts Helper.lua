@@ -10,7 +10,17 @@
  * Version: 1.0 2023-12-20
  * Changelog:
    + initial release
- --]]
+ @about
+    # Drafts Helper
+
+    Allows to control Reaper from the Drafts note taking app and pull data from Reaper into Drafts, e.g. timestamps.
+
+    ## Instructions
+
+    *see instructions in Drafts Directory (follow link to Reaper Action Group below)*
+
+    > If this script frequently saves you time and money, please consider to [support my work with coffee](https://ko-fi.com/tomtjes). 
+--]]
 
 local function create_marker()
 
