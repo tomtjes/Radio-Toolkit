@@ -6,7 +6,7 @@
  * License: GPL v3
  * Version: 1.0 2023-12-20
  * Changelog: Initial Release
- * About: 
+@about
 # Show project length
 
 Displays the current project length in a Docker tab with docking capability
