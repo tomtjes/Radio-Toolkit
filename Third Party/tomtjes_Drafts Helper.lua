@@ -2,7 +2,7 @@
  * Name: Drafts Helper
  * Author: tomtjes
  * Donation: https://ko-fi.com/tomtjes
- * Links:
+ @links
     Repository https://github.com/tomtjes/ReaScripts
     Drafts App https://getdrafts.com
     Reaper Action Group https://actions.getdrafts.com/g/2Jy
