@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Radio Toolkit" commit="0da2a859cb4b087a03c0ae07f9e3c2e664975a87">
+<index version="1" name="Radio Toolkit" commit="dd6c2e7dfb6b1533bca05018d5e2c8e8183ca558">
   <category name="Items">
     <reapack name="tomtjes_Glue adjacent items on track.lua" type="script" desc="Glue adjacent items on track">
       <metadata>
@@ -112,10 +112,9 @@ support my work with coffee
 ~ define region color by first track
 ~ set default to render tracks
 ~ reduce number of calls to reaper
-- remove requirement to select tracks, apply script to all tracks if none selected
-(Initial relase was 2020-09-11)]]></changelog>
-        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/0da2a859cb4b087a03c0ae07f9e3c2e664975a87/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20across%20tracks.lua</source>
-        <source type="data" file="toolbar_icons/tomtjes_toolbar_region_adjacent_items_across_tracks.png">https://github.com/tomtjes/Radio-Toolkit/raw/0da2a859cb4b087a03c0ae07f9e3c2e664975a87/Regions/toolbar_icons/tomtjes_toolbar_region_adjacent_items_across_tracks.png</source>
+- remove requirement to select tracks, apply script to all tracks if none selected]]></changelog>
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/dd6c2e7dfb6b1533bca05018d5e2c8e8183ca558/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20across%20tracks.lua</source>
+        <source type="data" file="toolbar_icons/tomtjes_toolbar_region_adjacent_items_across_tracks.png">https://github.com/tomtjes/Radio-Toolkit/raw/dd6c2e7dfb6b1533bca05018d5e2c8e8183ca558/Regions/toolbar_icons/tomtjes_toolbar_region_adjacent_items_across_tracks.png</source>
       </version>
     </reapack>
     <reapack name="tomtjes_Create regions from adjacent items on same track.lua" type="script" desc="Create regions from adjacent items on same track">
