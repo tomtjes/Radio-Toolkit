@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="tomtjes" commit="6240b540ad357d1e99ca965132b37f6e4d349b1d">
+<index version="1" name="tomtjes" commit="29b8a8aac6074c62ff4227424ae94b41ad8491c8">
   <category name="Items">
     <reapack name="tomtjes_Glue adjacent items on track.lua" type="script" desc="Glue adjacent items on track">
       <metadata>
@@ -100,7 +100,7 @@ support my work with coffee
 }
 ]]></description>
         <link rel="website" href="https://github.com/tomtjes/ReaScripts">Github</link>
-        <link rel="screenshot">https://github.com/tomtjes/ReaScripts/blob/c65335dcfe5f6b5eef1c7ff218efc7a8da79cd90/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20across%20tracks.gif?raw=true</link>
+        <link rel="screenshot">https://raw.githubusercontent.com/tomtjes/ReaScripts/c65335dcfe5f6b5eef1c7ff218efc7a8da79cd90/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20across%20tracks.gif</link>
         <link rel="donation">https://ko-fi.com/tomtjes</link>
       </metadata>
       <version name="1.1 2022-01-28" author="tomtjes" time="2023-12-21T03:43:17Z">
@@ -112,7 +112,7 @@ support my work with coffee
 ~ reduce number of calls to reaper
 - remove requirement to select tracks, apply script to all tracks if none selected
 (Initial relase was 2020-09-11)]]></changelog>
-        <source main="main">https://github.com/tomtjes/ReaScripts/raw/6240b540ad357d1e99ca965132b37f6e4d349b1d/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20across%20tracks.lua</source>
+        <source main="main">https://github.com/tomtjes/ReaScripts/raw/29b8a8aac6074c62ff4227424ae94b41ad8491c8/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20across%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="tomtjes_Create regions from adjacent items on same track.lua" type="script" desc="Create regions from adjacent items on same track">
