@@ -1,11 +1,18 @@
 --[[
- * Name: Create regions from adjacent items across tracks
- * Screenshot: https://github.com/tomtjes/ReaScripts/Regions/tomtjes_Create regions from adjacent items across tracks.gif
- * Author: tomtjes
- * Donation: https://ko-fi.com/tomtjes
- * Links: Github https://github.com/tomtjes/ReaScripts
- * License: GPL v3
- * Version: 1.1 2022-01-28
+@name
+    Create regions from adjacent items across tracks
+@screenshot
+    https://github.com/tomtjes/ReaScripts/Regions/tomtjes_Create regions from adjacent items across tracks.gif
+@author
+    tomtjes
+@donation
+    https://ko-fi.com/tomtjes
+@links
+    Github https://github.com/tomtjes/ReaScripts
+@license
+    GPL v3
+@version
+    1.1 2022-01-28
 @changelog
     ~ fix for first item at position 0 (using code from https://github.com/nofishonfriday/ReaScripts/blob/master/editing/nofish_Select%20next%20item%20(in%20time)%20across%20tracks.lua)
     ~ fix for multiple items with same position but different length
