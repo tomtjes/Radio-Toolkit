@@ -35,9 +35,13 @@
 
     Evaluates items on selected tracks or all items if no tracks are selected.
 
-    ## Instructions
+    ## Installation
 
-    - modify gap value and render setting in first lines of code (optional)
+    - optional: modify gap value and render setting in first lines of code
+    - optional: add included icon to toolbar: `tomtjes_toolbar_region_adjacent_items_across_tracks.png`
+
+    ## Usage
+
     - select track or tracks (optional)
     - run script
 
