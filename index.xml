@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Radio Toolkit" commit="2b45465e74117ad22538c79dd1945794f4403a8c">
+<index version="1" name="Radio Toolkit" commit="34ce8af96d715071a7aab5901953d760d9c15b10">
   <category name="Envelopes">
     <reapack name="tomtjes_X-Raym_Add fades or ramps at time selection edges on chosen envelopes (Ducking).lua" type="script" desc="Add fades/ramps at time selection edges on chosen envelopes (Ducking)">
       <metadata>
@@ -8,10 +8,18 @@
 \widowctrl\hyphauto
 
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Add fades/ramps at time selection edges on chosen envelopes (Ducking)\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Inserts points at time selection edges. You can deactivate the pop up window within the script. Works on selected envelope or selected tracks envelope with armed visible envelope.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Creates a ducked section \u175 ?\u175 ?____/\u175 ?\u175 ? in the time selection. Inserts points at time selection edges. Works on selected envelope or selected tracks envelope with armed visible envelope.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Configurable values - either in the pop-up prompt or in the script:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab length, shape and depth of left ramp\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab length, shape and depth of right ramp\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab portion of each ramp in % that will be outside of the time selection. E.g. if the left fade is 2 seconds long and the portion outside of the time selection is set to 50%, the fade will begin 1 second before the time selection.\sa180\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Known issue: mix of envelopes with fader and amplitude scaling causes wrong values\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Instructions\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Setup\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\i optional} deactivate the pop up windows in Basic Settings section in script\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\i optional} set default values for one or multiple envelope types in script\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Usage\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab create time selection\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab select an envelope\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab execute the script\sa180\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Based on version 1.6.1 of {\field{\*\fldinst{HYPERLINK "https://github.com/X-Raym/REAPER-ReaScripts/blob/master/Envelopes/On%20Tracks/X-Raym_Add%20envelope%20points%20at%20time%20selection%20edges%20from%20X%20to%20Y%20preserving%20edges%20on%20choosen%20envelopes.lua"}}{\fldrslt{\ul
 X-Raym_Add envelope points at time selection edges from X to Y preserving edges on choosen envelopes.lua
