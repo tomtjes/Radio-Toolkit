@@ -1,3 +1,24 @@
+--[[
+    Name:
+        Split item on track according to info items on other track, copy notes to take names
+    Author:
+        tomtjes
+    Donation:
+        https://ko-fi.com/tomtjes
+    Links:
+        Github https://github.com/tomtjes/Radio-Toolkit
+    Version:
+        0.1 2016-09-19
+    Changelog:
+        + initial release
+    License:
+        GPL v3
+    About:
+        # Split item on track according to info items on other track, copy notes to take names
+        
+        This script requires two selected tracks: one must contain 1 audio item, the other must contain text items with notes in them. The script splits the audio at the beginnig of each note and renames the take name of the new audio item based on the note in the text item.
+--]]
+
 -- check if 2 tracks are selected
 if reaper.CountSelectedTracks( 0 ) ~= 2 then
 	reaper.ShowConsoleMsg("This script requires exactly 2 (two) selected tracks!".."\n".."One track must contain the audio, the other the info items.")
