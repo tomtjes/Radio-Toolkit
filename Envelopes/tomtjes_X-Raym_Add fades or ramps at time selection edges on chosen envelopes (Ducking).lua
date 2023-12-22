@@ -9,14 +9,26 @@
   About:
     # Add fades/ramps at time selection edges on chosen envelopes (Ducking)
 
-    Inserts points at time selection edges. You can deactivate the pop up window within the script.
+    Creates a ducked section ¯¯\____/¯¯ in the time selection. Inserts points at time selection edges.
     Works on selected envelope or selected tracks envelope with armed visible envelope.
+
+    Configurable values - either in the pop-up prompt or in the script:
+
+    - length, shape and depth of left ramp
+    - length, shape and depth of right ramp
+    - portion of each ramp in % that will be outside of the time selection. E.g. if the left fade is 2 seconds long and the portion outside of the time selection is set to 50%, the fade will begin 1 second before the time selection.
 
     Known issue: mix of envelopes with fader and amplitude scaling causes wrong values
 
-    ## Instructions
+    ## Setup
+
+    - *optional* deactivate the pop up windows in Basic Settings section in script
+    - *optional* set default values for one or multiple envelope types in script
+
+    ## Usage
     
     - create time selection
+    - select an envelope
     - execute the script 
     
     Based on version 1.6.1 of [X-Raym_Add envelope points at time selection edges from X to Y preserving edges on choosen envelopes.lua](https://github.com/X-Raym/REAPER-ReaScripts/blob/master/Envelopes/On%20Tracks/X-Raym_Add%20envelope%20points%20at%20time%20selection%20edges%20from%20X%20to%20Y%20preserving%20edges%20on%20choosen%20envelopes.lua)
@@ -42,7 +54,6 @@ messages = true -- true/false : display infos in console
 prompt = true -- true/false : display a prompt window at script run. Only envelope 1 will work in prompt mode.
 
 -- Instructions: Copy envelope blocks below if you want to add another envelope.
--- Demo: http://quick.as/GRgDCz3l6
 
 ---- Envelope Block ----
 ins_idx = ins_idx + 1 -- Prepare the index. Don't modify this.
