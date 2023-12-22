@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Radio Toolkit" commit="2edcfb4671cb3635e1b04469e3f2873ac21774c1">
+<index version="1" name="Radio Toolkit" commit="2b45465e74117ad22538c79dd1945794f4403a8c">
+  <category name="Envelopes">
+    <reapack name="tomtjes_X-Raym_Add fades or ramps at time selection edges on chosen envelopes (Ducking).lua" type="script" desc="Add fades/ramps at time selection edges on chosen envelopes (Ducking)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Add fades/ramps at time selection edges on chosen envelopes (Ducking)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Inserts points at time selection edges. You can deactivate the pop up window within the script. Works on selected envelope or selected tracks envelope with armed visible envelope.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Known issue: mix of envelopes with fader and amplitude scaling causes wrong values\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Instructions\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab create time selection\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab execute the script\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Based on version 1.6.1 of {\field{\*\fldinst{HYPERLINK "https://github.com/X-Raym/REAPER-ReaScripts/blob/master/Envelopes/On%20Tracks/X-Raym_Add%20envelope%20points%20at%20time%20selection%20edges%20from%20X%20to%20Y%20preserving%20edges%20on%20choosen%20envelopes.lua"}}{\fldrslt{\ul
+X-Raym_Add envelope points at time selection edges from X to Y preserving edges on choosen envelopes.lua
+}}}
+\par}
+{\pard \ql \f0 \sa180 \li720 \fi0 If this script frequently saves you time and money, please consider to {\field{\*\fldinst{HYPERLINK "https://ko-fi.com/tomtjes"}}{\fldrslt{\ul
+support my work with coffee
+}}}
+.\par}
+}
+]]></description>
+        <link rel="website" href="https://github.com/tomtjes/Radio-Toolkit">Github</link>
+        <link rel="donation">https://ko-fi.com/tomtjes</link>
+      </metadata>
+      <version name="1.0.1 2022-01-29" author="tomtjes" time="2023-12-22T02:14:51Z">
+        <changelog><![CDATA[~ fix undefined variables]]></changelog>
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/2b45465e74117ad22538c79dd1945794f4403a8c/Envelopes/tomtjes_X-Raym_Add%20fades%20or%20ramps%20at%20time%20selection%20edges%20on%20chosen%20envelopes%20(Ducking).lua</source>
+      </version>
+    </reapack>
+  </category>
   <category name="Items">
     <reapack name="tomtjes_Collapse empty space between items.lua" type="script" desc="Collapse empty space between items">
       <metadata>
@@ -216,6 +248,126 @@ support my work with coffee
       <version name="1.0 2023-12-20" author="tomtjes" time="2023-12-21T03:43:17Z">
         <changelog><![CDATA[+ initial release]]></changelog>
         <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/0da2a859cb4b087a03c0ae07f9e3c2e664975a87/Third%20Party/tomtjes_Drafts%20Helper.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Time Selection">
+    <reapack name="tomtjes_Set inpoint = beginning of item if inpoint = 0.lua" type="script" desc="Set inpoint to beginning of item if inpoint is 0">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Set inpoint to beginning of item if inpoint is 0\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 If no inpoint (i.e. the beginning of a time selection) is defined or if the inpoint is at the beginning of the project or at the current outpoint, the inpoint is set at the beginning of the current item.\par}
+{\pard \ql \f0 \sa180 \li720 \fi0 If this script frequently saves you time and money, please consider to {\field{\*\fldinst{HYPERLINK "https://ko-fi.com/tomtjes"}}{\fldrslt{\ul
+support my work with coffee
+}}}
+.\par}
+}
+]]></description>
+        <link rel="website" href="https://github.com/tomtjes/Radio-Toolkit">Github</link>
+        <link rel="donation">https://ko-fi.com/tomtjes</link>
+      </metadata>
+      <version name="1.0 2017-03-14" author="tomtjes" time="2023-12-22T02:14:51Z">
+        <changelog><![CDATA[+ initial release]]></changelog>
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/2b45465e74117ad22538c79dd1945794f4403a8c/Time%20Selection/tomtjes_Set%20inpoint%20=%20beginning%20of%20item%20if%20inpoint%20=%200.lua</source>
+      </version>
+    </reapack>
+    <reapack name="tomtjes_Set inpoint = outpoint if inpoint = 0.lua" type="script" desc="Set inpoint to outpoint if inpoint is 0">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Set inpoint to outpoint if inpoint is 0\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 If the in-point (i.e. the beginning of a time selection) is at the beginning of the project, the inpoint is set to the same position as the current out-point.\par}
+{\pard \ql \f0 \sa180 \li720 \fi0 If this script frequently saves you time and money, please consider to {\field{\*\fldinst{HYPERLINK "https://ko-fi.com/tomtjes"}}{\fldrslt{\ul
+support my work with coffee
+}}}
+.\par}
+}
+]]></description>
+        <link rel="website" href="https://github.com/tomtjes/Radio-Toolkit">Github</link>
+        <link rel="donation">https://ko-fi.com/tomtjes</link>
+      </metadata>
+      <version name="1.0 2017-03-14" author="tomtjes" time="2023-12-22T02:14:51Z">
+        <changelog><![CDATA[+ initial release]]></changelog>
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/2b45465e74117ad22538c79dd1945794f4403a8c/Time%20Selection/tomtjes_Set%20inpoint%20=%20outpoint%20if%20inpoint%20=%200.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Transport">
+    <reapack name="tomtjes_Preview time selection.lua" type="script" desc="Preview time selection">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Preview time selection\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Plays the first and last seconds of the current time selection.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Setup\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\i optional} adjust the number of seconds played in the first line of the code (default: 2)\sa180\par}
+{\pard \ql \f0 \sa180 \li720 \fi0 If this script frequently saves you time and money, please consider to {\field{\*\fldinst{HYPERLINK "https://ko-fi.com/tomtjes"}}{\fldrslt{\ul
+support my work with coffee
+}}}
+.\par}
+}
+]]></description>
+        <link rel="website" href="https://github.com/tomtjes/Radio-Toolkit">Github</link>
+        <link rel="donation">https://ko-fi.com/tomtjes</link>
+      </metadata>
+      <version name="1.0 2017-03-09" author="tomtjes" time="2023-12-22T02:14:51Z">
+        <changelog><![CDATA[+ initial release]]></changelog>
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/2b45465e74117ad22538c79dd1945794f4403a8c/Transport/tomtjes_Preview%20time%20selection.lua</source>
+      </version>
+    </reapack>
+    <reapack name="tomtjes_Toggle master playrate - 125%.lua" type="script" desc="Toggle master playrate - 125%">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Toggle master playrate - 125%\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 If playrate is 1x, this script sets it to 1.25x. If playrate is 1.25x, this script sets it to 1x.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Setup\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The playrate is derived from the name of the script. Change the name of the script to {\f1 tomtjes_Toggle master playrate - 200%.lua} and it will set the playrate to 2x.\par}
+{\pard \ql \f0 \sa180 \li720 \fi0 If this script frequently saves you time and money, please consider to {\field{\*\fldinst{HYPERLINK "https://ko-fi.com/tomtjes"}}{\fldrslt{\ul
+support my work with coffee
+}}}
+.\par}
+}
+]]></description>
+        <link rel="website" href="https://github.com/tomtjes/Radio-Toolkit">Github</link>
+        <link rel="donation">https://ko-fi.com/tomtjes</link>
+      </metadata>
+      <version name="1.0 2022-04-28" author="tomtjes" time="2023-12-22T02:14:51Z">
+        <changelog><![CDATA[+ initial release]]></changelog>
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/2b45465e74117ad22538c79dd1945794f4403a8c/Transport/tomtjes_Toggle%20master%20playrate%20-%20125%25.lua</source>
+      </version>
+    </reapack>
+    <reapack name="tomtjes_Toggle master playrate - 150%.lua" type="script" desc="Toggle master playrate - 150%">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Toggle master playrate - 150%\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 If playrate is 1x, this script sets it to 1.5x. If playrate is 1.5x, this script sets it to 1x.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Setup\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The playrate is derived from the name of the script. Change the name of the script to {\f1 tomtjes_Toggle master playrate - 200%.lua} and it will set the playrate to 2x.\par}
+{\pard \ql \f0 \sa180 \li720 \fi0 If this script frequently saves you time and money, please consider to {\field{\*\fldinst{HYPERLINK "https://ko-fi.com/tomtjes"}}{\fldrslt{\ul
+support my work with coffee
+}}}
+.\par}
+}
+]]></description>
+        <link rel="website" href="https://github.com/tomtjes/Radio-Toolkit">Github</link>
+        <link rel="donation">https://ko-fi.com/tomtjes</link>
+      </metadata>
+      <version name="1.0 2022-04-28" author="tomtjes" time="2023-12-22T02:14:51Z">
+        <changelog><![CDATA[+ initial release]]></changelog>
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/2b45465e74117ad22538c79dd1945794f4403a8c/Transport/tomtjes_Toggle%20master%20playrate%20-%20150%25.lua</source>
       </version>
     </reapack>
   </category>
