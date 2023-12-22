@@ -233,7 +233,8 @@ Reaper
 {\pard \ql \f0 \sa180 \li0 \fi0 It's easiest to install Radio Toolkit using {\field{\*\fldinst{HYPERLINK "https://reapack.com"}}{\fldrslt{\ul
 ReaPack
 }}}
-. After installing it, find the ReaPack menu in Reaper, select {\f1 Import repositories...} and enter the following URL: {\f1 https://github.com/tomtjes/Radio-Toolkit/raw/master/index.xml}\par}
+. After installing it, find the ReaPack menu in Reaper, select {\f1 Import repositories...} and enter the following URL:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\f1 https://github.com/tomtjes/Radio-Toolkit/raw/master/index.xml}\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Alternatively, feel free to download individual script and import them into Reaper, e.g. using the {\f1 Actions} list.\par}
 }
 ]]></description>
