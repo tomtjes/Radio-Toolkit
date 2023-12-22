@@ -1,29 +1,35 @@
 --[[
- * ReaScript Name: Collapse empty space between items
- * Description: Reduces gaps between items to a set maximum length. Items are moved left.
-                Ripple Edit modes are being respected. The script works on selected items.
-                If items across multiple tracks are selected, they are evaluated as if they
-                were on the same track, meaning a gap is only a gap if it spans all tracks
-                that selected items are in. If no items are selected, the script works on
-                selected tracks, collapsing gaps on each selected track individually. 
- * Instructions: select items or tracks, run (modify gap value in first line if desired)
- * Screenshot URI:
- * Author: Thomas Reintjes
- * Author URI: https://ko-fi.com/tomtjes
- * Repository:
- * Repository URI: https://github.com/tomtjes/ReaScripts
- * File URI:
- * Licence: GPL v3
- * Forum Thread:
- * Forum Thread URl:
- * REAPER: 7.0
- * Extensions:
---]]
+    Name:
+        Collapse empty space between items
+    Screenshot:
+        https://github.com/tomtjes/Radio-Toolkit/blob/master/Items/tomtjes_Collapse%20empty%20space%20between%20items.gif
+    Author:
+        tomtjes
+    Donation:
+        https://ko-fi.com/tomtjes
+    Links:
+        Github https://github.com/tomtjes/Radio-Toolkit
+    Version:
+        1.0 2023-10-22
+    Changelog:
+        + initial release
+    License:
+        GPL v3
+    About:
+        # Collapse empty space between items
+        
+        Reduces gaps between items to a set maximum length. Items are moved left.
+        Ripple Edit modes are being respected. The script works on selected items.
+        If items across multiple tracks are selected, they are evaluated as if they
+        were on the same track, meaning a gap is only a gap if it spans all tracks
+        that selected items are in. If no items are selected, the script works on
+        selected tracks, collapsing gaps on each selected track individually. 
 
---[[
- * Changelog:
- * v1.0 (2023-10-22)
-	+ Initial Release
+        ## Instructions
+
+        - optional: modify gap value in first line
+        - select items or tracks
+        - run script 
 --]]
 
 --======= CONFIG =================================--
