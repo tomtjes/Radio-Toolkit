@@ -1,64 +1,28 @@
 --[[
- * ReaScript Name: Add fades/ramps at time selection edges on chosen envelopes (Ducking)
- * Description: Insert points at time selection edges. You can deactivate the pop up window within the script.∑
- * Instructions: Make a selection area. Execute the script. Works on selected envelope or selected tracks envelope with armed visible envelope.
- * Screenshot: http://i.giphy.com/l0K7o2JPg4cpLr2Jq.gif
- * Author: X-Raym
- * Author URI: http://extremraym.com
- * Repository: GitHub > X-Raym > EEL Scripts for Cockos REAPER
- * Repository URI: https://github.com/X-Raym/REAPER-EEL-Scripts
- * File URI: 
- * Licence: GPL v3
- * Forum Thread: Scripts (Lua): Multiple Tracks and Multiple Envelope Operations 
- * Forum Thread URI: http://forum.cockos.com/showthread.php?p=1499882
- * REAPER: 5.0
- * Extensions: 2.8.3
- * Version: 1.6.1
- * Original Name: Add envelope points at time selection edges from X to Y preserving edges on choosen envelopes
- *** This version is modified by tomtjes - MOD VERSION 1.0.1 ***
---]]
- 
---[[
- * Changelog:
- * tomtjes mod 1.0.1 (2022-01-29)
-   # fix undefined variables
- * tomtjes mod 1.0 (2017-03-11)
-   + support for shape of envelope points
-   # offset replaced by length of fade
-   # inside/outside of time selection replaced by percentage of fade outside of TS
-   # fixed fader scaling
-   # known issue: mix of envelopes with fader and amplitude scaling causes wrong values
- * v1.6.1 (2016-03-02)
-   # Delete points in area
- * v1.6 (2016-03-01)
-   + Independant "Inside" Parameter for X and Y (priority on X)
-   # When prompt defaut envelope name is selected envelope one, if any.
- * v1.5 (2016-01-26)
-   + Multitracks presets support
- * v1.4.3 (2016-01-20)
-   + Units infos in prompt
-   + Selected envelope as destination in prompt
-   # List envelopes before prompt
- * v1.4.2 (2016-01-19)
-   + Envelope scale types support (types: Volume, Pan/With, ReaSurround Gain)
-   + "cursor" keyword for value
-   # No popup if necessary conditions are not here
- * v1.4.1 (2016-01-19)
-  # Bug fixes
- * v1.4 (2016-01-18)
-  + Min, Max, Center in value input
-  + Conform input value to destination envelope
- * v1.3 (2016-01-18)
-  + Envelope Name in prompt
- * v1.2 (2016-01-18)
-  + Time offsets
- * v1.1 (2016-01-18)
-  + Optionnal infos in console
-  + Value Y
- * v1.0 (2016-01-17)
-  + Initial release
---]]
+  Name: Add fades/ramps at time selection edges on chosen envelopes (Ducking)
+  Author: tomtjes
+  Donation: https://ko-fi.com/tomtjes
+  Links: Github https://github.com/tomtjes/Radio-Toolkit
+  License: GPL v3
+  Version: 1.0.1 2022-01-29
+  Changelog: ~ fix undefined variables
+  About:
+    # Add fades/ramps at time selection edges on chosen envelopes (Ducking)
 
+    Inserts points at time selection edges. You can deactivate the pop up window within the script.
+    Works on selected envelope or selected tracks envelope with armed visible envelope.
+
+    Known issue: mix of envelopes with fader and amplitude scaling causes wrong values
+
+    ## Instructions
+    
+    - create time selection
+    - execute the script 
+    
+    Based on version 1.6.1 of [X-Raym_Add envelope points at time selection edges from X to Y preserving edges on choosen envelopes.lua](https://github.com/X-Raym/REAPER-ReaScripts/blob/master/Envelopes/On%20Tracks/X-Raym_Add%20envelope%20points%20at%20time%20selection%20edges%20from%20X%20to%20Y%20preserving%20edges%20on%20choosen%20envelopes.lua)
+
+    > If this script frequently saves you time and money, please consider to [support my work with coffee](https://ko-fi.com/tomtjes). 
+--]]
 
 -- INIT TABLES ------------------
 

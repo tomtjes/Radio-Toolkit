@@ -1,3 +1,23 @@
+--[[
+  Name: Preview time selection
+  Author: tomtjes
+  Donation: https://ko-fi.com/tomtjes
+  Links: Github https://github.com/tomtjes/Radio-Toolkit
+  License: GPL v3
+  Version: 1.0 2017-03-09
+  Changelog: + initial release
+  About:
+    # Preview time selection
+
+    Plays the first and last seconds of the current time selection.
+
+    ## Setup
+
+    - *optional* adjust the number of seconds played in the first line of the code (default: 2)
+
+    > If this script frequently saves you time and money, please consider to [support my work with coffee](https://ko-fi.com/tomtjes). 
+--]]
+
 seconds = 2 -- time in seconds that gets played at either end of time selection
 
 start_time, end_time = reaper.GetSet_LoopTimeRange2(0, false, false, 0, 0, false) -- get start and end time selection value in seconds
