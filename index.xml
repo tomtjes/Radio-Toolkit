@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Radio Toolkit" commit="6caab78a77b7477b7621c59d5ab09b6ebbe246bc">
+<index version="1" name="Radio Toolkit" commit="2edcfb4671cb3635e1b04469e3f2873ac21774c1">
   <category name="Items">
     <reapack name="tomtjes_Collapse empty space between items.lua" type="script" desc="Collapse empty space between items">
       <metadata>
@@ -49,6 +49,24 @@ support my work with coffee
       <version name="1.0 2020-09-11" author="tomtjes" time="2023-12-21T03:43:17Z">
         <changelog><![CDATA[+ initial release]]></changelog>
         <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/0da2a859cb4b087a03c0ae07f9e3c2e664975a87/Items/tomtjes_Glue%20adjacent%20items%20on%20track.lua</source>
+      </version>
+    </reapack>
+    <reapack name="tomtjes_Split item on track according to info items on other track, copy notes to take names.lua" type="script" desc="Split item on track according to info items on other track, copy notes to take names">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Split item on track according to info items on other track, copy notes to take names\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This script requires two selected tracks: one must contain 1 audio item, the other must contain text items with notes in them. The script splits the audio at the beginnig of each note and renames the take name of the new audio item based on the note in the text item.\par}
+}
+]]></description>
+        <link rel="website" href="https://github.com/tomtjes/Radio-Toolkit">Github</link>
+        <link rel="donation">https://ko-fi.com/tomtjes</link>
+      </metadata>
+      <version name="0.1 2016-09-19" author="tomtjes" time="2023-12-22T00:29:26Z">
+        <changelog><![CDATA[+ initial release]]></changelog>
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/2edcfb4671cb3635e1b04469e3f2873ac21774c1/Items/tomtjes_Split%20item%20on%20track%20according%20to%20info%20items%20on%20other%20track,%20copy%20notes%20to%20take%20names.lua</source>
       </version>
     </reapack>
   </category>
@@ -206,15 +224,17 @@ support my work with coffee
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 ReaScripts\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 tomtjes_Split item on track according to info items on other track, copy notes to take names.lua\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 This script requires two selected tracks: one must contain 1 audio item, the other must contain text items with notes in them. The script splits the audio at the beginnig of each note and renames the take name of the new audio item based on the note in the text item.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Installation\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Download file\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab In Reaper go to 'Options' > 'Show Reaper resource path in explorer/finder'\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Find the 'Scripts' folder and move downloaded file there\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab In Reaper hit '?', then 'Load' and choose downloaded file\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Click 'Run', if you want to execute the script, otherwise 'Close'\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Radio Toolkit\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Some scripts for {\field{\*\fldinst{HYPERLINK "https://www.reaper.fm"}}{\fldrslt{\ul
+Reaper
+}}}
+ that I felt I needed for radio and podcast production.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Installation\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 It's easiest to install Radio Toolkit using {\field{\*\fldinst{HYPERLINK "https://reapack.com"}}{\fldrslt{\ul
+ReaPack
+}}}
+. After installing it, find the ReaPack menu in Reaper, select {\f1 Import repositories...} and enter the following URL: {\f1 https://github.com/tomtjes/Radio-Toolkit/raw/master/index.xml}\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Alternatively, feel free to download individual script and import them into Reaper, e.g. using the {\f1 Actions} list.\par}
 }
 ]]></description>
     <link rel="donation">https://ko-fi.com/tomtjes</link>
