@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Radio Toolkit" commit="dd6c2e7dfb6b1533bca05018d5e2c8e8183ca558">
+<index version="1" name="Radio Toolkit" commit="6caab78a77b7477b7621c59d5ab09b6ebbe246bc">
   <category name="Items">
+    <reapack name="tomtjes_Collapse empty space between items.lua" type="script" desc="Collapse empty space between items">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Collapse empty space between items\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Reduces gaps between items to a set maximum length. Items are moved left. Ripple Edit modes are being respected. The script works on selected items. If items across multiple tracks are selected, they are evaluated as if they were on the same track, meaning a gap is only a gap if it spans all tracks that selected items are in. If no items are selected, the script works on selected tracks, collapsing gaps on each selected track individually.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Instructions\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab optional: modify gap value in first line\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab select items or tracks\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab run script\sa180\par}
+}
+]]></description>
+        <link rel="website" href="https://github.com/tomtjes/Radio-Toolkit">Github</link>
+        <link rel="screenshot">https://github.com/tomtjes/Radio-Toolkit/blob/master/Items/tomtjes_Collapse%20empty%20space%20between%20items.gif</link>
+        <link rel="donation">https://ko-fi.com/tomtjes</link>
+      </metadata>
+      <version name="1.0 2023-10-22" author="tomtjes" time="2023-12-22T00:06:51Z">
+        <changelog><![CDATA[+ initial release]]></changelog>
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/6caab78a77b7477b7621c59d5ab09b6ebbe246bc/Items/tomtjes_Collapse%20empty%20space%20between%20items.lua</source>
+      </version>
+    </reapack>
     <reapack name="tomtjes_Glue adjacent items on track.lua" type="script" desc="Glue adjacent items on track">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
