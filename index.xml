@@ -225,17 +225,8 @@ support my work with coffee
 \widowctrl\hyphauto
 
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Radio Toolkit\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Some scripts for {\field{\*\fldinst{HYPERLINK "https://www.reaper.fm"}}{\fldrslt{\ul
-Reaper
-}}}
- that I felt I needed for radio and podcast production.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Installation\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 It's easiest to install Radio Toolkit using {\field{\*\fldinst{HYPERLINK "https://reapack.com"}}{\fldrslt{\ul
-ReaPack
-}}}
-. After installing it, find the ReaPack menu in Reaper, select {\f1 Import repositories...} and enter the following URL:\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 {\f1 https://github.com/tomtjes/Radio-Toolkit/raw/master/index.xml}\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Alternatively, feel free to download individual script and import them into Reaper, e.g. using the {\f1 Actions} list.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Some scripts that I felt I needed for radio and podcast production.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 If you're a radio or podcast producer yourself, feel free to join me on Tracks, a global community of spoken word audio folks. Link at the {\f1 Website} button below.\par}
 }
 ]]></description>
     <link rel="donation">https://ko-fi.com/tomtjes</link>
