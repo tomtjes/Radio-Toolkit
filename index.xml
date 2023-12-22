@@ -202,8 +202,23 @@ support my work with coffee
     </reapack>
   </category>
   <metadata>
+    <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 ReaScripts\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 tomtjes_Split item on track according to info items on other track, copy notes to take names.lua\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This script requires two selected tracks: one must contain 1 audio item, the other must contain text items with notes in them. The script splits the audio at the beginnig of each note and renames the take name of the new audio item based on the note in the text item.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Installation\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Download file\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab In Reaper go to 'Options' > 'Show Reaper resource path in explorer/finder'\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Find the 'Scripts' folder and move downloaded file there\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab In Reaper hit '?', then 'Load' and choose downloaded file\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Click 'Run', if you want to execute the script, otherwise 'Close'\sa180\par}
+}
+]]></description>
     <link rel="donation">https://ko-fi.com/tomtjes</link>
-    <link rel="website" href="https://github.com/tomtjes/ReaScripts">Github</link>
+    <link rel="website" href="https://github.com/tomtjes/Radio-Toolkit">Github</link>
     <link rel="website" href="https://trks.ac">Tracks</link>
     <link rel="website" href="https://www.youtube.com/watch\?v\=4Dz5z2z1LI4">Radio Orchid</link>
   </metadata>
