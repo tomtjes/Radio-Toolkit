@@ -9,7 +9,7 @@
   About:
     # Add fades/ramps at time selection edges on chosen envelopes (Ducking)
 
-    Creates a ducked section ¯¯\____/¯¯ in the time selection. Inserts points at time selection edges.
+    Creates a ducked section ¯¯\\____/¯¯ in the time selection. Inserts points at time selection edges.
     Works on selected envelope or selected tracks envelope with armed visible envelope.
 
     Configurable values - either in the pop-up prompt or in the script:
