@@ -6,7 +6,7 @@
   Provides:
     [jsfx] jsfx/tomtjes_Show_project_length.jsfx > tomtjes_Show_project_length.jsfx
   License: GPL v3
-  Version: 1.0 2024-06-28
+  Version: 1.01 2024-07-01
   Changelog: + initial release
   About:
     # Show project length in MCP
