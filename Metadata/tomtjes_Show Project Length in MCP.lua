@@ -33,7 +33,7 @@ end
 reaper.gmem_attach("tomtjes_projectlength")
 
 local master = reaper.GetMasterTrack()
-local fx = reaper.TrackFX_GetByName(master, "Project Length", true)
+local fx = reaper.TrackFX_GetByName(master, "tomtjes_Show_project_length.jsfx", true)
 -- reaper.TrackFX_SetNamedConfigParm(master, fx, "renamed_name", "Project Length")
 reaper.TrackFX_SetNamedConfigParm(master, fx, "focused", 1)
 reaper.Main_OnCommand(42372, 0) -- show embedded GUI in MCP
