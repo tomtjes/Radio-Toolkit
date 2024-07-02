@@ -1,0 +1,34 @@
+desc: Project Length
+// Requires script tomtjes_Show Project Length in MCP.lua to be running.
+
+options:gmem=tomtjes_projectlength
+
+@init
+// Initialize variables
+project_length = 0;
+
+@block 
+// Get the current project length in seconds
+project_length = gmem[1];
+
+// Convert project length to minutes and seconds
+hours = floor(project_length / 3600);
+minutes = floor((project_length-hours*3600) / 60);
+seconds = project_length % 60;
+
+// Create a formatted string for display
+project_length_string = sprintf(#, "%02d:%02d:%02.0f", hours, minutes, seconds);
+
+
+@gfx 100 14
+gfx_r = 174/255;
+gfx_g = 174/255;
+gfx_b = 174/255;
+gfx_a = 1;
+gfx_clear = 1;
+
+// Draw the project length string
+gfx_setfont(1, "", gfx_h*0.6);
+gfx_x = gfx_w/3;
+gfx_y = gfx_h*0.15;
+gfx_drawstr(project_length_string,1);
