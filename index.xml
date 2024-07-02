@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Radio Toolkit" commit="30ff203c6e1f96045996fe82840c323f31ceb356">
+<index version="1" name="Radio Toolkit" commit="e4c4081c5aefb6ac6961b607eea8ff167fa4eb48">
   <category name="Envelopes">
     <reapack name="tomtjes_X-Raym_Add fades or ramps at time selection edges on chosen envelopes (Ducking).lua" type="script" desc="Add fades/ramps at time selection edges on chosen envelopes (Ducking)">
       <metadata>
@@ -64,6 +64,62 @@ support my work with coffee
         <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/6caab78a77b7477b7621c59d5ab09b6ebbe246bc/Items/tomtjes_Collapse%20empty%20space%20between%20items.lua</source>
       </version>
     </reapack>
+    <reapack name="tomtjes_Extend beginning of adjacent items (across tracks).lua" type="script" desc="Extend beginning of adjacent items (across tracks)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Extend beginning of adjacent items (across tracks)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Finds all contiguous groups of items that are less than a given number of seconds (default: 1) apart from each other. The first item in each group is then extended to the left by the given number of seconds (default: 2).\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Evaluates items on selected tracks or all items if no tracks are selected.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Installation\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab optional: modify gap value and extend value in first lines of code\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Usage\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab select track or tracks (optional)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab run script\sa180\par}
+{\pard \ql \f0 \sa180 \li720 \fi0 If this script frequently saves you time and money, please consider to {\field{\*\fldinst{HYPERLINK "https://ko-fi.com/tomtjes"}}{\fldrslt{\ul
+support my work with coffee
+}}}
+.\par}
+}
+]]></description>
+        <link rel="website" href="https://github.com/tomtjes/Radio-Toolkit">Github</link>
+        <link rel="screenshot">https://raw.githubusercontent.com/tomtjes/Radio-Toolkit/c65335dcfe5f6b5eef1c7ff218efc7a8da79cd90/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20across%20tracks.gif</link>
+        <link rel="donation">https://ko-fi.com/tomtjes</link>
+      </metadata>
+      <version name="1.0 2024-06-21" author="tomtjes" time="2024-07-02T01:23:21Z">
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/406ebeaaa2deb8dbc2ac0e98427caef17f77a0ac/Items/tomtjes_Extend%20beginning%20of%20adjacent%20items%20(across%20tracks).lua</source>
+      </version>
+    </reapack>
+    <reapack name="tomtjes_Extend end of adjacent items (across tracks).lua" type="script" desc="Extend end of adjacent items (across tracks)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Extend end of adjacent items (across tracks)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Finds all contiguous groups of items that are less than a given number of seconds (default: 1) apart from each other. The last item in each group is then extended by the given number of seconds (default: 2).\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Evaluates items on selected tracks or all items if no tracks are selected.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Installation\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab optional: modify gap value and extend value in first lines of code\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Usage\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab select track or tracks (optional)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab run script\sa180\par}
+{\pard \ql \f0 \sa180 \li720 \fi0 If this script frequently saves you time and money, please consider to {\field{\*\fldinst{HYPERLINK "https://ko-fi.com/tomtjes"}}{\fldrslt{\ul
+support my work with coffee
+}}}
+.\par}
+}
+]]></description>
+        <link rel="website" href="https://github.com/tomtjes/Radio-Toolkit">Github</link>
+        <link rel="screenshot">https://raw.githubusercontent.com/tomtjes/Radio-Toolkit/c65335dcfe5f6b5eef1c7ff218efc7a8da79cd90/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20across%20tracks.gif</link>
+        <link rel="donation">https://ko-fi.com/tomtjes</link>
+      </metadata>
+      <version name="1.0 2024-06-21" author="tomtjes" time="2024-07-02T01:23:21Z">
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/406ebeaaa2deb8dbc2ac0e98427caef17f77a0ac/Items/tomtjes_Extend%20end%20of%20adjacent%20items%20(across%20tracks).lua</source>
+      </version>
+    </reapack>
     <reapack name="tomtjes_Glue adjacent items on track.lua" type="script" desc="Glue adjacent items on track">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
@@ -110,6 +166,64 @@ support my work with coffee
       </version>
     </reapack>
   </category>
+  <category name="Markers">
+    <reapack name="tomtjes_Add marker at beginning of adjacent items (across tracks).lua" type="script" desc="Add marker at beginning of adjacent items (across tracks)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Add marker at beginning of adjacent items (across tracks)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Finds all contiguous groups of items that are less than a given number of seconds (default: 1) apart from each other. At the beginning of the first item in each group, a green "cue in" marker is added.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Evaluates items on selected tracks or all items if no tracks are selected.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Installation\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab optional: modify gap value and extend value in first lines of code\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Usage\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab select track or tracks (optional)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab run script\sa180\par}
+{\pard \ql \f0 \sa180 \li720 \fi0 If this script frequently saves you time and money, please consider to {\field{\*\fldinst{HYPERLINK "https://ko-fi.com/tomtjes"}}{\fldrslt{\ul
+support my work with coffee
+}}}
+.\par}
+}
+]]></description>
+        <link rel="website" href="https://github.com/tomtjes/Radio-Toolkit">Github</link>
+        <link rel="screenshot">https://raw.githubusercontent.com/tomtjes/Radio-Toolkit/c65335dcfe5f6b5eef1c7ff218efc7a8da79cd90/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20across%20tracks.gif</link>
+        <link rel="donation">https://ko-fi.com/tomtjes</link>
+      </metadata>
+      <version name="1.0 2024-06-21" author="tomtjes" time="2024-07-02T01:23:21Z">
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/406ebeaaa2deb8dbc2ac0e98427caef17f77a0ac/Markers/tomtjes_Add%20marker%20at%20beginning%20of%20adjacent%20items%20(across%20tracks).lua</source>
+      </version>
+    </reapack>
+    <reapack name="tomtjes_Add marker at end of adjacent items (across tracks).lua" type="script" desc="Add marker at end of adjacent items (across tracks)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Add marker at end of adjacent items (across tracks)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Finds all contiguous groups of items that are less than a given number of seconds (default: 1) apart from each other. At the end of the last item in each group, a red "cue out" marker is added.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Evaluates items on selected tracks or all items if no tracks are selected.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Installation\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab optional: modify gap value and extend value in first lines of code\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Usage\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab select track or tracks (optional)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab run script\sa180\par}
+{\pard \ql \f0 \sa180 \li720 \fi0 If this script frequently saves you time and money, please consider to {\field{\*\fldinst{HYPERLINK "https://ko-fi.com/tomtjes"}}{\fldrslt{\ul
+support my work with coffee
+}}}
+.\par}
+}
+]]></description>
+        <link rel="website" href="https://github.com/tomtjes/Radio-Toolkit">Github</link>
+        <link rel="screenshot">https://raw.githubusercontent.com/tomtjes/Radio-Toolkit/c65335dcfe5f6b5eef1c7ff218efc7a8da79cd90/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20across%20tracks.gif</link>
+        <link rel="donation">https://ko-fi.com/tomtjes</link>
+      </metadata>
+      <version name="1.0 2024-06-21" author="tomtjes" time="2024-07-02T01:23:21Z">
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/406ebeaaa2deb8dbc2ac0e98427caef17f77a0ac/Markers/tomtjes_Add%20marker%20at%20end%20of%20adjacent%20items%20(across%20tracks).lua</source>
+      </version>
+    </reapack>
+  </category>
   <category name="Metadata">
     <reapack name="tomtjes_Calculate total length of items on selected tracks.lua" type="script" desc="Calculate total length of items on selected tracks">
       <metadata>
@@ -137,6 +251,29 @@ support my work with coffee
         <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/0da2a859cb4b087a03c0ae07f9e3c2e664975a87/Metadata/tomtjes_Calculate%20total%20length%20of%20items%20on%20selected%20tracks.lua</source>
       </version>
     </reapack>
+    <reapack name="tomtjes_Show Project Length in MCP.lua" type="script" desc="Show project length in MCP">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Show project length in MCP\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Displays the current project length in the MCP\par}
+{\pard \ql \f0 \sa180 \li720 \fi0 If this script frequently saves you time and money, please consider to {\field{\*\fldinst{HYPERLINK "https://ko-fi.com/tomtjes"}}{\fldrslt{\ul
+support my work with coffee
+}}}
+.\par}
+}
+]]></description>
+        <link rel="website" href="https://github.com/tomtjes/Radio-Toolkit">Github</link>
+        <link rel="donation">https://ko-fi.com/tomtjes</link>
+      </metadata>
+      <version name="1.0 2024-06-28" author="tomtjes" time="2024-07-02T01:23:21Z">
+        <changelog><![CDATA[+ initial release]]></changelog>
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/406ebeaaa2deb8dbc2ac0e98427caef17f77a0ac/Metadata/tomtjes_Show%20Project%20Length%20in%20MCP.lua</source>
+        <source type="effect" file="tomtjes_Show_project_length.jsfx">https://github.com/tomtjes/Radio-Toolkit/raw/406ebeaaa2deb8dbc2ac0e98427caef17f77a0ac/Metadata/jsfx/tomtjes_Show_project_length.jsfx</source>
+      </version>
+    </reapack>
     <reapack name="tomtjes_Show Project Length.lua" type="script" desc="Show project length">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
@@ -160,6 +297,13 @@ support my work with coffee
       </version>
     </reapack>
   </category>
+  <category name="Metadata/jsfx">
+    <reapack name="tomtjes_Show_project_length.jsfx" type="effect" desc="Project Length">
+      <version name="1.0" time="2024-07-02T02:01:07Z">
+        <source>https://github.com/tomtjes/Radio-Toolkit/raw/e4c4081c5aefb6ac6961b607eea8ff167fa4eb48/Metadata/jsfx/tomtjes_Show_project_length.jsfx</source>
+      </version>
+    </reapack>
+  </category>
   <category name="Regions">
     <reapack name="tomtjes_Create regions from adjacent items across tracks.lua" type="script" desc="Create regions from adjacent items across tracks">
       <metadata>
@@ -168,10 +312,10 @@ support my work with coffee
 \widowctrl\hyphauto
 
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Create regions from adjacent items across tracks\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Creates regions that comprise all items that are less than a given number of seconds (default: 1) apart. The region render matrix gets adjusted to render the respective tracks for the created regions and/or the master track (configurable). Regions are named and colored after track of first item in region.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Creates regions that comprise all items that are less than a given number of seconds (default: 1) apart. The region render matrix gets adjusted to render the respective tracks for the created regions and/or the master track (configurable). Regions are colored after the upmost track. Names are concatenated from all tracks that have items in this region.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Evaluates items on selected tracks or all items if no tracks are selected.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Installation\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab optional: modify gap value and render setting in first lines of code\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab optional: modify Gap value and Render setting in first lines of code\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab optional: add included icon to toolbar: {\f1 tomtjes_toolbar_region_adjacent_items_across_tracks.png}\sa180\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Usage\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab select track or tracks (optional)\par}
@@ -196,6 +340,12 @@ support my work with coffee
 - remove requirement to select tracks, apply script to all tracks if none selected]]></changelog>
         <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/dd6c2e7dfb6b1533bca05018d5e2c8e8183ca558/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20across%20tracks.lua</source>
         <source type="data" file="toolbar_icons/tomtjes_toolbar_region_adjacent_items_across_tracks.png">https://github.com/tomtjes/Radio-Toolkit/raw/dd6c2e7dfb6b1533bca05018d5e2c8e8183ca558/Regions/toolbar_icons/tomtjes_toolbar_region_adjacent_items_across_tracks.png</source>
+      </version>
+      <version name="1.2 2024-06-22" author="tomtjes" time="2024-07-02T01:23:21Z">
+        <changelog><![CDATA[~ improve code quality
+~ lower track numbers take precedence in naming and coloring regions]]></changelog>
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/406ebeaaa2deb8dbc2ac0e98427caef17f77a0ac/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20across%20tracks.lua</source>
+        <source type="data" file="toolbar_icons/tomtjes_toolbar_region_adjacent_items_across_tracks.png">https://github.com/tomtjes/Radio-Toolkit/raw/406ebeaaa2deb8dbc2ac0e98427caef17f77a0ac/Regions/toolbar_icons/tomtjes_toolbar_region_adjacent_items_across_tracks.png</source>
       </version>
     </reapack>
     <reapack name="tomtjes_Create regions from adjacent items on same track.lua" type="script" desc="Create regions from adjacent items on same track">
