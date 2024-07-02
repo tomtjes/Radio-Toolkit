@@ -1,6 +1,6 @@
 desc: Project Length
 // Requires script tomtjes_Show Project Length in MCP.lua to be running.
-// Version: 1.0
+// Version: 1.01
 // MetaPackage: true
 
 options:gmem=tomtjes_projectlength
