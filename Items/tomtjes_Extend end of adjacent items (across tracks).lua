@@ -13,8 +13,10 @@ Provides:
 License:
     GPL v3
 Version:
-    1.0 2024-06-21
+    1.1 2024-07-03
 Changelog:
+    + fix case where multiple items end in same position
+    ~ clear time selection when finished
 About:
     # Extend end of adjacent items (across tracks)
     Finds all contiguous groups of items that are less than a
@@ -47,7 +49,6 @@ function Main()
     local orig_items = GetSelectedItems()
     reaper.Main_OnCommand(40289, 0) -- clear item selection
 
-    Shift = 0 -- sums up the shift of items to the right as the script extends them
     local tracks = GetTracks()
     local items = GetItems(tracks)
     items = SortByPos(items)
@@ -61,6 +62,7 @@ function Main()
     for _, item in ipairs(orig_items) do
         reaper.SetMediaItemSelected(item, true)
     end
+    reaper.Main_OnCommand(40020, 0) -- clear time selection
 end -- END MAIN
 
 function GetSelectedItems()
@@ -110,13 +112,14 @@ function GetItems(tracks)
 end
 
 function SortByPos(items)
+    -- goal: start from end of project
     if #items > 1 then
         table.sort(items, function( a,b )
-            if (a.pos < b.pos) then
-                -- primary sort on position -> a before b
+            if (a.endpos > b.endpos) then
+                -- primary sort on end position -> a before b
                 return true
-            elseif (a.pos > b.pos) then
-                -- primary sort on position -> b before a
+            elseif (a.endpos < b.endpos) then
+                -- primary sort on end position -> b before a
                 return false
             else
                 -- primary sort tied, resolve w secondary sort on track
@@ -128,26 +131,36 @@ function SortByPos(items)
 end
 
 function FindContiguous(items,gap)
-    local last_of_group = items[1] -- last item of contiguous group
+    local last_of_group = {} -- last item(s) of contiguous group
+    local first_of_group = items[1]
     repeat
-        if last_of_group.endpos < items[1].endpos then
-            last_of_group = items[1]
+        if #last_of_group == 0 or last_of_group[1].endpos == items[1].endpos then
+            last_of_group[#last_of_group+1] = items[1] -- all items ending at the end of this group
+        end
+        if first_of_group.pos > items[1].pos then
+            first_of_group = items[1]
         end
         table.remove(items,1)
-    until #items == 0 or items[1].pos - last_of_group.endpos >= gap -- last item reached or gap detected
+    until #items == 0 or first_of_group.pos - items[1].endpos >= gap -- last item reached or gap detected
     return items,last_of_group
 end
 
-function ExtendRight(item,sec)
-    local s = math.min(item.sourcelength - item.endsec,sec) -- make sure take is long enough
-    if s > 0.0001 then -- >0 doesn't work
-        reaper.GetSet_LoopTimeRange2( 0, true, true, item.endpos+Shift+Gap, item.endpos+Shift+Gap+s, false )
+function ExtendRight(items,sec)
+    local extmax = 0
+    for _, item in ipairs(items) do
+        extmax = math.max(extmax,item.sourcelength - item.endsec) -- make sure take is long enough
+    end
+    extmax = math.min(extmax,sec)
+    if extmax > 0.0001 then -- >0 doesn't work
+        reaper.GetSet_LoopTimeRange2( 0, true, true, items[1].endpos+extmax, items[1].endpos+extmax+extmax, false )
         reaper.Main_OnCommand( 40200, 0 ) -- insert silence in time selection
-        reaper.SetMediaItemSelected( item.item, true )
-        reaper.SetEditCurPos2( 0, item.endpos+Shift+s, false, false )
-        reaper.Main_OnCommand( 41311, 0 ) -- extend item right to cursor
-        reaper.SetMediaItemSelected( item.item, false )
-        Shift = Shift + s
+        for _, item in ipairs(items) do
+            local ext = math.min(extmax, item.sourcelength - item.endsec)
+            reaper.SetMediaItemSelected( item.item, true )
+            reaper.SetEditCurPos2( 0, item.endpos+ext, false, false )
+            reaper.Main_OnCommand( 41311, 0 ) -- extend item right to cursor
+            reaper.SetMediaItemSelected( item.item, false )
+        end
     end
 end
 
