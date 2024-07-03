@@ -6,8 +6,9 @@
   Provides:
     [jsfx] jsfx/tomtjes_Show_project_length.jsfx > tomtjes_Show_project_length.jsfx
   License: GPL v3
-  Version: 1.01 2024-07-01
-  Changelog: + initial release
+  Version: 1.02 2024-07-03
+  Changelog: 
+    ~ fix always show GUI in MCP
   About:
     # Show project length in MCP
 
@@ -36,6 +37,9 @@ local master = reaper.GetMasterTrack()
 local fx = reaper.TrackFX_GetByName(master, "tomtjes_Show_project_length.jsfx", true)
 -- reaper.TrackFX_SetNamedConfigParm(master, fx, "renamed_name", "Project Length")
 reaper.TrackFX_SetNamedConfigParm(master, fx, "focused", 1)
-reaper.Main_OnCommand(42372, 0) -- show embedded GUI in MCP
+local state = reaper.GetToggleCommandState(42372)
+if state == 0 then
+  reaper.Main_OnCommand(42372, 0) -- show embedded GUI in MCP
+end
 
 main()
