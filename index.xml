@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Radio Toolkit" commit="abc1f23f65a62a962884982b89418b81e4f29b67">
+<index version="1" name="Radio Toolkit" commit="37c1db48cb6a35d066b1413298174ea0d19895c8">
   <category name="Envelopes">
     <reapack name="tomtjes_X-Raym_Add fades or ramps at time selection edges on chosen envelopes (Ducking).lua" type="script" desc="Add fades/ramps at time selection edges on chosen envelopes (Ducking)">
       <metadata>
@@ -287,6 +287,11 @@ support my work with coffee
         <changelog><![CDATA[+ initial release]]></changelog>
         <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/c7e03fc1e9cd2d4a3456607bc4092b1455306dbc/Metadata/tomtjes_Show%20Project%20Length%20in%20MCP.lua</source>
         <source type="effect" file="tomtjes_Show_project_length.jsfx">https://github.com/tomtjes/Radio-Toolkit/raw/c7e03fc1e9cd2d4a3456607bc4092b1455306dbc/Metadata/jsfx/tomtjes_Show_project_length.jsfx</source>
+      </version>
+      <version name="1.02 2024-07-03" author="tomtjes" time="2024-07-03T22:00:58Z">
+        <changelog><![CDATA[~ fix always show GUI in MCP]]></changelog>
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/37c1db48cb6a35d066b1413298174ea0d19895c8/Metadata/tomtjes_Show%20Project%20Length%20in%20MCP.lua</source>
+        <source type="effect" file="tomtjes_Show_project_length.jsfx">https://github.com/tomtjes/Radio-Toolkit/raw/37c1db48cb6a35d066b1413298174ea0d19895c8/Metadata/jsfx/tomtjes_Show_project_length.jsfx</source>
       </version>
     </reapack>
     <reapack name="tomtjes_Show Project Length.lua" type="script" desc="Show project length">
