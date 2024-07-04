@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Radio Toolkit" commit="64e997f759b8a20342930945983a007b6690b7d6">
+<index version="1" name="Radio Toolkit" commit="88ab18e04c61401e9acb3870d52fb4b22c5a1ef6">
   <category name="Envelopes">
     <reapack name="tomtjes_X-Raym_Add fades or ramps at time selection edges on chosen envelopes (Ducking).lua" type="script" desc="Add fades/ramps at time selection edges on chosen envelopes (Ducking)">
       <metadata>
@@ -428,6 +428,27 @@ support my work with coffee
       <version name="1.0 2023-12-20" author="tomtjes" time="2023-12-21T03:43:17Z">
         <changelog><![CDATA[+ initial release]]></changelog>
         <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/0da2a859cb4b087a03c0ae07f9e3c2e664975a87/Third%20Party/tomtjes_Drafts%20Helper.lua</source>
+      </version>
+    </reapack>
+    <reapack name="tomtjes_Install Ultraschall Soundboard.lua" type="script" desc="Install Ultraschall Soundboard">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Install Ultraschall Soundboard\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0-test1" author="tomtjes" time="2024-07-04T16:18:20Z">
+        <changelog><![CDATA[+ initial release]]></changelog>
+        <source type="effect" file="Suundboard.vst3">https://github.com/Ultraschall/ultraschall-portable/raw/master/UserPlugins/FX/Soundboard.vst3</source>
+        <source type="tracktpl" file="Ultraschall-Soundboard.RTrackTemplate">https://github.com/Ultraschall/ultraschall-portable/raw/master/TrackTemplates/Insert%20Ultraschall-Soundboard%20track.RTrackTemplate</source>
+      </version>
+      <version name="1.0-test2" author="tomtjes" time="2024-07-04T16:19:20Z">
+        <changelog><![CDATA[+ initial release]]></changelog>
+        <source type="effect" file="Soundboard.vst3">https://github.com/Ultraschall/ultraschall-portable/raw/master/UserPlugins/FX/Soundboard.vst3</source>
+        <source type="tracktpl" file="Ultraschall-Soundboard.RTrackTemplate">https://github.com/Ultraschall/ultraschall-portable/raw/master/TrackTemplates/Insert%20Ultraschall-Soundboard%20track.RTrackTemplate</source>
       </version>
     </reapack>
   </category>
