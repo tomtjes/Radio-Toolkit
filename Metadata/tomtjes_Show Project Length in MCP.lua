@@ -4,11 +4,11 @@
   Donation: https://ko-fi.com/tomtjes
   Links: Github https://github.com/tomtjes/Radio-Toolkit
   Provides:
-    [jsfx] jsfx/tomtjes_Show_project_length.jsfx
+    [jsfx] tomtjes_Show Project Length.jsfx 
   License: GPL v3
-  Version: 1.03 2024-07-03
+  Version: 1.04 2024-07-03
   Changelog: 
-    ~ fix deprecated Reaper function
+    ~ fix jsfx location
   About:
     # Show project length in MCP
 
@@ -34,7 +34,7 @@ end
 reaper.gmem_attach("tomtjes_projectlength")
 
 local master = reaper.GetMasterTrack()
-local fx = reaper.TrackFX_AddByName(master, "tomtjes_Show_project_length.jsfx", false, 1)
+local fx = reaper.TrackFX_AddByName(master, "tomtjes_Show Project Length.jsfx", false, 1)
 reaper.TrackFX_SetNamedConfigParm(master, fx, "focused", 1)
 local state = reaper.GetToggleCommandState(42372)
 if state == 0 then
