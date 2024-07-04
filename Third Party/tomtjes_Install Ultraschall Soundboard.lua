@@ -7,7 +7,7 @@
     Donation:
     Links:
     Version:
-        1.0-test1
+        1.0-test2
     MetaPackage: true
     Provides: 
         [effect] Soundboard.vst3 https://github.com/Ultraschall/ultraschall-portable/raw/master/UserPlugins/FX/Soundboard.vst3
