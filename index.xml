@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Radio Toolkit" commit="37c1db48cb6a35d066b1413298174ea0d19895c8">
+<index version="1" name="Radio Toolkit" commit="82554502cda1b59e42f5d160d4a01ce50b1ae338">
   <category name="Envelopes">
     <reapack name="tomtjes_X-Raym_Add fades or ramps at time selection edges on chosen envelopes (Ducking).lua" type="script" desc="Add fades/ramps at time selection edges on chosen envelopes (Ducking)">
       <metadata>
@@ -293,6 +293,11 @@ support my work with coffee
         <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/37c1db48cb6a35d066b1413298174ea0d19895c8/Metadata/tomtjes_Show%20Project%20Length%20in%20MCP.lua</source>
         <source type="effect" file="tomtjes_Show_project_length.jsfx">https://github.com/tomtjes/Radio-Toolkit/raw/37c1db48cb6a35d066b1413298174ea0d19895c8/Metadata/jsfx/tomtjes_Show_project_length.jsfx</source>
       </version>
+      <version name="1.04 2024-07-03" author="tomtjes" time="2024-07-04T00:35:04Z">
+        <changelog><![CDATA[~ fix jsfx location]]></changelog>
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/82554502cda1b59e42f5d160d4a01ce50b1ae338/Metadata/tomtjes_Show%20Project%20Length%20in%20MCP.lua</source>
+        <source type="effect" file="tomtjes_Show Project Length.jsfx">https://github.com/tomtjes/Radio-Toolkit/raw/82554502cda1b59e42f5d160d4a01ce50b1ae338/Metadata/tomtjes_Show%20Project%20Length.jsfx</source>
+      </version>
     </reapack>
     <reapack name="tomtjes_Show Project Length.lua" type="script" desc="Show project length">
       <metadata>
@@ -314,13 +319,6 @@ support my work with coffee
       <version name="1.0 2023-12-20" author="tomtjes" time="2023-12-21T03:43:17Z">
         <changelog><![CDATA[+ initial release]]></changelog>
         <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/0da2a859cb4b087a03c0ae07f9e3c2e664975a87/Metadata/tomtjes_Show%20Project%20Length.lua</source>
-      </version>
-    </reapack>
-  </category>
-  <category name="Metadata/jsfx">
-    <reapack name="tomtjes_Show_project_length.jsfx" type="effect" desc="Project Length">
-      <version name="1.0" time="2024-07-02T02:01:07Z">
-        <source>https://github.com/tomtjes/Radio-Toolkit/raw/e4c4081c5aefb6ac6961b607eea8ff167fa4eb48/Metadata/jsfx/tomtjes_Show_project_length.jsfx</source>
       </version>
     </reapack>
   </category>
