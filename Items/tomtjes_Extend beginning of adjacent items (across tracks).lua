@@ -13,10 +13,9 @@ Provides:
 License:
     GPL v3
 Version:
-    1.1 2024-07-03
+    1.2 2024-07-03
 Changelog:
-    + fix case where multiple items start in same position
-    ~ clear time selection when finished
+    + fix item sorting
 About:
     # Extend beginning of adjacent items (across tracks)
 
@@ -116,11 +115,11 @@ function SortByPos(items)
     -- goal: start from end of project
     if #items > 1 then
         table.sort(items, function( a,b )
-            if (a.pos > b.pos) then
-                -- primary sort on position -> a before b
+            if (a.endpos > b.endpos) then
+                -- primary sort on end position -> a before b
                 return true
-            elseif (a.pos < b.pos) then
-                -- primary sort on position -> b before a
+            elseif (a.endpos < b.endpos) then
+                -- primary sort on end position -> b before a
                 return false
             else
                 -- primary sort tied, resolve w secondary sort on track
