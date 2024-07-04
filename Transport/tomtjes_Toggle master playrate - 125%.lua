@@ -4,13 +4,19 @@
   Donation: https://ko-fi.com/tomtjes
   Links: Github https://github.com/tomtjes/Radio-Toolkit
   License: GPL v3
-  Version: 1.0 2022-04-28
-  Changelog: + initial release
+  Version: 1.1 2024-07-03
+  MetaPackage: true
+  Provides:
+    [main] . > Toggle master playrate - 125%
+    [main] . > Toggle master playrate - 150%
+    [main] . > Toggle master playrate - 175%
+    [main] . > Toggle master playrate - 200%
+  Changelog: 
+    + consolidate as metapackage
   About:
-    # Toggle master playrate - 125%
+    # Toggle master playrate
 
-    If playrate is 1x, this script sets it to 1.25x.
-    If playrate is 1.25x, this script sets it to 1x.
+    Toogles playrate between 1x (100%) and value in script title.
 
     ## Setup
 
