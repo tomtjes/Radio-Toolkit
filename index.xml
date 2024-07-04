@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Radio Toolkit" commit="7457d699a9c9abc0b44ca53b4aa2737c5996b229">
+<index version="1" name="Radio Toolkit" commit="64e997f759b8a20342930945983a007b6690b7d6">
   <category name="Envelopes">
     <reapack name="tomtjes_X-Raym_Add fades or ramps at time selection edges on chosen envelopes (Ducking).lua" type="script" desc="Add fades/ramps at time selection edges on chosen envelopes (Ducking)">
       <metadata>
@@ -95,6 +95,10 @@ support my work with coffee
         <changelog><![CDATA[+ fix case where multiple items start in same position
 ~ clear time selection when finished]]></changelog>
         <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/abc1f23f65a62a962884982b89418b81e4f29b67/Items/tomtjes_Extend%20beginning%20of%20adjacent%20items%20(across%20tracks).lua</source>
+      </version>
+      <version name="1.2 2024-07-03" author="tomtjes" time="2024-07-04T02:21:17Z">
+        <changelog><![CDATA[+ fix item sorting]]></changelog>
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/64e997f759b8a20342930945983a007b6690b7d6/Items/tomtjes_Extend%20beginning%20of%20adjacent%20items%20(across%20tracks).lua</source>
       </version>
     </reapack>
     <reapack name="tomtjes_Extend end of adjacent items (across tracks).lua" type="script" desc="Extend end of adjacent items (across tracks)">
