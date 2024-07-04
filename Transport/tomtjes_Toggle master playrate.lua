@@ -1,18 +1,18 @@
 --[[
-  Name: Toggle master playrate - 125%
+  Name: Toggle master playrate
   Author: tomtjes
   Donation: https://ko-fi.com/tomtjes
   Links: Github https://github.com/tomtjes/Radio-Toolkit
   License: GPL v3
-  Version: 1.1 2024-07-03
+  Version: 1.2 2024-07-03
   MetaPackage: true
   Provides:
-    [main] . > Toggle master playrate - 125%
-    [main] . > Toggle master playrate - 150%
-    [main] . > Toggle master playrate - 175%
-    [main] . > Toggle master playrate - 200%
+    [main] . > Toggle master playrate - 125%.lua
+    [main] . > Toggle master playrate - 150%.lua
+    [main] . > Toggle master playrate - 175%.lua
+    [main] . > Toggle master playrate - 200%.lua
   Changelog: 
-    + consolidate as metapackage
+    + fix metapackage
   About:
     # Toggle master playrate
 
