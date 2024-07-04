@@ -10,7 +10,7 @@
         1.0-test1
     MetaPackage: true
     Provides: 
-        [effect] Suundboard.vst3 https://github.com/Ultraschall/ultraschall-portable/raw/master/UserPlugins/FX/Soundboard.vst3
+        [effect] Soundboard.vst3 https://github.com/Ultraschall/ultraschall-portable/raw/master/UserPlugins/FX/Soundboard.vst3
         [tracktpl] Ultraschall-Soundboard.RTrackTemplate https://github.com/Ultraschall/ultraschall-portable/raw/master/TrackTemplates/Insert%20Ultraschall-Soundboard%20track.RTrackTemplate
     Changelog:
         + initial release
