@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Radio Toolkit" commit="b8d24b1f0d8a4675e86b86b5d35d87a9035e6119">
+<index version="1" name="Radio Toolkit" commit="bbf5eb79a9ee858a3a86dddabc38417d4b6b3915">
   <category name="Envelopes">
     <reapack name="tomtjes_X-Raym_Add fades or ramps at time selection edges on chosen envelopes (Ducking).lua" type="script" desc="Add fades/ramps at time selection edges on chosen envelopes (Ducking)">
       <metadata>
@@ -498,7 +498,7 @@ support my work with coffee
         <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/2b45465e74117ad22538c79dd1945794f4403a8c/Transport/tomtjes_Preview%20time%20selection.lua</source>
       </version>
     </reapack>
-    <reapack name="tomtjes_Toggle master playrate - 125%.lua" type="script" desc="Toggle master playrate - 125%">
+    <reapack name="tomtjes_Toggle master playrate.lua" type="script" desc="Toggle master playrate - 125%">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
@@ -517,40 +517,12 @@ support my work with coffee
         <link rel="website" href="https://github.com/tomtjes/Radio-Toolkit">Github</link>
         <link rel="donation">https://ko-fi.com/tomtjes</link>
       </metadata>
-      <version name="1.0 2022-04-28" author="tomtjes" time="2023-12-22T02:14:51Z">
-        <changelog><![CDATA[+ initial release]]></changelog>
-        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/2b45465e74117ad22538c79dd1945794f4403a8c/Transport/tomtjes_Toggle%20master%20playrate%20-%20125%25.lua</source>
-      </version>
-      <version name="1.1 2024-07-03" author="tomtjes" time="2024-07-04T01:11:01Z">
+      <version name="1.1 2024-07-03" author="tomtjes" time="2024-07-04T01:13:28Z">
         <changelog><![CDATA[+ consolidate as metapackage]]></changelog>
-        <source main="main" file="Toggle master playrate - 125%">https://github.com/tomtjes/Radio-Toolkit/raw/b8d24b1f0d8a4675e86b86b5d35d87a9035e6119/Transport/tomtjes_Toggle%20master%20playrate%20-%20125%25.lua</source>
-        <source main="main" file="Toggle master playrate - 150%">https://github.com/tomtjes/Radio-Toolkit/raw/b8d24b1f0d8a4675e86b86b5d35d87a9035e6119/Transport/tomtjes_Toggle%20master%20playrate%20-%20125%25.lua</source>
-        <source main="main" file="Toggle master playrate - 175%">https://github.com/tomtjes/Radio-Toolkit/raw/b8d24b1f0d8a4675e86b86b5d35d87a9035e6119/Transport/tomtjes_Toggle%20master%20playrate%20-%20125%25.lua</source>
-        <source main="main" file="Toggle master playrate - 200%">https://github.com/tomtjes/Radio-Toolkit/raw/b8d24b1f0d8a4675e86b86b5d35d87a9035e6119/Transport/tomtjes_Toggle%20master%20playrate%20-%20125%25.lua</source>
-      </version>
-    </reapack>
-    <reapack name="tomtjes_Toggle master playrate - 150%.lua" type="script" desc="Toggle master playrate - 150%">
-      <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
-{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
-\widowctrl\hyphauto
-
-{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Toggle master playrate - 150%\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 If playrate is 1x, this script sets it to 1.5x. If playrate is 1.5x, this script sets it to 1x.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Setup\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 The playrate is derived from the name of the script. Change the name of the script to {\f1 tomtjes_Toggle master playrate - 200%.lua} and it will set the playrate to 2x.\par}
-{\pard \ql \f0 \sa180 \li720 \fi0 If this script frequently saves you time and money, please consider to {\field{\*\fldinst{HYPERLINK "https://ko-fi.com/tomtjes"}}{\fldrslt{\ul
-support my work with coffee
-}}}
-.\par}
-}
-]]></description>
-        <link rel="website" href="https://github.com/tomtjes/Radio-Toolkit">Github</link>
-        <link rel="donation">https://ko-fi.com/tomtjes</link>
-      </metadata>
-      <version name="1.0 2022-04-28" author="tomtjes" time="2023-12-22T02:14:51Z">
-        <changelog><![CDATA[+ initial release]]></changelog>
-        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/2b45465e74117ad22538c79dd1945794f4403a8c/Transport/tomtjes_Toggle%20master%20playrate%20-%20150%25.lua</source>
+        <source main="main" file="Toggle master playrate - 125%">https://github.com/tomtjes/Radio-Toolkit/raw/bbf5eb79a9ee858a3a86dddabc38417d4b6b3915/Transport/tomtjes_Toggle%20master%20playrate.lua</source>
+        <source main="main" file="Toggle master playrate - 150%">https://github.com/tomtjes/Radio-Toolkit/raw/bbf5eb79a9ee858a3a86dddabc38417d4b6b3915/Transport/tomtjes_Toggle%20master%20playrate.lua</source>
+        <source main="main" file="Toggle master playrate - 175%">https://github.com/tomtjes/Radio-Toolkit/raw/bbf5eb79a9ee858a3a86dddabc38417d4b6b3915/Transport/tomtjes_Toggle%20master%20playrate.lua</source>
+        <source main="main" file="Toggle master playrate - 200%">https://github.com/tomtjes/Radio-Toolkit/raw/bbf5eb79a9ee858a3a86dddabc38417d4b6b3915/Transport/tomtjes_Toggle%20master%20playrate.lua</source>
       </version>
     </reapack>
   </category>
