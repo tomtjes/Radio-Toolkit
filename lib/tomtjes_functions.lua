@@ -10,10 +10,12 @@ Links:
 License:
     GPL v3
 Version:
-    1.02 2024-07-04
+    1.03 2024-07-04
 Changelog:
     + initial release
 NoIndex: true
+Provides:
+    [nomain] .
 About:
     # Functions
 
