@@ -10,10 +10,11 @@ Donation:
 Links:
     Github https://github.com/tomtjes/Radio-Toolkit
 Provides:
+    [nomain] ../lib/tomtjes_functions.lua
 License:
     GPL v3
 Version:
-    1.1 2024-07-04
+    1.2 2024-07-04
 Changelog:
     ~ move functions to separate file
 About:
