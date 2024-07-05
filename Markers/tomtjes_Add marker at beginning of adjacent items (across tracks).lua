@@ -13,8 +13,9 @@ Provides:
 License:
     GPL v3
 Version:
-    1.0 2024-06-21
+    1.1 2024-07-04
 Changelog:
+    ~ move functions to separate file
 About:
     # Add marker at beginning of adjacent items (across tracks)
 
@@ -41,102 +42,37 @@ Gap = 1 -- minimum distance (seconds) between items before they're considered no
 --======= END OF CONFIG ==========================--
 
 --======= FUNCTIONS ==============================--
+local script_folder = debug.getinfo(1).source:match("@?(.*[\\/])")
+script_folder = script_folder:match("^(.*[\\/])[^\\/]*[\\/]$") -- parent folder
+local script_path = script_folder .. "tomtjes_functions.lua"
+
+if reaper.file_exists(script_path) then
+    dofile(script_path)
+else
+    reaper.MB("Missing functions script.\n" .. script_path, "Error", 0)
+    return
+end
 
 function Main()
-    -- save original item selection
-    local orig_items = GetSelectedItems()
-    reaper.Main_OnCommand(40289, 0) -- clear item selection
-
     local tracks = GetTracks()
     local items = GetItems(tracks)
-    items = SortByPos(items)
+
+    -- start from end of project
+    items = SortReverse(items)
+
+    -- get all contiguous groups of items and save start time
+    local markers = {}
     while #items > 0 do
         local first_of_group
-        items, first_of_group = FindContiguous(items,Gap)
-        AddMarker(first_of_group.pos)
+        first_of_group, _, items = FindContiguous(items,Gap)
+        markers[#markers+1] = first_of_group[1].pos
     end
 
-    -- restore item selection
-    for _, item in ipairs(orig_items) do
-        reaper.SetMediaItemSelected(item, true)
+    -- create markers
+    for i, _ in ipairs(markers) do
+        AddMarker(markers[#markers-i+1]) -- reverse order to make marker numbers increase with time
     end
 end -- END MAIN
-
-function GetSelectedItems()
-    local items = {}
-    local itemcount = reaper.CountSelectedMediaItems(0)
-    for i = 1, itemcount do
-        items[i] = reaper.GetSelectedMediaItem(0, i-1)
-    end
-    return items
-end
-
-function GetTracks()
-    local tracks = {}
-    local track_count = reaper.CountTracks(0)
-    local track_count_sel = reaper.CountSelectedTracks(0)
-	for i = 0, track_count - 1 do
-		local track = reaper.GetTrack(0, i)
-        if (track_count_sel > 0 and reaper.IsTrackSelected(track) == true) or track_count_sel == 0 then -- selected tracks only or all tracks if none selected
-            tracks[#tracks+1] = track
-        end
-	end
-    return tracks
-end
-
-function GetItems(tracks)
-    local items = {}
-    for i=1, #tracks do
-        local track = tracks[i]
-        local item_count = reaper.GetTrackNumMediaItems(track)
-        -- build array of items
-        for j = 0, item_count - 1 do
-            local item = {}
-            item.track = track
-            item.tracknum = reaper.GetMediaTrackInfo_Value(track, 'IP_TRACKNUMBER')
-            item.item = reaper.GetTrackMediaItem(track, j)
-            item.length = reaper.GetMediaItemInfo_Value(item.item, "D_LENGTH")
-            item.pos = reaper.GetMediaItemInfo_Value(item.item, "D_POSITION")
-            item.endpos = item.pos + item.length
-            item.offset = reaper.GetMediaItemTakeInfo_Value(reaper.GetActiveTake(item.item), "D_STARTOFFS")
-            item.endsec = item.offset + item.length
-            item.sourcelength = reaper.GetMediaSourceLength(reaper.GetMediaItemTake_Source(reaper.GetActiveTake(item.item)))
-            
-            items[#items+1] = item
-        end
-    end
-    return items
-end
-
-function SortByPos(items)
-    if #items > 1 then
-        table.sort(items, function( a,b )
-            if (a.pos < b.pos) then
-                -- primary sort on position -> a before b
-                return true
-            elseif (a.pos > b.pos) then
-                -- primary sort on position -> b before a
-                return false
-            else
-                -- primary sort tied, resolve w secondary sort on track
-                return a.tracknum < b.tracknum
-            end
-        end)
-    end
-    return items
-end
-
-function FindContiguous(items,gap)
-    local first_of_group = items[1] -- first item of contiguous group
-    local last_of_group = items[1] -- last item of contiguous group
-    repeat
-        if last_of_group.endpos < items[1].endpos then
-            last_of_group = items[1]
-        end
-        table.remove(items,1)
-    until #items == 0 or items[1].pos - last_of_group.endpos >= gap -- last item reached or gap detected
-    return items,first_of_group
-end
 
 function AddMarker(sec)
     reaper.AddProjectMarker2( 0, false, sec, -1, "cue in", -1, reaper.ColorToNative(0,250,0)|0x1000000 ) -- add marker
