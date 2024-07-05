@@ -14,7 +14,7 @@ Provides:
 License:
     GPL v3
 Version:
-    1.2 2024-07-04
+    1.3 2024-07-04
 Changelog:
     ~ move functions to separate file
 About:
@@ -45,7 +45,7 @@ Gap = 1 -- minimum distance (seconds) between items before they're considered no
 --======= FUNCTIONS ==============================--
 local script_folder = debug.getinfo(1).source:match("@?(.*[\\/])")
 script_folder = script_folder:match("^(.*[\\/])[^\\/]*[\\/]$") -- parent folder
-local script_path = script_folder .. "tomtjes_functions.lua"
+local script_path = script_folder .. "lib/tomtjes_functions.lua"
 
 if reaper.file_exists(script_path) then
     dofile(script_path)
