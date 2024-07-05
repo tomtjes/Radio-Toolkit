@@ -14,7 +14,7 @@ Provides:
 License:
     GPL v3
 Version:
-    1.3 2024-07-04
+    1.4 2024-07-04
 Changelog:
     ~ move functions to separate file
 About:
