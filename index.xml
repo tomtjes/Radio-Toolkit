@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Radio Toolkit" commit="c6aebcdef078c56128e4e2b2f683dd656434c170">
+<index version="1" name="Radio Toolkit" commit="1ebf9c4d3615ee113a576daea723f636bfe24787">
   <category name="Envelopes">
     <reapack name="tomtjes_X-Raym_Add fades or ramps at time selection edges on chosen envelopes (Ducking).lua" type="script" desc="Add fades/ramps at time selection edges on chosen envelopes (Ducking)">
       <metadata>
@@ -221,6 +221,11 @@ support my work with coffee
         <changelog><![CDATA[~ move functions to separate file]]></changelog>
         <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/c6aebcdef078c56128e4e2b2f683dd656434c170/Markers/tomtjes_Add%20marker%20at%20beginning%20of%20adjacent%20items%20(across%20tracks).lua</source>
         <source file="../lib/tomtjes_functions.lua">https://github.com/tomtjes/Radio-Toolkit/raw/c6aebcdef078c56128e4e2b2f683dd656434c170/lib/tomtjes_functions.lua</source>
+      </version>
+      <version name="1.4 2024-07-04" author="tomtjes" time="2024-07-05T00:44:19Z">
+        <changelog><![CDATA[~ move functions to separate file]]></changelog>
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/1ebf9c4d3615ee113a576daea723f636bfe24787/Markers/tomtjes_Add%20marker%20at%20beginning%20of%20adjacent%20items%20(across%20tracks).lua</source>
+        <source file="../lib/tomtjes_functions.lua">https://github.com/tomtjes/Radio-Toolkit/raw/1ebf9c4d3615ee113a576daea723f636bfe24787/lib/tomtjes_functions.lua</source>
       </version>
     </reapack>
     <reapack name="tomtjes_Add marker at end of adjacent items (across tracks).lua" type="script" desc="Add marker at end of adjacent items (across tracks)">
