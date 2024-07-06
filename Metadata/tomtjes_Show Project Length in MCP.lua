@@ -8,7 +8,7 @@
     [nomain] helpers/tomtjes_Get Project Length.lua
     [nomain] helpers/tomtjes_Insert Project Length FX in MCP.lua
   License: GPL v3
-  Version: 1.05-pre2 2024-07-06
+  Version: 1.05-pre3 2024-07-06
   Changelog: 
     ~ fix jsfx location
   About:
@@ -20,7 +20,6 @@
 --]]
 
 local script_folder = debug.getinfo(1).source:match("@?(.*[\\/])")
-script_folder = script_folder:match("^(.*[\\/])[^\\/]*[\\/]$") -- parent folder
 local script_path = script_folder .. "helpers/tomtjes_Insert Project Length FX in MCP.lua"
 
 if reaper.file_exists(script_path) then
