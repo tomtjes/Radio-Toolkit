@@ -7,11 +7,9 @@
     [jsfx] helpers/tomtjes_Show Project Length.jsfx
     [main] helpers/tomtjes_Get Project Length.lua
   License: GPL v3
-  Version: 1.05 2024-07-06
+  Version: 1.06 2024-07-06
   Changelog: 
-    + allow termination when FX is not present
-    + requires Reaper 7
-    ~ fix termination popup when opening new project
+    + check all open projects for FX before launching or terminating updater
   About:
     # Show project length in MCP
 
