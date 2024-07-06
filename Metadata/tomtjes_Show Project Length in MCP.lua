@@ -8,7 +8,7 @@
     [main] helpers/tomtjes_Get Project Length.lua
     [nomain] helpers/tomtjes_Insert Project Length FX in MCP.lua
   License: GPL v3
-  Version: 1.05-pre5 2024-07-06
+  Version: 1.05-pre6 2024-07-06
   Changelog: 
     ~ fix jsfx location
   About:
@@ -29,11 +29,4 @@ else
     return
 end
 
-script_path = script_folder .. "helpers/tomtjes_Get Project Length.lua"
-
-if reaper.file_exists(script_path) then
-    dofile(script_path)
-else
-    reaper.MB("Missing Update script.\n Please install Radio Toolkit Base." .. script_path, "Error", 0)
-    return
-end
+reaper.Main_OnCommand("_RS24dcd803546d839f9cf11293746fc8b7319d5924", 0) -- tomtjes_Get Project Length.lua
