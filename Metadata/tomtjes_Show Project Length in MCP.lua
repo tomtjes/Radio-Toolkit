@@ -5,10 +5,10 @@
   Links: Github https://github.com/tomtjes/Radio-Toolkit
   Provides:
     [jsfx] helpers/tomtjes_Show Project Length.jsfx
-    [nomain] helpers/tomtjes_Get Project Length.lua
+    helpers/tomtjes_Get Project Length.lua
     [nomain] helpers/tomtjes_Insert Project Length FX in MCP.lua
   License: GPL v3
-  Version: 1.05-pre3 2024-07-06
+  Version: 1.05-pre4 2024-07-06
   Changelog: 
     ~ fix jsfx location
   About:
