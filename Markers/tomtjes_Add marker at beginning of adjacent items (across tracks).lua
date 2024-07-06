@@ -9,12 +9,10 @@ Donation:
     https://ko-fi.com/tomtjes
 Links:
     Github https://github.com/tomtjes/Radio-Toolkit
-Provides:
-    ../lib/tomtjes_functions.lua
 License:
     GPL v3
 Version:
-    1.5 2024-07-04
+    1.6-pre2 2024-07-04
 Changelog:
     ~ move functions to separate file
 About:
@@ -45,12 +43,12 @@ Gap = 1 -- minimum distance (seconds) between items before they're considered no
 --======= FUNCTIONS ==============================--
 local script_folder = debug.getinfo(1).source:match("@?(.*[\\/])")
 script_folder = script_folder:match("^(.*[\\/])[^\\/]*[\\/]$") -- parent folder
-local script_path = script_folder .. "lib/tomtjes_functions.lua"
+local script_path = script_folder .. "Functions/tomtjes_Radio Toolkit Base.lua"
 
 if reaper.file_exists(script_path) then
     dofile(script_path)
 else
-    reaper.MB("Missing functions script.\n" .. script_path, "Error", 0)
+    reaper.MB("Missing base functions.\n Please install Radio Toolkit Base." .. script_path, "Error", 0)
     return
 end
 

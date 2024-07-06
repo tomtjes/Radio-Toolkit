@@ -1,6 +1,6 @@
 --[[
 Name:
-    Functions
+    Radio Toolkit Base
 Author:
     tomtjes
 Donation:
@@ -10,14 +10,13 @@ Links:
 License:
     GPL v3
 Version:
-    1.03 2024-07-04
+    1.0-pre1 2024-07-06
 Changelog:
     + initial release
-NoIndex: true
 Provides:
     [nomain] .
 About:
-    # Functions
+    # Radio Toolkit Base
 
     Functions used by other Radio Toolkit packages
 
