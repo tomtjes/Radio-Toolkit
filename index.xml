@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Radio Toolkit" commit="cbfcbdf986a8b6b5d7d6cf5ced2cd90067046c37">
+<index version="1" name="Radio Toolkit" commit="6899441f08f5419d9a0d57a6276146cc65134795">
   <category name="Envelopes">
     <reapack name="tomtjes_X-Raym_Add fades or ramps at time selection edges on chosen envelopes (Ducking).lua" type="script" desc="Add fades/ramps at time selection edges on chosen envelopes (Ducking)">
       <metadata>
@@ -357,6 +357,13 @@ support my work with coffee
         <changelog><![CDATA[~ fix jsfx location]]></changelog>
         <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/82554502cda1b59e42f5d160d4a01ce50b1ae338/Metadata/tomtjes_Show%20Project%20Length%20in%20MCP.lua</source>
         <source type="effect" file="tomtjes_Show Project Length.jsfx">https://github.com/tomtjes/Radio-Toolkit/raw/82554502cda1b59e42f5d160d4a01ce50b1ae338/Metadata/tomtjes_Show%20Project%20Length.jsfx</source>
+      </version>
+      <version name="1.05-pre1 2024-07-06" author="tomtjes" time="2024-07-06T17:53:44Z">
+        <changelog><![CDATA[~ fix jsfx location]]></changelog>
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/6899441f08f5419d9a0d57a6276146cc65134795/Metadata/tomtjes_Show%20Project%20Length%20in%20MCP.lua</source>
+        <source type="effect" file="helpers/tomtjes_Show Project Length.jsfx">https://github.com/tomtjes/Radio-Toolkit/raw/6899441f08f5419d9a0d57a6276146cc65134795/Metadata/helpers/tomtjes_Show%20Project%20Length.jsfx</source>
+        <source file="helpers/tomtjes_Get Project Length.lua">https://github.com/tomtjes/Radio-Toolkit/raw/6899441f08f5419d9a0d57a6276146cc65134795/Metadata/helpers/tomtjes_Get%20Project%20Length.lua</source>
+        <source file="helpers/tomtjes_Insert Project Length FX in MCP.lua">https://github.com/tomtjes/Radio-Toolkit/raw/6899441f08f5419d9a0d57a6276146cc65134795/Metadata/helpers/tomtjes_Insert%20Project%20Length%20FX%20in%20MCP.lua</source>
       </version>
     </reapack>
     <reapack name="tomtjes_Show Project Length.lua" type="script" desc="Show project length">
