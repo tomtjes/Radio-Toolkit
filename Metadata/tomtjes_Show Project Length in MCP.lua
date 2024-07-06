@@ -6,11 +6,12 @@
   Provides:
     [jsfx] helpers/tomtjes_Show Project Length.jsfx
     [main] helpers/tomtjes_Get Project Length.lua
-    [nomain] helpers/tomtjes_Insert Project Length FX in MCP.lua
   License: GPL v3
-  Version: 1.05-pre8 2024-07-06
+  Version: 1.05 2024-07-06
   Changelog: 
-    ~ fix jsfx location
+    + allow termination when FX is not present
+    + requires Reaper 7
+    ~ fix termination popup when opening new project
   About:
     # Show project length in MCP
 
@@ -19,15 +20,21 @@
     > If this script frequently saves you time and money, please consider to [support my work with coffee](https://ko-fi.com/tomtjes). 
 --]]
 
-local script_folder = debug.getinfo(1).source:match("@?(.*[\\/])")
-local script_path = script_folder .. "helpers/tomtjes_Insert Project Length FX in MCP.lua"
-
-if reaper.file_exists(script_path) then
-    dofile(script_path)
-else
-    reaper.MB("Missing Insert script.\n Please install Radio Toolkit Base." .. script_path, "Error", 0)
-    return
+local version = tonumber(reaper.GetAppVersion():match("^(%d)"))
+if version < 7 then
+  reaper.MB("Reaper 7+ required.", "Error", 0)
+  return
 end
 
+-- insert FX
+local master = reaper.GetMasterTrack()
+local fx = reaper.TrackFX_AddByName(master, "tomtjes_Show Project Length.jsfx", false, 1)
+reaper.TrackFX_SetNamedConfigParm(master, fx, "focused", 1)
+local state = reaper.GetToggleCommandState(42372) -- check if GUI in MCP
+if state == 0 then
+  reaper.Main_OnCommand(42372, 0) -- show embedded GUI in MCP
+end
+
+-- run updater script tomtjes_Get Project Length.lua
 local cmd = reaper.NamedCommandLookup("_RS24dcd803546d839f9cf11293746fc8b7319d5924")
-reaper.Main_OnCommand(cmd, 0) -- tomtjes_Get Project Length.lua
+reaper.Main_OnCommand(cmd, 0)
