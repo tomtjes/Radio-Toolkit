@@ -8,7 +8,7 @@
     [main] helpers/tomtjes_Get Project Length.lua
     [nomain] helpers/tomtjes_Insert Project Length FX in MCP.lua
   License: GPL v3
-  Version: 1.05-pre7 2024-07-06
+  Version: 1.05-pre8 2024-07-06
   Changelog: 
     ~ fix jsfx location
   About:
