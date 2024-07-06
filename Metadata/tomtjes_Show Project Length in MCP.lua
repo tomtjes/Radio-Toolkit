@@ -4,9 +4,11 @@
   Donation: https://ko-fi.com/tomtjes
   Links: Github https://github.com/tomtjes/Radio-Toolkit
   Provides:
-    [jsfx] tomtjes_Show Project Length.jsfx 
+    [jsfx] helpers/tomtjes_Show Project Length.jsfx
+    [nomain] helpers/tomtjes_Get Project Length.lua
+    [nomain] helpers/tomtjes_Insert Project Length FX in MCP.lua
   License: GPL v3
-  Version: 1.04 2024-07-03
+  Version: 1.05-pre1 2024-07-06
   Changelog: 
     ~ fix jsfx location
   About:
@@ -17,28 +19,22 @@
     > If this script frequently saves you time and money, please consider to [support my work with coffee](https://ko-fi.com/tomtjes). 
 --]]
 
-function GetProjectLength()
-  if reaper.GetPlayState()&4==4 and reaper.GetProjectLength() < reaper.GetPlayPosition() then
-    return reaper.GetPlayPosition()
-  else
-    return reaper.GetProjectLength() + reaper.GetProjectTimeOffset(0, false)
-  end
+local script_folder = debug.getinfo(1).source:match("@?(.*[\\/])")
+script_folder = script_folder:match("^(.*[\\/])[^\\/]*[\\/]$") -- parent folder
+local script_path = script_folder .. "helpers/tomtjes_Insert Project Length FX in MCP.lua"
+
+if reaper.file_exists(script_path) then
+    dofile(script_path)
+else
+    reaper.MB("Missing Insert script.\n Please install Radio Toolkit Base." .. script_path, "Error", 0)
+    return
 end
 
-function main()
-    local length = GetProjectLength()
-    reaper.gmem_write(1, length) -- write value to gmem slot
-    reaper.defer(main) -- re-run the script
+script_path = script_folder .. "helpers/tomtjes_Get Project Length.lua"
+
+if reaper.file_exists(script_path) then
+    dofile(script_path)
+else
+    reaper.MB("Missing Update script.\n Please install Radio Toolkit Base." .. script_path, "Error", 0)
+    return
 end
-
-reaper.gmem_attach("tomtjes_projectlength")
-
-local master = reaper.GetMasterTrack()
-local fx = reaper.TrackFX_AddByName(master, "tomtjes_Show Project Length.jsfx", false, 1)
-reaper.TrackFX_SetNamedConfigParm(master, fx, "focused", 1)
-local state = reaper.GetToggleCommandState(42372)
-if state == 0 then
-  reaper.Main_OnCommand(42372, 0) -- show embedded GUI in MCP
-end
-
-main()
