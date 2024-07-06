@@ -5,7 +5,7 @@
   Links: Github https://github.com/tomtjes/Radio-Toolkit
   NoIndex: true
   License: GPL v3
-  Version: 1.1 2024-07-06
+  Version: 1.2pre 2024-07-06
   Changelog: 
   About:
     # Get project length
@@ -28,7 +28,12 @@ function Update()
     reaper.gmem_write(1, length) -- write value to gmem slot
     reaper.defer(Update) -- re-run the script
 end
-  
-reaper.set_action_options(1|2) -- terminate when relaunched, automatically relaunch
-reaper.gmem_attach("tomtjes_projectlength")  
-Update()
+
+local master = reaper.GetMasterTrack()
+local fx = reaper.TrackFX_AddByName(master, "tomtjes_Show Project Length.jsfx", false, 0)
+
+if fx >= 0 then -- fx is present
+    reaper.set_action_options(1|2) -- terminate when relaunched, automatically relaunch
+    reaper.gmem_attach("tomtjes_projectlength")
+    Update()
+end
