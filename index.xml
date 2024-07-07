@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Radio Toolkit" commit="e330c4732ed22a6152271c415968dda796aaf30f">
+<index version="1" name="Radio Toolkit" commit="8c1825bc1ea34227af121d297ba3961e1a39d09f">
   <category name="Envelopes">
     <reapack name="tomtjes_X-Raym_Add fades or ramps at time selection edges on chosen envelopes (Ducking).lua" type="script" desc="Add fades/ramps at time selection edges on chosen envelopes (Ducking)">
       <metadata>
@@ -62,6 +62,10 @@ support my work with coffee
         <changelog><![CDATA[+ initial release]]></changelog>
         <source>https://github.com/tomtjes/Radio-Toolkit/raw/cbfcbdf986a8b6b5d7d6cf5ced2cd90067046c37/Functions/tomtjes_Radio%20Toolkit%20Base.lua</source>
       </version>
+      <version name="1.0-pre2 2024-07-06" author="tomtjes" time="2024-07-07T14:23:19Z">
+        <changelog><![CDATA[+ initial release]]></changelog>
+        <source>https://github.com/tomtjes/Radio-Toolkit/raw/8c1825bc1ea34227af121d297ba3961e1a39d09f/Functions/tomtjes_Radio%20Toolkit%20Base.lua</source>
+      </version>
     </reapack>
   </category>
   <category name="Items">
@@ -86,6 +90,10 @@ support my work with coffee
       <version name="1.0 2023-10-22" author="tomtjes" time="2023-12-22T00:06:51Z">
         <changelog><![CDATA[+ initial release]]></changelog>
         <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/6caab78a77b7477b7621c59d5ab09b6ebbe246bc/Items/tomtjes_Collapse%20empty%20space%20between%20items.lua</source>
+      </version>
+      <version name="1.1-pre1 2024-07-06" author="tomtjes" time="2024-07-07T14:23:19Z">
+        <changelog><![CDATA[~ move functions to separate package]]></changelog>
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/8c1825bc1ea34227af121d297ba3961e1a39d09f/Items/tomtjes_Collapse%20empty%20space%20between%20items.lua</source>
       </version>
     </reapack>
     <reapack name="tomtjes_Extend beginning of adjacent items (across tracks).lua" type="script" desc="Extend beginning of adjacent items (across tracks)">
@@ -260,6 +268,10 @@ support my work with coffee
         <changelog><![CDATA[~ move functions to separate file]]></changelog>
         <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/cbfcbdf986a8b6b5d7d6cf5ced2cd90067046c37/Markers/tomtjes_Add%20marker%20at%20beginning%20of%20adjacent%20items%20(across%20tracks).lua</source>
       </version>
+      <version name="1.6-pre3 2024-07-06" author="tomtjes" time="2024-07-07T14:23:19Z">
+        <changelog><![CDATA[~ minor changes]]></changelog>
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/8c1825bc1ea34227af121d297ba3961e1a39d09f/Markers/tomtjes_Add%20marker%20at%20beginning%20of%20adjacent%20items%20(across%20tracks).lua</source>
+      </version>
     </reapack>
     <reapack name="tomtjes_Add marker at end of adjacent items (across tracks).lua" type="script" desc="Add marker at end of adjacent items (across tracks)">
       <metadata>
@@ -291,6 +303,10 @@ support my work with coffee
       <version name="1.1 2024-07-04" author="tomtjes" time="2024-07-05T00:30:42Z">
         <changelog><![CDATA[~ move functions to separate file]]></changelog>
         <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/b1ca6dc9c2b4db0fc776597b2389bff68a1e6fdc/Markers/tomtjes_Add%20marker%20at%20end%20of%20adjacent%20items%20(across%20tracks).lua</source>
+      </version>
+      <version name="1.6-pre1 2024-07-06" author="tomtjes" time="2024-07-07T14:23:19Z">
+        <changelog><![CDATA[~ move functions to separate package]]></changelog>
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/8c1825bc1ea34227af121d297ba3961e1a39d09f/Markers/tomtjes_Add%20marker%20at%20end%20of%20adjacent%20items%20(across%20tracks).lua</source>
       </version>
     </reapack>
   </category>
@@ -495,6 +511,11 @@ support my work with coffee
         <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/406ebeaaa2deb8dbc2ac0e98427caef17f77a0ac/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20across%20tracks.lua</source>
         <source type="data" file="toolbar_icons/tomtjes_toolbar_region_adjacent_items_across_tracks.png">https://github.com/tomtjes/Radio-Toolkit/raw/406ebeaaa2deb8dbc2ac0e98427caef17f77a0ac/Regions/toolbar_icons/tomtjes_toolbar_region_adjacent_items_across_tracks.png</source>
       </version>
+      <version name="1.3-pre1 2024-07-06" author="tomtjes" time="2024-07-07T14:23:19Z">
+        <changelog><![CDATA[~ move functions to separate package]]></changelog>
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/8c1825bc1ea34227af121d297ba3961e1a39d09f/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20across%20tracks.lua</source>
+        <source type="data" file="toolbar_icons/tomtjes_toolbar_region_adjacent_items_across_tracks.png">https://github.com/tomtjes/Radio-Toolkit/raw/8c1825bc1ea34227af121d297ba3961e1a39d09f/Regions/toolbar_icons/tomtjes_toolbar_region_adjacent_items_across_tracks.png</source>
+      </version>
     </reapack>
     <reapack name="tomtjes_Create regions from adjacent items on same track.lua" type="script" desc="Create regions from adjacent items on same track">
       <metadata>
@@ -526,6 +547,11 @@ support my work with coffee
 - remove requirement to select tracks, apply script to all tracks if none selected]]></changelog>
         <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/0da2a859cb4b087a03c0ae07f9e3c2e664975a87/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20on%20same%20track.lua</source>
         <source type="data" file="toolbar_icons/tomtjes_toolbar_region_adjacent_items_same_track.png">https://github.com/tomtjes/Radio-Toolkit/raw/0da2a859cb4b087a03c0ae07f9e3c2e664975a87/Regions/toolbar_icons/tomtjes_toolbar_region_adjacent_items_same_track.png</source>
+      </version>
+      <version name="1.1-pre1 2024-07-06" author="tomtjes" time="2024-07-07T14:23:19Z">
+        <changelog><![CDATA[~ move functions to separate package]]></changelog>
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/8c1825bc1ea34227af121d297ba3961e1a39d09f/Regions/tomtjes_Create%20regions%20from%20adjacent%20items%20on%20same%20track.lua</source>
+        <source type="data" file="toolbar_icons/tomtjes_toolbar_region_adjacent_items_same_track.png">https://github.com/tomtjes/Radio-Toolkit/raw/8c1825bc1ea34227af121d297ba3961e1a39d09f/Regions/toolbar_icons/tomtjes_toolbar_region_adjacent_items_same_track.png</source>
       </version>
     </reapack>
   </category>
