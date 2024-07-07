@@ -14,7 +14,7 @@ Provides:
 License:
     GPL v3
 Version:
-    1.3-pre2 2024-07-06
+    1.3 2024-07-07
 Changelog:
     ~ move functions to separate package
 About:
@@ -43,7 +43,7 @@ About:
 --]]
 
 --======= CONFIG =================================--
-Gap = 1 -- minimum distance (seconds) between items for a new region to be created
+Gap = 1 -- maximum allowable distance (seconds) between items before a new region gets created
 Render = "tracks" -- options: "master", "tracks", "both"
 --======= END OF CONFIG ==========================--
 

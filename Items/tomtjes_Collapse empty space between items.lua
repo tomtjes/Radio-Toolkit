@@ -10,7 +10,7 @@
     Links:
         Github https://github.com/tomtjes/Radio-Toolkit
     Version:
-        1.1-pre3 2024-07-06
+        1.1 2024-07-07
     Changelog:
         ~ move functions to separate package
     License:
@@ -33,7 +33,7 @@
 --]]
 
 --======= CONFIG =================================--
--- collapse gaps larger than
+-- collapse gaps larger than (seconds)
 Gap = 1.0
 --======= END OF CONFIG ==========================--
 

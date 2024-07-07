@@ -10,7 +10,7 @@ Links:
 License:
     GPL v3
 Version:
-    1.0-pre3 2024-07-06
+    1.0 2024-07-07
 Changelog:
     + initial release
 Provides:
@@ -118,7 +118,7 @@ function GetTracks(sel)
     local track_count_sel = reaper.CountSelectedTracks(0)
     if sel == nil then
         if track_count_sel > 0 then
-            sel = true
+            sel = true -- if there are selected tracks, only get selected tracks
         else
             sel = false
         end

@@ -12,7 +12,7 @@ Links:
 License:
     GPL v3
 Version:
-    1.6-pre1 2024-07-06
+    1.6 2024-07-07
 Changelog:
     ~ move functions to separate package
 About:
@@ -36,7 +36,7 @@ About:
 --]]
 
 --======= CONFIG =================================--
-Gap = 1 -- minimum distance (seconds) between items before they're considered not adjacent
+Gap = 1 -- maximum allowable distance (seconds) between items before they're considered not adjacent
 --======= END OF CONFIG ==========================--
 
 --======= FUNCTIONS ==============================--

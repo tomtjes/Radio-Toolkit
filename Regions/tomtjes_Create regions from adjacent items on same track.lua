@@ -7,7 +7,7 @@
   Provides:
     [data] toolbar_icons/tomtjes_toolbar_region_adjacent_items_same_track.png > toolbar_icons/tomtjes_toolbar_region_adjacent_items_same_track.png
   License: GPL v3
-  Version: 1.1-pre2 2024-07-06
+  Version: 1.1 2024-07-07
   Changelog:
     ~ move functions to separate package
   About:
@@ -35,7 +35,7 @@
 --]]
 
 --======= CONFIG =================================--
-Gap = 1 -- minimum distance (seconds) between items for a new region to be created
+Gap = 1 -- maximum allowable distance (seconds) between items before a new region gets created
 render = "tracks" -- options: "master", "tracks", "both"
 --======= END OF CONFIG ==========================--
 
