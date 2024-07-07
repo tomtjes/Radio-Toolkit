@@ -10,7 +10,7 @@
     Links:
         Github https://github.com/tomtjes/Radio-Toolkit
     Version:
-        1.1-pre2 2024-07-06
+        1.1-pre3 2024-07-06
     Changelog:
         ~ move functions to separate package
     License:
@@ -79,14 +79,14 @@ function CollapseSelectedItems(items)
         local gapstart = groups[i+1].endpos
         local gapend = groups[i].pos
         reaper.GetSet_LoopTimeRange2(0, true, false, gapstart, gapend - Gap, false)
-        if orig_RippleAll == 1 then
+        if RippleAll == 1 then
             reaper.Main_OnCommand(40201, 0) -- Delete time selection moving later items
         else
             for t, _ in pairs(tracks) do
                 DeleteTimeOnTrack(t)
             end
             -- above block moved later items, undo if ripple per track is off
-            if orig_RippleTrack == 0 then
+            if RippleTrack == 0 then
                 for t, _ in pairs(tracks) do
                     reaper.GetSet_LoopTimeRange2(0, true, false, groups[1].endpos-(gapend-gapstart)+Gap, groups[1].endpos, false)
                     InsertTimeOnTrack(t)
@@ -111,19 +111,20 @@ function Main()
     -- save original time selection
     local orig_start_sel, orig_end_sel = reaper.GetSet_LoopTimeRange2(0,false, false,0,0,false)
     -- save the original ripple edit mode
-    orig_RippleAll = reaper.GetToggleCommandStateEx(0, 41991)
-    orig_RippleTrack = reaper.GetToggleCommandStateEx(0, 41990)
+    RippleAll = reaper.GetToggleCommandStateEx(0, 41991)
+    RippleTrack = reaper.GetToggleCommandStateEx(0, 41990)
     -- save original item selection
     local orig_items = GetSelectedItems()
     -- save original track selection
     local orig_tracks = GetSelectedTracks()
 
     if #orig_items > 0 then
-        CollapseSelectedItems(orig_items)
+        local items = GetSelectedItems() -- can't copy orig_items here because tables are references 
+        CollapseSelectedItems(items)
     elseif #orig_tracks > 0 then
         CollapseSelectedTracks(orig_tracks)
     end
-        
+
     -- restore track selection
     reaper.Main_OnCommand(40297, 0) -- clear track selection
     for _, t in pairs(orig_tracks) do
@@ -133,9 +134,9 @@ function Main()
     reaper.Main_OnCommand(40289, 0) -- clear item selection
     SetSelectedItems(orig_items)
     -- Restore original ripple edit mode and time selection
-    if orig_RippleAll == 1 then
+    if RippleAll == 1 then
         reaper.Main_OnCommand(40311, 0)
-    elseif orig_RippleTrack == 1 then
+    elseif RippleTrack == 1 then
         reaper.Main_OnCommand(40310, 0)
     else
         reaper.Main_OnCommand(40309, 0)
