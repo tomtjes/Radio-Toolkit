@@ -7,7 +7,7 @@
   Provides:
     [data] toolbar_icons/tomtjes_toolbar_region_adjacent_items_same_track.png > toolbar_icons/tomtjes_toolbar_region_adjacent_items_same_track.png
   License: GPL v3
-  Version: 1.1-pre1 2024-07-06
+  Version: 1.1-pre2 2024-07-06
   Changelog:
     ~ move functions to separate package
   About:
@@ -35,7 +35,7 @@
 --]]
 
 --======= CONFIG =================================--
-gap = 1 -- minimum distance (seconds) between items for a new region to be created
+Gap = 1 -- minimum distance (seconds) between items for a new region to be created
 render = "tracks" -- options: "master", "tracks", "both"
 --======= END OF CONFIG ==========================--
 
@@ -56,13 +56,16 @@ function Main()
 
   -- get items per track
   for track, _ in pairs(Tracks) do
-    local items = GetItems(track)
+    -- create sub-table with just one track
+    local t = {}
+    t[track] = Tracks[track]
+    local items = GetItems(t)
     items = SortAsc(items)
 
     while #items > 0 do
       local first_of_group, last_of_group
       first_of_group, last_of_group, items, _ = FindContAsc(items,Gap)
-      local region = AddRegion(first_of_group.pos, last_of_group.endpos, track)
+      local region = AddRegion(first_of_group[1].pos, last_of_group[1].endpos, track)
       AdjustRenderMatrix(region, track)
     end
   end

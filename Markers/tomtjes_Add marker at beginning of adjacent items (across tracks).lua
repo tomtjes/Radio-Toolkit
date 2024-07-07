@@ -12,9 +12,9 @@ Links:
 License:
     GPL v3
 Version:
-    1.6-pre3 2024-07-06
+    1.6-pre4 2024-07-06
 Changelog:
-    ~ minor changes
+    ~ move functions to separate package
 About:
     # Add marker at beginning of adjacent items (across tracks)
 

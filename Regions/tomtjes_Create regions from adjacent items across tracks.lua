@@ -14,7 +14,7 @@ Provides:
 License:
     GPL v3
 Version:
-    1.3-pre1 2024-07-06
+    1.3-pre2 2024-07-06
 Changelog:
     ~ move functions to separate package
 About:
@@ -68,7 +68,7 @@ function Main()
     while #items > 0 do
         local first_of_group, last_of_group, trks
         first_of_group, last_of_group, items, trks = FindContAsc(items,Gap)
-        local region = AddRegion(first_of_group.pos, last_of_group.endpos, trks)
+        local region = AddRegion(first_of_group[1].pos, last_of_group[1].endpos, trks)
         AdjustRenderMatrix(region, trks)
     end
 end -- END MAIN

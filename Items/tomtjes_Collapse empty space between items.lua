@@ -10,7 +10,7 @@
     Links:
         Github https://github.com/tomtjes/Radio-Toolkit
     Version:
-        1.1-pre1 2024-07-06
+        1.1-pre2 2024-07-06
     Changelog:
         ~ move functions to separate package
     License:
@@ -72,7 +72,7 @@ function CollapseSelectedItems(items)
     while #items > 0 do
         local first_of_group, last_of_group
         first_of_group, last_of_group, items, tracks = FindContDesc(items,Gap)
-        groups[#groups+1] = { pos = first_of_group.pos, endpos = last_of_group.endpos }
+        groups[#groups+1] = { pos = first_of_group[1].pos, endpos = last_of_group[1].endpos }
     end
 
     for i = 1, #groups-1 do
@@ -120,13 +120,13 @@ function Main()
 
     if #orig_items > 0 then
         CollapseSelectedItems(orig_items)
-    elseif trackcount > 0 then
+    elseif #orig_tracks > 0 then
         CollapseSelectedTracks(orig_tracks)
     end
         
     -- restore track selection
     reaper.Main_OnCommand(40297, 0) -- clear track selection
-    for t, _ in pairs(orig_tracks) do
+    for _, t in pairs(orig_tracks) do
         reaper.SetTrackSelected(t, true)
     end
     -- restore item selection

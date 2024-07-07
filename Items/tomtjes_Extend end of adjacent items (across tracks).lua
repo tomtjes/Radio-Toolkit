@@ -13,10 +13,9 @@ Provides:
 License:
     GPL v3
 Version:
-    1.1 2024-07-03
+    1.2-pre1 2024-07-07
 Changelog:
-    + fix case where multiple items end in same position
-    ~ clear time selection when finished
+    ~ move functions to separate package
 About:
     # Extend end of adjacent items (across tracks)
     Finds all contiguous groups of items that are less than a
@@ -43,6 +42,16 @@ Extend = 2 -- number of seconds to extend the last item to the right
 --======= END OF CONFIG ==========================--
 
 --======= FUNCTIONS ==============================--
+local script_folder = debug.getinfo(1).source:match("@?(.*[\\/])")
+script_folder = script_folder:match("^(.*[\\/])[^\\/]*[\\/]$") -- parent folder
+local script_path = script_folder .. "Functions/tomtjes_Radio Toolkit Base.lua"
+
+if reaper.file_exists(script_path) then
+    dofile(script_path)
+else
+    reaper.MB("Missing base functions.\n Please install Radio Toolkit Base." .. script_path, "Error", 0)
+    return
+end
 
 function Main()
     -- save original item selection
@@ -51,99 +60,17 @@ function Main()
 
     local tracks = GetTracks()
     local items = GetItems(tracks)
-    items = SortByPos(items)
+    items = SortDesc(items)
     while #items > 0 do
         local last_of_group
-        items, last_of_group = FindContiguous(items,Gap)
+        _, last_of_group, items = FindContDesc(items,Gap)
         ExtendRight(last_of_group,Extend)
     end
 
     -- restore item selection
-    for _, item in ipairs(orig_items) do
-        reaper.SetMediaItemSelected(item, true)
-    end
     reaper.Main_OnCommand(40020, 0) -- clear time selection
+    SetSelectedItems(orig_items)
 end -- END MAIN
-
-function GetSelectedItems()
-    local items = {}
-    local itemcount = reaper.CountSelectedMediaItems(0)
-    for i = 1, itemcount do
-        items[i] = reaper.GetSelectedMediaItem(0, i-1)
-    end
-    return items
-end
-
-function GetTracks()
-    local tracks = {}
-    local track_count = reaper.CountTracks(0)
-    local track_count_sel = reaper.CountSelectedTracks(0)
-	for i = 0, track_count - 1 do
-		local track = reaper.GetTrack(0, i)
-        if (track_count_sel > 0 and reaper.IsTrackSelected(track) == true) or track_count_sel == 0 then -- selected tracks only or all tracks if none selected
-            tracks[#tracks+1] = track
-        end
-	end
-    return tracks
-end
-
-function GetItems(tracks)
-    local items = {}
-    for i=1, #tracks do
-        local track = tracks[i]
-        local item_count = reaper.GetTrackNumMediaItems(track)
-        -- build array of items
-        for j = 0, item_count - 1 do
-            local item = {}
-            item.track = track
-            item.tracknum = reaper.GetMediaTrackInfo_Value(track, 'IP_TRACKNUMBER')
-            item.item = reaper.GetTrackMediaItem(track, j)
-            item.length = reaper.GetMediaItemInfo_Value(item.item, "D_LENGTH")
-            item.pos = reaper.GetMediaItemInfo_Value(item.item, "D_POSITION")
-            item.endpos = item.pos + item.length
-            item.offset = reaper.GetMediaItemTakeInfo_Value(reaper.GetActiveTake(item.item), "D_STARTOFFS")
-            item.endsec = item.offset + item.length
-            item.sourcelength = reaper.GetMediaSourceLength(reaper.GetMediaItemTake_Source(reaper.GetActiveTake(item.item)))
-            
-            items[#items+1] = item
-        end
-    end
-    return items
-end
-
-function SortByPos(items)
-    -- goal: start from end of project
-    if #items > 1 then
-        table.sort(items, function( a,b )
-            if (a.endpos > b.endpos) then
-                -- primary sort on end position -> a before b
-                return true
-            elseif (a.endpos < b.endpos) then
-                -- primary sort on end position -> b before a
-                return false
-            else
-                -- primary sort tied, resolve w secondary sort on track
-                return a.tracknum < b.tracknum
-            end
-        end)
-    end
-    return items
-end
-
-function FindContiguous(items,gap)
-    local last_of_group = {} -- last item(s) of contiguous group
-    local first_of_group = items[1]
-    repeat
-        if #last_of_group == 0 or last_of_group[1].endpos == items[1].endpos then
-            last_of_group[#last_of_group+1] = items[1] -- all items ending at the end of this group
-        end
-        if first_of_group.pos > items[1].pos then
-            first_of_group = items[1]
-        end
-        table.remove(items,1)
-    until #items == 0 or first_of_group.pos - items[1].endpos >= gap -- last item reached or gap detected
-    return items,last_of_group
-end
 
 function ExtendRight(items,sec)
     local extmax = 0

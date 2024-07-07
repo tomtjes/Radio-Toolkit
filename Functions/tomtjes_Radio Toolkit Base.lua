@@ -10,7 +10,7 @@ Links:
 License:
     GPL v3
 Version:
-    1.0-pre2 2024-07-06
+    1.0-pre3 2024-07-06
 Changelog:
     + initial release
 Provides:
@@ -80,7 +80,7 @@ function FindContAsc(items, gap)
         end
         tracks[items[1].track] = true
         table.remove(items,1)
-    until #items == 0 or last[1].endpos - items[1].pos > gap -- last item reached or gap detected
+    until #items == 0 or items[1].pos - last[1].endpos > gap -- last item reached or gap detected
     return first, last, items, tracks
 end
 
@@ -137,7 +137,7 @@ end
 
 function GetItems(tracks)
     local items = {}
-    for track, tinfo in ipairs(tracks) do
+    for track, tinfo in pairs(tracks) do
         local item_count = reaper.GetTrackNumMediaItems(track)
         -- build array of items
         for i = 0, item_count - 1 do
@@ -177,6 +177,7 @@ function GetSelectedItems()
         items[i].pos = reaper.GetMediaItemInfo_Value(items[i].item, "D_POSITION")
         items[i].endpos = items[i].pos + reaper.GetMediaItemInfo_Value(items[i].item, "D_LENGTH")
         items[i].track = reaper.GetMediaItemInfo_Value(items[i].item, "P_TRACK")
+        items[i].tracknum = reaper.GetMediaTrackInfo_Value(items[i].track, 'IP_TRACKNUMBER')
     end
     return items
 end
