@@ -12,9 +12,9 @@ Links:
 License:
     GPL v3
 Version:
-    1.6-pre2 2024-07-04
+    1.6-pre3 2024-07-06
 Changelog:
-    ~ move functions to separate file
+    ~ minor changes
 About:
     # Add marker at beginning of adjacent items (across tracks)
 
@@ -56,21 +56,17 @@ function Main()
     local tracks = GetTracks()
     local items = GetItems(tracks)
 
-    -- start from end of project
-    items = SortReverse(items)
+    -- sort items ascending
+    items = SortAsc(items)
 
     -- get all contiguous groups of items and save start time
-    local markers = {}
     while #items > 0 do
         local first_of_group
-        first_of_group, _, items = FindContiguous(items,Gap)
-        markers[#markers+1] = first_of_group[1].pos
+        first_of_group, _, items = FindContAsc(items,Gap)
+        -- create marker
+        AddMarker(first_of_group[1].pos)
     end
 
-    -- create markers
-    for i, _ in ipairs(markers) do
-        AddMarker(markers[#markers-i+1]) -- reverse order to make marker numbers increase with time
-    end
 end -- END MAIN
 
 function AddMarker(sec)

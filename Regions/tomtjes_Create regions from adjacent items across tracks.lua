@@ -14,10 +14,9 @@ Provides:
 License:
     GPL v3
 Version:
-    1.2 2024-06-22
+    1.3-pre1 2024-07-06
 Changelog:
-    ~ improve code quality
-    ~ lower track numbers take precedence in naming and coloring regions
+    ~ move functions to separate package
 About:
     # Create regions from adjacent items across tracks
 
@@ -49,110 +48,30 @@ Render = "tracks" -- options: "master", "tracks", "both"
 --======= END OF CONFIG ==========================--
 
 --======= FUNCTIONS ==============================--
+local script_folder = debug.getinfo(1).source:match("@?(.*[\\/])")
+script_folder = script_folder:match("^(.*[\\/])[^\\/]*[\\/]$") -- parent folder
+local script_path = script_folder .. "Functions/tomtjes_Radio Toolkit Base.lua"
+
+if reaper.file_exists(script_path) then
+    dofile(script_path)
+else
+    reaper.MB("Missing base functions.\n Please install Radio Toolkit Base." .. script_path, "Error", 0)
+    return
+end
 
 function Main()
-    -- save original item selection
-    local orig_items = GetSelectedItems()
-    reaper.Main_OnCommand(40289, 0) -- clear item selection
-
     Tracks = GetTracks()
-    Master = reaper.GetMasterTrack(0)
 
     local items = GetItems(Tracks)
-    items = SortByPos(items)
+    items = SortAsc(items)
+
     while #items > 0 do
         local first_of_group, last_of_group, trks
-        items, first_of_group, last_of_group, trks = FindContiguous(items,Gap)
----@diagnostic disable-next-line: need-check-nil
-        AddRegion(first_of_group.pos, last_of_group.endpos, trks)
-    end
-
-    -- restore item selection
-    for _, item in ipairs(orig_items) do
-        reaper.SetMediaItemSelected(item, true)
+        first_of_group, last_of_group, items, trks = FindContAsc(items,Gap)
+        local region = AddRegion(first_of_group.pos, last_of_group.endpos, trks)
+        AdjustRenderMatrix(region, trks)
     end
 end -- END MAIN
-
-function GetSelectedItems()
-    local items = {}
-    local itemcount = reaper.CountSelectedMediaItems(0)
-    for i = 1, itemcount do
-        items[i] = reaper.GetSelectedMediaItem(0, i-1)
-    end
-    return items
-end
-
-function GetTracks()
-    local tracks = {}
-    local track_count = reaper.CountTracks(0)
-    local track_count_sel = reaper.CountSelectedTracks(0)
-	for i = 0, track_count - 1 do
-		local track = reaper.GetTrack(0, i)
-        if (track_count_sel > 0 and reaper.IsTrackSelected(track) == true) or track_count_sel == 0 then -- selected tracks only or all tracks if none selected
-            tracks[track] = {}
-            _, tracks[track].name = reaper.GetTrackName(track)
-            tracks[track].color = reaper.GetTrackColor(track)
-            tracks[track].num = reaper.GetMediaTrackInfo_Value(track, 'IP_TRACKNUMBER')
-        end
-	end
-    return tracks
-end
-
-function GetItems(tracks)
-    local items = {}
-    for track, v in pairs(tracks) do
-        local item_count = reaper.GetTrackNumMediaItems(track)
-        -- build array of items
-        for j = 0, item_count - 1 do
-            local item = {}
-            item.track = track
-            item.tracknum = v.num
-            item.item = reaper.GetTrackMediaItem(track, j)
-            item.length = reaper.GetMediaItemInfo_Value(item.item, "D_LENGTH")
-            item.pos = reaper.GetMediaItemInfo_Value(item.item, "D_POSITION")
-            item.endpos = item.pos + item.length
-            item.offset = reaper.GetMediaItemTakeInfo_Value(reaper.GetActiveTake(item.item), "D_STARTOFFS")
-            item.endsec = item.offset + item.length
-            item.sourcelength = reaper.GetMediaSourceLength(reaper.GetMediaItemTake_Source(reaper.GetActiveTake(item.item)))
-
-            items[#items+1] = item
-        end
-    end
-    return items
-end
-
-function SortByPos(items)
-    if #items > 1 then
-        table.sort(items, function( a,b )
-            if (a.pos < b.pos) then
-                -- primary sort on position -> a before b
-                return true
-            elseif (a.pos > b.pos) then
-                -- primary sort on position -> b before a
-                return false
-            else
-                -- primary sort tied, resolve w secondary sort on track
-                return a.tracknum < b.tracknum
-            end
-        end)
-    end
-    return items
-end
-
-function FindContiguous(items,gap)
-    local first_of_group = items[1] -- first item of contiguous group
-    local last_of_group = items[1] -- last item of contiguous group
-    local tracks = {}
-    repeat
-        if last_of_group.endpos < items[1].endpos then
-            last_of_group = items[1]
-        end
-        -- save track for render matrix and region naming
-        tracks[items[1].track] = true
-        table.remove(items,1)
-    until #items == 0 or items[1].pos - last_of_group.endpos >= gap -- last item reached or gap detected
-    return items, first_of_group, last_of_group, tracks
-end
 
 function AddRegion(start,stop,tracks)
     -- region name and color defined by tracks in project order
@@ -181,15 +100,16 @@ function AddRegion(start,stop,tracks)
             color = Tracks[trk].color
         end
     end
+    return reaper.AddProjectMarker2( 0, true, start, stop, name, 1, color ) -- add region and save id
+end
 
-    local region = reaper.AddProjectMarker2( 0, true, start, stop, name, 1, color ) -- add region and save id
-
+function AdjustRenderMatrix(region, tracks)
     -- adjust render matrix
     if Render == "master" or Render == "both" then
-        reaper.SetRegionRenderMatrix( 0, region, Master, 1 )
+        local master = reaper.GetMasterTrack(0)
+        reaper.SetRegionRenderMatrix( 0, region, master, 1 )
     end
-
-    for _, trk in pairs(trks) do
+    for trk, _ in pairs(tracks) do
         if Render == "tracks" or Render == "both" then
             reaper.SetRegionRenderMatrix( 0, region, trk, 1 )
         end

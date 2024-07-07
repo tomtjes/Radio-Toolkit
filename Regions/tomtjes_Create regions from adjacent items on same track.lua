@@ -7,10 +7,9 @@
   Provides:
     [data] toolbar_icons/tomtjes_toolbar_region_adjacent_items_same_track.png > toolbar_icons/tomtjes_toolbar_region_adjacent_items_same_track.png
   License: GPL v3
-  Version: 1.0.2 2022-01-28
+  Version: 1.1-pre1 2024-07-06
   Changelog:
-    ~ fix region numbering (start with 1 instead of 0)
-    - remove requirement to select tracks, apply script to all tracks if none selected
+    ~ move functions to separate package
   About:
     # Create regions from adjacent items on same track
 
@@ -41,89 +40,53 @@ render = "tracks" -- options: "master", "tracks", "both"
 --======= END OF CONFIG ==========================--
 
 --======= FUNCTIONS ==============================--
+local script_folder = debug.getinfo(1).source:match("@?(.*[\\/])")
+script_folder = script_folder:match("^(.*[\\/])[^\\/]*[\\/]$") -- parent folder
+local script_path = script_folder .. "Functions/tomtjes_Radio Toolkit Base.lua"
 
-function main()
-  local region, region_start, region_end, region_name, region_color, number_of_items, item, item_start, item_end
-  -- get master track
-  local master = reaper.GetMasterTrack( 0 )
+if reaper.file_exists(script_path) then
+    dofile(script_path)
+else
+    reaper.MB("Missing base functions.\n Please install Radio Toolkit Base." .. script_path, "Error", 0)
+    return
+end
 
-  -- check # of tracks selected
-  local tracks = {}
-  local number_of_tracks = reaper.CountSelectedTracks(0)
-  if number_of_tracks == 0 then
-    number_of_tracks = reaper.CountTracks(0)
-    for i=1, number_of_tracks do
-      tracks[i] = reaper.GetTrack(0, i-1)
-    end
-  else
-    for i=1, number_of_tracks do
-      tracks[i] = reaper.GetSelectedTrack( 0, i-1 )
-    end
-  end
+function Main()
+  Tracks = GetTracks()
 
-  -- iterate over tracks
-  for _,track in ipairs(tracks) do
-  
-    region_color = reaper.GetTrackColor( track )
-    _, region_name = reaper.GetTrackName( track )
+  -- get items per track
+  for track, _ in pairs(Tracks) do
+    local items = GetItems(track)
+    items = SortAsc(items)
 
-    number_of_items = reaper.CountTrackMediaItems( track )
-
-    -- get first item on track
-    item = reaper.GetTrackMediaItem( track, 0 )
-    item_start, _, item_end = StartLengthEnd(item)
-
-    -- start first region
-    region_start = item_start
-    region_end = item_end
-
-    -- iterate over items on track
-    for j=1, number_of_items do
-
-      -- get next item on track
-      item = reaper.GetTrackMediaItem( track, j )
-      if item ~= nil then
-        item_start, _, item_end = StartLengthEnd(item)
-      else -- reached end of track
-        item_start = region_end + gap + 1 -- always create region for last item
-      end
-
-      -- create region now?
-      if item_start - region_end >= gap then -- if gap to next item big enough
-        region = reaper.AddProjectMarker2( 0, true, region_start, region_end, region_name, 1, region_color ) -- add region and save id
-
-        -- adjust render matrix
-        if render == "master" or render == "both" then
-          reaper.SetRegionRenderMatrix( 0, region, master, 1 )
-        end
-        if render == "tracks" or render == "both" then
-          reaper.SetRegionRenderMatrix( 0, region, track, 1 )
-        end
-
-        -- start next region
-        region_start = item_start
-      end
-
-      -- extend region?
-      if item_end > region_end then
-        region_end = item_end
-      end
+    while #items > 0 do
+      local first_of_group, last_of_group
+      first_of_group, last_of_group, items, _ = FindContAsc(items,Gap)
+      local region = AddRegion(first_of_group.pos, last_of_group.endpos, track)
+      AdjustRenderMatrix(region, track)
     end
   end
 end
 
-function StartLengthEnd(item)
-  local item_start = reaper.GetMediaItemInfo_Value( item, "D_POSITION" )
-  local item_length = reaper.GetMediaItemInfo_Value( item, "D_LENGTH" )
-  local item_end = item_start + item_length
-  return item_start, item_length, item_end
+function AddRegion(start,stop,track)
+  -- region name and color defined by tracks in project order
+  local name = Tracks[track].name
+  local color = Tracks[track].color
+  return reaper.AddProjectMarker2( 0, true, start, stop, name, 1, color ) -- add region and return id
 end
 
+function AdjustRenderMatrix(region, track)
+  if Render == "master" or Render == "both" then
+      local master = reaper.GetMasterTrack(0)
+      reaper.SetRegionRenderMatrix( 0, region, master, 1 )
+  end
+  if Render == "tracks" or Render == "both" then
+      reaper.SetRegionRenderMatrix( 0, region, track, 1 )
+  end
+end
 --======= END OF FUNCTIONS =======================--
 
 reaper.Undo_BeginBlock()
-
-main()
-
+Main()
 reaper.UpdateArrange()
 reaper.Undo_EndBlock("Create regions from adjacent items on same track", -1)

@@ -10,9 +10,9 @@
     Links:
         Github https://github.com/tomtjes/Radio-Toolkit
     Version:
-        1.0 2023-10-22
+        1.1-pre1 2024-07-06
     Changelog:
-        + initial release
+        ~ move functions to separate package
     License:
         GPL v3
     About:
@@ -34,22 +34,19 @@
 
 --======= CONFIG =================================--
 -- collapse gaps larger than
-max_gap = 1.0
+Gap = 1.0
 --======= END OF CONFIG ==========================--
 
 --======= FUNCTIONS ==============================--
+local script_folder = debug.getinfo(1).source:match("@?(.*[\\/])")
+script_folder = script_folder:match("^(.*[\\/])[^\\/]*[\\/]$") -- parent folder
+local script_path = script_folder .. "Functions/tomtjes_Radio Toolkit Base.lua"
 
-function GetSelectedItems()
-    local items = {}
-    local itemcount = reaper.CountSelectedMediaItems(0)
-    for i = 1, itemcount do
-        items[i] = {}
-        items[i].item = reaper.GetSelectedMediaItem(0, i-1)
-        items[i].pos = reaper.GetMediaItemInfo_Value(items[i].item, "D_POSITION")
-        items[i].endpos = items[i].pos + reaper.GetMediaItemInfo_Value(items[i].item, "D_LENGTH")
-        items[i].track = reaper.GetMediaItemInfo_Value(items[i].item, "P_TRACK")
-    end
-    return items
+if reaper.file_exists(script_path) then
+    dofile(script_path)
+else
+    reaper.MB("Missing base functions.\n Please install Radio Toolkit Base." .. script_path, "Error", 0)
+    return
 end
 
 function DeleteTimeOnTrack(track)
@@ -69,54 +66,30 @@ function InsertTimeOnTrack(track)
 end
 
 function CollapseSelectedItems(items)
-    -- sort by end position, last item first
-    table.sort(items, function(a,b)
-		if (a.endpos > b.endpos) then
-				-- primary sort on end position -> a before b
-			return true
-			elseif (a.endpos < b.endpos) then
-				-- primary sort on end position -> b before a
-			return false
-		else
-			-- primary sort tied, resolve w secondary sort on pos
-			return a.pos > b.pos
-		end
-	end)
-
-    -- find tracks and latest endpos per track
-    local tracks = {}
-    for _, item in ipairs(items) do
-        if not tracks[item.track] then
-            tracks[item.track] = item.endpos
-        end
+    items = SortDesc(items)
+    local tracks
+    local groups = {}
+    while #items > 0 do
+        local first_of_group, last_of_group
+        first_of_group, last_of_group, items, tracks = FindContDesc(items,Gap)
+        groups[#groups+1] = { pos = first_of_group.pos, endpos = last_of_group.endpos }
     end
 
-    local group_start = items[1].pos
-    for n, item in ipairs(items) do
-        if item.pos < group_start then
-            group_start = item.pos
-        end
-        if n < #items then
-            local gap = group_start - items[n+1].endpos
-            if gap > max_gap then
-                reaper.GetSet_LoopTimeRange2(0, true, false, group_start - gap, group_start - max_gap, false)
-                if orig_RippleAll == 1 then
-                    reaper.Main_OnCommand(40201, 0) -- Delete time selection moving later items
-                else
-                    for t, maxpos in pairs(tracks) do
-                        if group_start < maxpos then
-                            DeleteTimeOnTrack(t)
-                        end
-                    end
-                    -- above block moved later items, undo if ripple per track is off
-                    if orig_RippleTrack == 0 then
-                        for t, maxpos in pairs(tracks) do
-                            if group_start < maxpos then
-                                reaper.GetSet_LoopTimeRange2(0, true, false, maxpos - (gap - max_gap), maxpos, false)
-                                InsertTimeOnTrack(t)
-                            end
-                        end
-                    end
+    for i = 1, #groups-1 do
+        local gapstart = groups[i+1].endpos
+        local gapend = groups[i].pos
+        reaper.GetSet_LoopTimeRange2(0, true, false, gapstart, gapend - Gap, false)
+        if orig_RippleAll == 1 then
+            reaper.Main_OnCommand(40201, 0) -- Delete time selection moving later items
+        else
+            for t, _ in pairs(tracks) do
+                DeleteTimeOnTrack(t)
+            end
+            -- above block moved later items, undo if ripple per track is off
+            if orig_RippleTrack == 0 then
+                for t, _ in pairs(tracks) do
+                    reaper.GetSet_LoopTimeRange2(0, true, false, groups[1].endpos-(gapend-gapstart)+Gap, groups[1].endpos, false)
+                    InsertTimeOnTrack(t)
                 end
             end
         end
@@ -143,11 +116,7 @@ function Main()
     -- save original item selection
     local orig_items = GetSelectedItems()
     -- save original track selection
-    local orig_tracks = {}
-    local trackcount = reaper.CountSelectedTracks(0)
-    for i = 1, trackcount do
-        orig_tracks[i] = reaper.GetSelectedTrack(0, i-1)
-    end
+    local orig_tracks = GetSelectedTracks()
 
     if #orig_items > 0 then
         CollapseSelectedItems(orig_items)
@@ -157,14 +126,12 @@ function Main()
         
     -- restore track selection
     reaper.Main_OnCommand(40297, 0) -- clear track selection
-    for _, t in ipairs(orig_tracks) do
+    for t, _ in pairs(orig_tracks) do
         reaper.SetTrackSelected(t, true)
     end
     -- restore item selection
     reaper.Main_OnCommand(40289, 0) -- clear item selection
-    for _, item in ipairs(orig_items) do
-        reaper.SetMediaItemSelected(item.item, true)
-    end
+    SetSelectedItems(orig_items)
     -- Restore original ripple edit mode and time selection
     if orig_RippleAll == 1 then
         reaper.Main_OnCommand(40311, 0)

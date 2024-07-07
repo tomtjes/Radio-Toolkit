@@ -9,14 +9,12 @@ Donation:
     https://ko-fi.com/tomtjes
 Links:
     Github https://github.com/tomtjes/Radio-Toolkit
-Provides:
-    ../lib/tomtjes_functions.lua
 License:
     GPL v3
 Version:
-    1.5 2024-07-04
+    1.6-pre1 2024-07-06
 Changelog:
-    ~ move functions to separate file
+    ~ move functions to separate package
 About:
     # Add marker at end of adjacent items (across tracks)
     Finds all contiguous groups of items that are less than a
@@ -44,12 +42,12 @@ Gap = 1 -- minimum distance (seconds) between items before they're considered no
 --======= FUNCTIONS ==============================--
 local script_folder = debug.getinfo(1).source:match("@?(.*[\\/])")
 script_folder = script_folder:match("^(.*[\\/])[^\\/]*[\\/]$") -- parent folder
-local script_path = script_folder .. "lib/tomtjes_functions.lua"
+local script_path = script_folder .. "Functions/tomtjes_Radio Toolkit Base.lua"
 
 if reaper.file_exists(script_path) then
     dofile(script_path)
 else
-    reaper.MB("Missing functions script.\n" .. script_path, "Error", 0)
+    reaper.MB("Missing base functions.\n Please install Radio Toolkit Base." .. script_path, "Error", 0)
     return
 end
 
@@ -58,19 +56,15 @@ function Main()
     local items = GetItems(tracks)
 
     -- start from end of project
-    items = SortReverse(items)
+    items = SortAsc(items)
 
     -- get all contiguous groups of items and save start time
     local markers = {}
     while #items > 0 do
         local last_of_group
-        _, last_of_group, items = FindContiguous(items,Gap)
-        markers[#markers+1] = last_of_group[1].pos
-    end
-
-    -- create markers
-    for i, _ in ipairs(markers) do
-        AddMarker(markers[#markers-i+1]) -- reverse order to make marker numbers increase with time
+        _, last_of_group, items = FindContAsc(items,Gap)
+        -- create marker
+        AddMarker(last_of_group[1].endpos)
     end
 end -- END MAIN
 
