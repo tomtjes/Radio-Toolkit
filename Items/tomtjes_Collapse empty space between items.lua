@@ -10,7 +10,7 @@
     Links:
         Github https://github.com/tomtjes/Radio-Toolkit
     Version:
-        1.1.1 2024-07-07
+        1.2 2024-07-07
     Changelog:
         ~ fix groups spanning multiple tracks
     License:
