@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Radio Toolkit" commit="92089721114f35147c18dd34f042c3642aa4ead2">
+<index version="1" name="Radio Toolkit" commit="b3bce2d068e8807a108f6709bd3f66e8581d47a8">
   <category name="Envelopes">
     <reapack name="tomtjes_X-Raym_Add fades or ramps at time selection edges on chosen envelopes (Ducking).lua" type="script" desc="Add fades/ramps at time selection edges on chosen envelopes (Ducking)">
       <metadata>
@@ -118,6 +118,10 @@ support my work with coffee
       <version name="1.1.1 2024-07-07" author="tomtjes" time="2024-07-07T18:30:14Z">
         <changelog><![CDATA[~ fix groups spanning multiple tracks]]></changelog>
         <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/92089721114f35147c18dd34f042c3642aa4ead2/Items/tomtjes_Collapse%20empty%20space%20between%20items.lua</source>
+      </version>
+      <version name="1.2 2024-07-07" author="tomtjes" time="2024-07-07T18:35:15Z">
+        <changelog><![CDATA[~ fix groups spanning multiple tracks]]></changelog>
+        <source main="main">https://github.com/tomtjes/Radio-Toolkit/raw/b3bce2d068e8807a108f6709bd3f66e8581d47a8/Items/tomtjes_Collapse%20empty%20space%20between%20items.lua</source>
       </version>
     </reapack>
     <reapack name="tomtjes_Extend beginning of adjacent items (across tracks).lua" type="script" desc="Extend beginning of adjacent items (across tracks)">
