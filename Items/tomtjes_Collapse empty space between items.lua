@@ -10,9 +10,9 @@
     Links:
         Github https://github.com/tomtjes/Radio-Toolkit
     Version:
-        1.1 2024-07-07
+        1.1.1 2024-07-07
     Changelog:
-        ~ move functions to separate package
+        ~ fix groups spanning multiple tracks
     License:
         GPL v3
     About:
@@ -72,7 +72,7 @@ function CollapseSelectedItems(items)
     while #items > 0 do
         local first_of_group, last_of_group
         first_of_group, last_of_group, items, tracks = FindContDesc(items,Gap)
-        groups[#groups+1] = { pos = first_of_group[1].pos, endpos = last_of_group[1].endpos }
+        groups[#groups+1] = { pos = first_of_group[1].pos, endpos = last_of_group[1].endpos, tracks = tracks }
     end
 
     for i = 1, #groups-1 do
@@ -82,12 +82,12 @@ function CollapseSelectedItems(items)
         if RippleAll == 1 then
             reaper.Main_OnCommand(40201, 0) -- Delete time selection moving later items
         else
-            for t, _ in pairs(tracks) do
+            for t, _ in pairs(groups[i].tracks) do
                 DeleteTimeOnTrack(t)
             end
             -- above block moved later items, undo if ripple per track is off
             if RippleTrack == 0 then
-                for t, _ in pairs(tracks) do
+                for t, _ in pairs(groups[i].tracks) do
                     reaper.GetSet_LoopTimeRange2(0, true, false, groups[1].endpos-(gapend-gapstart)+Gap, groups[1].endpos, false)
                     InsertTimeOnTrack(t)
                 end
